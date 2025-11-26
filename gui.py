@@ -75,13 +75,28 @@ def process_pdf_file(
         return "Загрузите PDF файл", "", ""
 
     try:
-        progress(0.1, desc="Инициализация...")
+        progress(0.05, desc="Инициализация...")
+
+        # Получаем путь к файлу (Gradio 5.x передаёт строку)
+        if isinstance(pdf_file, str):
+            pdf_path = pdf_file
+        elif hasattr(pdf_file, 'name'):
+            pdf_path = pdf_file.name
+        else:
+            pdf_path = str(pdf_file)
+
+        print(f"[GUI DEBUG] PDF path: {pdf_path}")
+
+        # Проверяем существование файла
+        if not Path(pdf_path).exists():
+            return f"Ошибка: файл не найден: {pdf_path}", "", ""
 
         # Проверяем API ключ
         api_key = os.environ.get("ANTHROPIC_API_KEY")
         if not api_key:
             return "Ошибка: ANTHROPIC_API_KEY не найден в .env", "", ""
 
+        progress(0.1, desc="Создание процессора...")
         processor = PDFVisionProcessor(api_key=api_key)
 
         # Парсим и валидируем диапазон страниц
@@ -93,36 +108,81 @@ def process_pdf_file(
             except ValueError as e:
                 return f"Ошибка в диапазоне страниц: {e}", "", ""
 
-        # Устанавливаем DPI
+        # Устанавливаем DPI (ниже = быстрее)
         processor.config["dpi"] = dpi
+        print(f"[GUI DEBUG] DPI: {dpi}, mode: {mode}, page_range: {page_tuple}")
 
-        progress(0.2, desc="Конвертация PDF в изображения...")
+        progress(0.15, desc="Конвертация PDF в изображения (может занять время)...")
 
-        # Обрабатываем PDF
-        result = processor.process_pdf(
-            pdf_file.name if hasattr(pdf_file, 'name') else pdf_file,
-            mode=mode,
-            page_range=page_tuple
-        )
+        # Конвертируем PDF в изображения отдельно для показа прогресса
+        images = processor.pdf_to_images(pdf_path)
+
+        # Применяем фильтр по диапазону страниц если указан
+        if page_tuple:
+            start_page, end_page = page_tuple
+            # Индексация с 0, page_tuple с 1
+            images = images[start_page-1:end_page]
+            print(f"[GUI DEBUG] Applied page range {page_tuple}: {len(images)} pages selected")
+        total_pages = len(images)
+        print(f"[GUI DEBUG] Converted {total_pages} pages to images")
+
+        progress(0.3, desc=f"Конвертировано {total_pages} страниц. Отправка в Claude...")
+
+        # Определяем номер первой страницы для правильной нумерации
+        page_start = page_tuple[0] if page_tuple else 1
+
+        # Обрабатываем страницы через process_pages (он сам делает батчинг)
+        print(f"[GUI DEBUG] Processing {total_pages} pages starting from {page_start}")
+        progress(0.5, desc="Анализ страниц через Claude Vision...")
+
+        results = processor.process_pages(images, mode=mode, page_start=page_start)
+
+        # Подсчитываем токены
+        total_tokens = {"input": 0, "output": 0}
+        successful_results = []
+        for r in results:
+            if r.get("status") == "success":
+                successful_results.append(r)
+                total_tokens["input"] += r.get("usage", {}).get("input_tokens", 0)
+                total_tokens["output"] += r.get("usage", {}).get("output_tokens", 0)
 
         progress(0.9, desc="Сохранение результатов...")
 
-        # Читаем Markdown результат
-        session_id = result["session_id"]
-        md_path = OUTPUT_DIR / f"{session_id}_processed.md"
-        json_path = OUTPUT_DIR / f"{session_id}_processed.json"
+        # Формируем итоговый результат
+        from datetime import datetime
+        session_id = f"{Path(pdf_path).stem}_vision_{datetime.now().strftime('%H%M%S')}"
 
-        md_content = ""
-        if md_path.exists():
-            with open(md_path, encoding="utf-8") as f:
-                md_content = f.read()
+        # Сохраняем результаты
+        final_result = {
+            "session_id": session_id,
+            "source_pdf": pdf_path,
+            "total_pages": total_pages,
+            "mode": mode,
+            "processed_at": datetime.now().isoformat(),
+            "total_tokens": total_tokens,
+            "results": results
+        }
+
+        # Сохраняем JSON
+        json_path = OUTPUT_DIR / f"{session_id}_processed.json"
+        with open(json_path, "w", encoding="utf-8") as f:
+            import json
+            json.dump(final_result, f, ensure_ascii=False, indent=2)
+
+        # Создаём Markdown (используем _save_as_markdown)
+        md_path = OUTPUT_DIR / f"{session_id}_processed.md"
+        processor._save_as_markdown(final_result, md_path)
+
+        # Читаем содержимое для отображения
+        with open(md_path, "r", encoding="utf-8") as f:
+            md_content = f.read()
 
         status = f"""✅ Обработка завершена!
 
 📊 Статистика:
-- Страниц: {result['total_pages']}
-- Успешных батчей: {result['successful_batches']}
-- Токенов: {result['total_tokens']['input']:,} → {result['total_tokens']['output']:,}
+- Страниц: {total_pages}
+- Успешных батчей: {len(successful_results)}/{len(results)}
+- Токенов: {total_tokens['input']:,} → {total_tokens['output']:,}
 
 📁 Файлы:
 - {md_path.name}
@@ -133,7 +193,10 @@ def process_pdf_file(
         return status, md_content, str(json_path)
 
     except Exception as e:
-        return f"❌ Ошибка: {str(e)}", "", ""
+        import traceback
+        error_details = traceback.format_exc()
+        print(f"[GUI ERROR] {error_details}")
+        return f"❌ Ошибка: {str(e)}\n\nПодробности в консоли", "", ""
 
 
 def process_pdf_folder(
