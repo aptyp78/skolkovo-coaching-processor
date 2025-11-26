@@ -41,6 +41,181 @@ logger = get_logger(__name__)
 from pdf_vision_processor import PDFVisionProcessor
 from audio_transcriber import AudioTranscriber, SeminarProcessor, process_audio_file
 
+# Локальные процессоры
+try:
+    from local_processor import (
+        LocalPDFProcessor, LocalVisionProcessor, LocalWhisperTranscriber,
+        check_local_requirements, OllamaClient
+    )
+    LOCAL_AVAILABLE = True
+except ImportError:
+    LOCAL_AVAILABLE = False
+    logger.warning("Локальные процессоры недоступны")
+
+# Глобальная переменная для хранения текущего процесса конвертации
+_current_conversion_process = None
+
+
+def get_system_memory_gb() -> int:
+    """Получает объём RAM системы в GB."""
+    try:
+        import subprocess
+        result = subprocess.run(
+            ['sysctl', '-n', 'hw.memsize'],
+            capture_output=True, text=True, timeout=5
+        )
+        bytes_ram = int(result.stdout.strip())
+        return bytes_ram // (1024 ** 3)
+    except Exception:
+        return 32  # Консервативная оценка по умолчанию
+
+
+def estimate_model_size(model_name: str) -> tuple:
+    """
+    Оценивает размер модели по названию.
+    Возвращает (размер_в_GB, можно_запустить, рекомендация).
+    """
+    name_lower = model_name.lower()
+
+    # Извлекаем размер из названия (7b, 13b, 34b, 70b, 235b, 671b)
+    import re
+    size_match = re.search(r'(\d+)b', name_lower)
+
+    if size_match:
+        params_b = int(size_match.group(1))
+    else:
+        # Оценка по умолчанию для известных моделей
+        if 'llama3.3' in name_lower or 'llama3:latest' in name_lower:
+            params_b = 70
+        elif 'llama3:8b' in name_lower or 'qwen3:8b' in name_lower:
+            params_b = 8
+        elif 'llava' in name_lower and '34b' not in name_lower:
+            params_b = 7  # llava:latest обычно 7b
+        else:
+            params_b = 7  # По умолчанию предполагаем маленькую модель
+
+    # Приблизительный размер в памяти (параметры * 2 байта для fp16 + накладные расходы)
+    estimated_ram_gb = (params_b * 2) // 1 + 2  # ~2GB на параметр + 2GB overhead
+
+    # Получаем RAM системы
+    system_ram = get_system_memory_gb()
+
+    # Определяем, можно ли запустить (оставляем 16GB для системы)
+    available_ram = system_ram - 16
+    can_run = estimated_ram_gb <= available_ram
+
+    # Рекомендации
+    if params_b >= 200:
+        recommendation = "🔴 Слишком большая"
+    elif params_b >= 70:
+        if system_ram >= 128:
+            recommendation = "🟡 Медленная, но работает"
+        else:
+            recommendation = "🔴 Требует много RAM"
+    elif params_b >= 30:
+        recommendation = "🟢 Хороший баланс"
+    elif params_b >= 7:
+        recommendation = "🟢 Быстрая"
+    else:
+        recommendation = "🟢 Очень быстрая"
+
+    return estimated_ram_gb, can_run, recommendation, params_b
+
+
+def get_ollama_models() -> dict:
+    """
+    Получает список доступных моделей Ollama с фильтрацией и рекомендациями.
+    Возвращает словарь с текстовыми и vision моделями.
+    """
+    result = {
+        "text": [],           # Модели для текстового анализа
+        "vision": [],         # Модели с поддержкой изображений
+        "all": [],            # Все модели
+        "recommended": [],    # Рекомендованные модели
+        "text_choices": [],   # Форматированные варианты для Dropdown (текст)
+        "vision_choices": [], # Форматированные варианты для Dropdown (vision)
+        "system_ram": 0
+    }
+
+    if not LOCAL_AVAILABLE:
+        return result
+
+    try:
+        client = OllamaClient()
+        models = client.list_models()
+        result["all"] = models
+        result["system_ram"] = get_system_memory_gb()
+
+        # Vision/OCR ключевые слова (модели, способные работать с изображениями)
+        vision_keywords = [
+            'llava', 'vision', 'bakllava', 'moondream', 'cogvlm',
+            'qwen-vl', 'qwen3-vl', 'qwen2.5vl', 'qwen2-vl',  # Qwen Vision-Language
+            'granite3.2-vision', 'granite-vision',            # IBM Granite OCR
+            'deepseek-ocr', 'minicpm-v',                      # Специализированные OCR
+            'llama3.2-vision', 'llama-vision'                 # Meta Vision
+        ]
+
+        # Модели с лучшим OCR (приоритет для документов с текстом)
+        ocr_optimized = ['granite3.2-vision', 'deepseek-ocr', 'qwen2.5vl', 'minicpm-v']
+
+        # Фильтруем модели с "-cloud" суффиксом (они требуют API и не работают локально)
+        cloud_keywords = ['-cloud', ':cloud', 'cloud-']
+
+        for model in models:
+            model_lower = model.lower()
+
+            # Пропускаем "облачные" модели (это заглушки, требующие внешнего API)
+            if any(kw in model_lower for kw in cloud_keywords):
+                continue
+
+            # Получаем информацию о модели
+            ram_gb, can_run, recommendation, params = estimate_model_size(model)
+
+            # Форматируем для отображения
+            display_name = f"{model} {recommendation}"
+
+            # Разделяем на vision и текстовые
+            is_vision = any(kw in model_lower for kw in vision_keywords)
+
+            # Проверяем, оптимизирована ли модель для OCR
+            is_ocr_optimized = any(kw in model_lower for kw in ocr_optimized)
+
+            if is_vision:
+                result["vision"].append(model)
+                if can_run:
+                    # Добавляем метку OCR для оптимизированных моделей
+                    if is_ocr_optimized:
+                        display_name = f"⭐ {model} {recommendation} [OCR]"
+                    # Gradio 5.x: используем строки напрямую (display_name включает model)
+                    result["vision_choices"].append(display_name)
+            else:
+                result["text"].append(model)
+                if can_run:
+                    result["text_choices"].append(display_name)
+
+            # Добавляем в рекомендованные если хороший баланс
+            if can_run and params <= 70 and "🟢" in recommendation:
+                result["recommended"].append(model)
+
+        # Сортируем: сначала OCR-оптимизированные (⭐), потом 🟢, потом 🟡
+        def sort_key(display):
+            if "⭐" in display:      # OCR-оптимизированные первыми
+                return (0, display)
+            elif "🟢" in display:
+                return (1, display)
+            elif "🟡" in display:
+                return (2, display)
+            else:
+                return (3, display)
+
+        result["text_choices"].sort(key=sort_key)
+        result["vision_choices"].sort(key=sort_key)
+
+        return result
+    except Exception as e:
+        logger.warning(f"Не удалось получить список моделей Ollama: {e}")
+        return result
+
 
 # ============================================================================
 # ФУНКЦИИ ДЛЯ ОБРАБОТКИ PDF
@@ -63,10 +238,16 @@ def process_pdf_file(
     mode: str,
     page_range: str,
     dpi: int,
+    processing_mode: str = "cloud",  # "cloud" или "local"
+    ollama_model: str = None,        # Модель Ollama для локальной обработки
     progress=gr.Progress()
 ) -> Tuple[str, str, str]:
     """
-    Обрабатывает PDF файл через Vision API.
+    Обрабатывает PDF файл через Vision API или локально.
+
+    Args:
+        processing_mode: "cloud" (Claude API) или "local" (Ollama)
+        ollama_model: Модель Ollama (llava:34b, llama3.3 и т.д.)
 
     Returns:
         Tuple[status, markdown_result, json_path]
@@ -85,18 +266,90 @@ def process_pdf_file(
         else:
             pdf_path = str(pdf_file)
 
-        print(f"[GUI DEBUG] PDF path: {pdf_path}")
+        print(f"[GUI DEBUG] PDF path: {pdf_path}, mode: {processing_mode}")
 
         # Проверяем существование файла
         if not Path(pdf_path).exists():
             return f"Ошибка: файл не найден: {pdf_path}", "", ""
 
+        # ЛОКАЛЬНАЯ ОБРАБОТКА
+        if processing_mode == "local":
+            if not LOCAL_AVAILABLE:
+                return "Ошибка: локальные процессоры не установлены", "", ""
+
+            # Определяем модель (извлекаем имя из display_name)
+            model_display = ollama_model or "llava:34b"
+            model = extract_model_name(model_display)
+            progress(0.1, desc=f"Создание локального процессора ({model})...")
+
+            # Проверяем, это vision модель или текстовая
+            vision_keywords = [
+                'llava', 'vision', 'bakllava', 'moondream', 'cogvlm',
+                'qwen-vl', 'qwen3-vl', 'qwen2.5vl', 'qwen2-vl',
+                'granite3.2-vision', 'granite-vision',
+                'deepseek-ocr', 'minicpm-v',
+                'llama3.2-vision', 'llama-vision'
+            ]
+            is_vision = any(kw in model.lower() for kw in vision_keywords)
+
+            try:
+                if is_vision:
+                    processor = LocalVisionProcessor({"dpi": dpi, "vision_model": model})
+                else:
+                    # Для текстовых моделей используем LocalPDFProcessor
+                    processor = LocalPDFProcessor({"text_model": model})
+            except ConnectionError as e:
+                return f"Ошибка: {e}\n\nЗапустите Ollama: ollama serve", "", ""
+
+            # Парсим диапазон страниц (только для Vision процессора)
+            page_tuple = None
+            if page_range and page_range.strip():
+                try:
+                    start, end = validate_page_range(page_range)
+                    page_tuple = (start, end)
+                except ValueError as e:
+                    return f"Ошибка в диапазоне страниц: {e}", "", ""
+
+            progress(0.2, desc="Обработка PDF...")
+
+            # Обрабатываем локально (разная логика для Vision и текстовых моделей)
+            if is_vision:
+                result = processor.process_pdf(pdf_path, mode=mode, page_range=page_tuple)
+            else:
+                # LocalPDFProcessor не поддерживает page_range
+                result = processor.process_pdf(pdf_path, mode=mode)
+
+            # Читаем markdown результат
+            session_id = result["session_id"]
+            md_path = OUTPUT_DIR / f"{session_id}_processed.md"
+            json_path = OUTPUT_DIR / f"{session_id}_processed.json"
+
+            md_content = ""
+            if md_path.exists():
+                with open(md_path, "r", encoding="utf-8") as f:
+                    md_content = f.read()
+
+            status = f"""✅ Локальная обработка завершена!
+
+🏠 Процессор: Ollama ({model})
+📊 Статистика:
+- Страниц: {result['total_pages']}
+- Успешно: {result['successful_pages']}/{result['total_pages']}
+
+📁 Файлы:
+- {md_path.name}
+- {json_path.name}
+"""
+            progress(1.0, desc="Готово!")
+            return status, md_content, str(json_path)
+
+        # ОБЛАЧНАЯ ОБРАБОТКА (Claude API)
         # Проверяем API ключ
         api_key = os.environ.get("ANTHROPIC_API_KEY")
         if not api_key:
             return "Ошибка: ANTHROPIC_API_KEY не найден в .env", "", ""
 
-        progress(0.1, desc="Создание процессора...")
+        progress(0.1, desc="Создание процессора (Claude API)...")
         processor = PDFVisionProcessor(api_key=api_key)
 
         # Парсим и валидируем диапазон страниц
@@ -246,6 +499,7 @@ def _convert_to_mp3_if_needed(audio_path: str, progress_callback=None) -> str:
     Возвращает путь к MP3 файлу (оригинальный или конвертированный).
     """
     from pydub import AudioSegment
+    import re
 
     path = Path(audio_path)
     file_size_mb = path.stat().st_size / (1024 * 1024)
@@ -254,40 +508,88 @@ def _convert_to_mp3_if_needed(audio_path: str, progress_callback=None) -> str:
     if file_size_mb < 25 or path.suffix.lower() == '.mp3':
         return audio_path
 
-    # Для больших файлов в экзотических форматах - конвертируем в MP3
-    if progress_callback:
-        progress_callback(f"Конвертирую {file_size_mb:.0f}MB в MP3 (может занять несколько минут)...")
-
     print(f"   🔄 Конвертирую {path.name} ({file_size_mb:.0f}MB) в MP3...")
 
     # Создаём временный MP3 файл
     mp3_path = OUTPUT_DIR / f"{path.stem}_converted.mp3"
 
-    # Конвертируем через ffmpeg напрямую (быстрее чем pydub для больших файлов)
+    # Получаем длительность для расчёта прогресса
     try:
-        result = subprocess.run(
-            ['ffmpeg', '-y', '-i', str(path), '-vn', '-acodec', 'libmp3lame', '-q:a', '4', str(mp3_path)],
+        duration_result = subprocess.run(
+            ['ffprobe', '-v', 'error', '-show_entries', 'format=duration',
+             '-of', 'default=noprint_wrappers=1:nokey=1', str(path)],
             capture_output=True,
-            text=True,
-            timeout=600  # 10 минут таймаут
+            text=True
         )
-        if result.returncode == 0 and mp3_path.exists():
+        total_duration = float(duration_result.stdout.strip())
+    except:
+        total_duration = None
+
+    # Конвертируем через ffmpeg с отслеживанием прогресса
+    global _current_conversion_process
+    try:
+        print(f"   🎵 Запускаю ffmpeg для {path.name}...")
+
+        process = subprocess.Popen(
+            ['ffmpeg', '-y', '-i', str(path), '-vn', '-acodec', 'libmp3lame', '-q:a', '4', str(mp3_path)],
+            stdout=subprocess.PIPE,
+            stderr=subprocess.PIPE,
+            text=True
+        )
+        _current_conversion_process = process  # Сохраняем для возможности отмены
+
+        # Читаем stderr для отслеживания прогресса
+        while True:
+            line = process.stderr.readline()
+            if not line and process.poll() is not None:
+                break
+
+            if progress_callback and total_duration and 'time=' in line:
+                # Парсим время: time=00:01:23.45
+                time_match = re.search(r'time=(\d{2}):(\d{2}):(\d{2})', line)
+                if time_match:
+                    h, m, s = map(int, time_match.groups())
+                    current_time = h * 3600 + m * 60 + s
+                    progress_pct = min(0.95, current_time / total_duration)
+                    progress_callback(f"Конвертация: {int(progress_pct * 100)}%")
+
+        process.wait()
+        _current_conversion_process = None  # Очищаем после завершения
+
+        if process.returncode == 0 and mp3_path.exists():
             new_size = mp3_path.stat().st_size / (1024 * 1024)
             print(f"   ✅ Конвертировано: {new_size:.0f}MB")
+            if progress_callback:
+                progress_callback(f"Конвертация завершена: {new_size:.0f}MB")
             return str(mp3_path)
-    except subprocess.TimeoutExpired:
-        print("   ⚠️ Таймаут конвертации")
+        else:
+            stderr = process.stderr.read() if process.stderr else ""
+            print(f"   ❌ ffmpeg ошибка (код {process.returncode}):\n{stderr[-500:]}")
+
     except Exception as e:
         print(f"   ⚠️ Ошибка ffmpeg: {e}")
+        _current_conversion_process = None
 
     # Если ffmpeg не сработал, пробуем pydub
     try:
+        if progress_callback:
+            progress_callback("Пробую альтернативный метод конвертации...")
         audio = AudioSegment.from_file(str(path))
         audio.export(str(mp3_path), format="mp3")
         return str(mp3_path)
     except Exception as e:
         print(f"   ⚠️ Ошибка pydub: {e}")
         return audio_path  # Возвращаем оригинал
+
+
+def cancel_audio_conversion():
+    """Отменяет текущую конвертацию аудио."""
+    global _current_conversion_process
+    if _current_conversion_process and _current_conversion_process.poll() is None:
+        _current_conversion_process.terminate()
+        _current_conversion_process = None
+        return "❌ Конвертация отменена пользователем"
+    return "⚠️ Нет активной конвертации для отмены"
 
 
 def transcribe_audio_file(
@@ -298,10 +600,17 @@ def transcribe_audio_file(
     module: str,
     provider: str,
     transcript_only: bool,
+    analysis_mode: str = "cloud",  # "cloud" или "local" для анализа
+    analysis_model: str = None,    # Модель Ollama для локального анализа
     progress=gr.Progress()
 ) -> Tuple[str, str, str]:
     """
     Транскрибирует аудио файл.
+
+    Args:
+        provider: "openai", "local_whisper", "mlx_whisper"
+        analysis_mode: "cloud" (Claude) или "local" (Ollama) для анализа транскрипта
+        analysis_model: Модель Ollama для анализа (llama3.3 и т.д.)
 
     Returns:
         Tuple[status, markdown_result, transcript_text]
@@ -310,14 +619,21 @@ def transcribe_audio_file(
         return "Загрузите аудио файл", "", ""
 
     try:
+        # Извлекаем чистые значения из Radio (Gradio 5.x передаёт display-строки)
+        provider = extract_radio_value(provider)
+        analysis_mode = extract_radio_value(analysis_mode)
+
         progress(0.05, desc="Проверка файла...")
 
-        # Проверяем API ключи
+        # Проверяем API ключи в зависимости от провайдера
         if provider == "openai" and not os.environ.get("OPENAI_API_KEY"):
             return "Ошибка: OPENAI_API_KEY не найден", "", ""
 
-        if not transcript_only and not os.environ.get("ANTHROPIC_API_KEY"):
-            return "Ошибка: ANTHROPIC_API_KEY не найден", "", ""
+        if provider == "mlx_whisper" and not LOCAL_AVAILABLE:
+            return "Ошибка: MLX-Whisper не установлен. pip install mlx-whisper", "", ""
+
+        if not transcript_only and analysis_mode == "cloud" and not os.environ.get("ANTHROPIC_API_KEY"):
+            return "Ошибка: ANTHROPIC_API_KEY не найден для облачного анализа", "", ""
 
         audio_path = audio_file.name if hasattr(audio_file, 'name') else audio_file
 
@@ -327,9 +643,15 @@ def transcribe_audio_file(
 
         progress(0.1, desc=f"Файл: {file_size_mb:.0f}MB ({file_ext})")
 
-        # Для больших файлов в экзотических форматах - конвертируем в MP3
-        if file_size_mb > 25 and file_ext not in ['.mp3', '.wav', '.m4a']:
-            progress(0.15, desc=f"Конвертирую {file_size_mb:.0f}MB в MP3...")
+        # Конвертируем экзотические форматы (qta, avi, mov и т.д.) или большие файлы
+        STANDARD_FORMATS = ['.mp3', '.wav', '.m4a', '.ogg', '.flac']
+        needs_conversion = (
+            file_ext not in STANDARD_FORMATS or  # Экзотический формат
+            file_size_mb > 25  # Или слишком большой для API
+        )
+
+        if needs_conversion:
+            progress(0.15, desc=f"Конвертирую {file_ext} ({file_size_mb:.0f}MB) в MP3...")
             audio_path = _convert_to_mp3_if_needed(
                 audio_path,
                 lambda msg: progress(0.2, desc=msg)
@@ -350,8 +672,14 @@ def transcribe_audio_file(
         if transcript_only:
             # Только транскрипция
             progress(0.3, desc="Транскрибирую аудио...")
-            transcriber = AudioTranscriber(provider=provider)
-            transcript = transcriber.transcribe(audio_path)
+
+            # MLX-Whisper (локальный)
+            if provider == "mlx_whisper":
+                transcriber = LocalWhisperTranscriber(model="large-v3")
+                transcript = transcriber.transcribe(audio_path)
+            else:
+                transcriber = AudioTranscriber(provider=provider)
+                transcript = transcriber.transcribe(audio_path)
 
             # Сохраняем транскрипт
             output_name = Path(audio_path).stem
@@ -373,17 +701,99 @@ def transcribe_audio_file(
             # Полная обработка
             progress(0.3, desc="Транскрипция (большие файлы: 3-10 мин)...")
 
-            transcriber = AudioTranscriber(provider=provider)
-            transcript = transcriber.transcribe(audio_path)
+            # MLX-Whisper (локальный)
+            if provider == "mlx_whisper":
+                transcriber = LocalWhisperTranscriber(model="large-v3")
+                transcript = transcriber.transcribe(audio_path)
+            else:
+                transcriber = AudioTranscriber(provider=provider)
+                transcript = transcriber.transcribe(audio_path)
 
-            progress(0.5, desc="Анализ через Claude...")
+            # Анализ транскрипта
+            if analysis_mode == "local":
+                model_display = analysis_model or "llama3.3"
+                model = extract_model_name(model_display)
+                progress(0.5, desc=f"Анализ через Ollama ({model})...")
 
-            processor = SeminarProcessor()
-            results = processor.process_seminar(transcript, metadata)
+                try:
+                    client = OllamaClient()
+
+                    # Подготавливаем текст для анализа (ограничиваем размер)
+                    text_to_analyze = transcript['text'][:10000]
+
+                    system_prompt = """Ты эксперт по анализу семинаров и лекций.
+Проанализируй транскрипцию и создай структурированное резюме."""
+
+                    analysis_prompt = f"""Проанализируй следующую транскрипцию семинара:
+
+Метаданные:
+- Название: {metadata.get('title', 'Не указано')}
+- Спикер: {metadata.get('speaker', 'Не указан')}
+- Дата: {metadata.get('date', 'Не указана')}
+
+Транскрипция:
+{text_to_analyze}
+
+Создай структурированный анализ:
+1. Краткое содержание (3-5 предложений)
+2. Ключевые темы и концепции
+3. Основные идеи спикера
+4. Практические рекомендации (если есть)
+5. Вопросы для рефлексии
+
+Отвечай на русском языке."""
+
+                    analysis_result = client.generate(
+                        model=model,
+                        prompt=analysis_prompt,
+                        system=system_prompt
+                    )
+
+                    results = {
+                        "metadata": metadata,
+                        "transcript": transcript,
+                        "chunk_results": [],
+                        "final_summary": f"# Анализ семинара\n\n**Модель:** {model}\n\n{analysis_result}",
+                        "processed_at": datetime.now().isoformat(),
+                        "model": model
+                    }
+                except Exception as e:
+                    logger.error(f"Ошибка локального анализа: {e}")
+                    results = {
+                        "metadata": metadata,
+                        "transcript": transcript,
+                        "chunk_results": [],
+                        "final_summary": f"# Транскрипция\n\n⚠️ Ошибка анализа: {e}\n\n{transcript['text'][:5000]}...",
+                        "processed_at": datetime.now().isoformat()
+                    }
+            else:
+                progress(0.5, desc="Анализ через Claude...")
+                processor = SeminarProcessor()
+                results = processor.process_seminar(transcript, metadata)
 
             progress(0.9, desc="Сохранение...")
 
-            json_path, md_path = processor.save_results(results)
+            # Сохранение результатов
+            if analysis_mode == "local":
+                # Сохраняем локально без SeminarProcessor
+                timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+                title_clean = "".join(c for c in metadata.get('title', 'audio') if c.isalnum() or c in " _-")[:30]
+                output_name = f"{title_clean}_{timestamp}"
+
+                json_path = OUTPUT_DIR / f"{output_name}.json"
+                with open(json_path, "w", encoding="utf-8") as f:
+                    json.dump(results, f, ensure_ascii=False, indent=2)
+
+                md_path = OUTPUT_DIR / f"{output_name}.md"
+                with open(md_path, "w", encoding="utf-8") as f:
+                    f.write(results.get("final_summary", ""))
+
+                # Сохраняем транскрипт
+                transcript_path = TRANSCRIPTS_DIR / f"{output_name}_transcript.txt"
+                with open(transcript_path, "w", encoding="utf-8") as f:
+                    f.write(transcript.get("text", ""))
+            else:
+                json_path, md_path = processor.save_results(results)
 
             # Читаем Markdown
             md_content = ""
@@ -574,10 +984,77 @@ def get_stats() -> str:
 # СОЗДАНИЕ ИНТЕРФЕЙСА
 # ============================================================================
 
+def extract_model_name(display_name: str) -> str:
+    """Извлекает имя модели из display_name (например, '⭐ qwen2.5vl:7b 🟢 ...' -> 'qwen2.5vl:7b')."""
+    # Убираем ⭐ и [OCR] если есть
+    name = display_name.replace("⭐ ", "").replace(" [OCR]", "")
+    # Берём первую часть до 🟢/🟡/🔴
+    for marker in ["🟢", "🟡", "🔴"]:
+        if marker in name:
+            name = name.split(marker)[0].strip()
+            break
+    return name.strip()
+
+
+def extract_radio_value(display_value: str) -> str:
+    """Извлекает значение из Radio choice (например, '☁️ OpenAI (openai)' -> 'openai')."""
+    if "(" in display_value and ")" in display_value:
+        # Извлекаем значение в скобках
+        value = display_value.split("(")[1].split(")")[0].strip()
+        return value
+    # Если скобок нет, возвращаем как есть
+    return display_value.strip()
+
+
 def create_interface():
     """Создает Gradio интерфейс."""
 
-    with gr.Blocks(title="SKOLKOVO Materials Processor") as app:
+    # Получаем модели Ollama один раз при создании интерфейса
+    ollama_models = get_ollama_models()
+
+    # Используем форматированные choices с рекомендациями (строки для Gradio 5.x)
+    vision_choices = ollama_models["vision_choices"] if ollama_models["vision_choices"] else ["llava:34b 🟢 Хороший баланс"]
+    text_choices = ollama_models["text_choices"] if ollama_models["text_choices"] else ["llama3.3 🟡 Медленная, но работает"]
+
+    # Объединяем все модели (vision первые, потом текстовые)
+    all_model_choices = vision_choices + text_choices
+
+    # Для PDF и Audio используем одинаковый список
+    pdf_model_choices = all_model_choices
+    audio_model_choices = all_model_choices  # Одинаковый с PDF для консистентности
+
+    # Значения по умолчанию (первый элемент списка)
+    default_vision = vision_choices[0] if vision_choices else "llava:34b 🟢 Хороший баланс"
+    default_text = text_choices[0] if text_choices else "llama3.3 🟡 Медленная, но работает"
+
+    # RAM системы для отображения
+    system_ram = ollama_models.get("system_ram", 0)
+
+    # CSS для улучшения отображения Dropdown с прокруткой
+    custom_css = """
+    /* Фикс прокрутки для dropdown списков Ollama моделей */
+    .dropdown-container ul {
+        max-height: 300px !important;
+        overflow-y: auto !important;
+    }
+    /* Улучшенный scrollbar */
+    .dropdown-container ul::-webkit-scrollbar {
+        width: 8px;
+    }
+    .dropdown-container ul::-webkit-scrollbar-track {
+        background: #f1f1f1;
+        border-radius: 4px;
+    }
+    .dropdown-container ul::-webkit-scrollbar-thumb {
+        background: #888;
+        border-radius: 4px;
+    }
+    .dropdown-container ul::-webkit-scrollbar-thumb:hover {
+        background: #555;
+    }
+    """
+
+    with gr.Blocks(title="SKOLKOVO Materials Processor", css=custom_css) as app:
 
         # Заголовок
         gr.Markdown("""
@@ -593,8 +1070,8 @@ def create_interface():
             # ========================
             # TAB 1: PDF ОБРАБОТКА
             # ========================
-            with gr.Tab("PDF Обработка"):
-                gr.Markdown("### Обработка PDF через Claude Vision")
+            with gr.Tab("📄 PDF Обработка"):
+                gr.Markdown("### Обработка PDF через Claude Vision или локально (Ollama)")
 
                 with gr.Row():
                     with gr.Column(scale=1):
@@ -604,11 +1081,60 @@ def create_interface():
                             type="filepath"
                         )
 
+                        # Переключатель облако/локально
+                        pdf_processing_mode = gr.Radio(
+                            label="🔧 Режим обработки",
+                            choices=[
+                                ("☁️ Облако (Claude API)", "cloud"),
+                                ("🏠 Локально (Ollama)", "local")
+                            ],
+                            value="cloud",
+                            info="Облако: лучшее качество, платно | Локально: бесплатно, требует Ollama"
+                        )
+
+                        # Выбор модели Ollama для PDF (vision)
+                        with gr.Row():
+                            pdf_ollama_model = gr.Dropdown(
+                                label="🤖 Модель Ollama",
+                                choices=pdf_model_choices,
+                                value=default_vision,
+                                visible=False,  # Скрыт по умолчанию (показывается при выборе local)
+                                info=f"RAM: {system_ram}GB | ⭐ OCR | 🟢 Рекомендовано | 🟡 Медленная",
+                                scale=4
+                            )
+                            pdf_refresh_models = gr.Button(
+                                "🔄",
+                                visible=False,
+                                scale=1,
+                                min_width=50
+                            )
+
+                        # Функция обновления списка моделей PDF (vision + text)
+                        def refresh_pdf_models():
+                            """Обновляет список моделей для PDF."""
+                            models = get_ollama_models()
+                            vision = models["vision_choices"] if models["vision_choices"] else ["llava:34b 🟢"]
+                            text = models["text_choices"] if models["text_choices"] else ["llama3.3 🟡"]
+                            pdf_choices = vision + text
+                            default_v = vision[0] if vision else "llava:34b"
+                            return gr.update(choices=pdf_choices, value=default_v)
+
+                        # Показываем/скрываем выбор модели при смене режима
+                        def toggle_model_visibility(mode):
+                            visible = (mode == "local")
+                            return gr.update(visible=visible), gr.update(visible=visible)
+
+                        pdf_processing_mode.change(
+                            fn=toggle_model_visibility,
+                            inputs=[pdf_processing_mode],
+                            outputs=[pdf_ollama_model, pdf_refresh_models]
+                        )
+
                         pdf_mode = gr.Dropdown(
-                            label="Режим обработки",
+                            label="Тип анализа",
                             choices=[m[0] for m in get_pdf_modes()],
                             value="Полный анализ",
-                            info="Выберите тип анализа"
+                            info="Выберите глубину анализа"
                         )
 
                         with gr.Row():
@@ -670,8 +1196,8 @@ def create_interface():
                     return "full_analysis"
 
                 pdf_btn.click(
-                    fn=lambda f, m, p, d: process_pdf_file(f, get_mode_key(m), p, d),
-                    inputs=[pdf_file, pdf_mode, pdf_pages, pdf_dpi],
+                    fn=lambda f, m, p, d, pm, om: process_pdf_file(f, get_mode_key(m), p, d, pm, om),
+                    inputs=[pdf_file, pdf_mode, pdf_pages, pdf_dpi, pdf_processing_mode, pdf_ollama_model],
                     outputs=[pdf_status, pdf_result, pdf_json_path]
                 )
 
@@ -681,11 +1207,17 @@ def create_interface():
                     outputs=[folder_result]
                 )
 
+                # Обновление списка моделей PDF
+                pdf_refresh_models.click(
+                    fn=refresh_pdf_models,
+                    outputs=[pdf_ollama_model]
+                )
+
             # ========================
             # TAB 2: АУДИО ТРАНСКРИПЦИЯ
             # ========================
             with gr.Tab("🎙️ Аудио Транскрипция"):
-                gr.Markdown("### Транскрипция аудио через Whisper + анализ через Claude")
+                gr.Markdown("### Транскрипция аудио + анализ (облако или локально)")
 
                 with gr.Row():
                     with gr.Column(scale=1):
@@ -717,19 +1249,59 @@ def create_interface():
                                 scale=1
                             )
 
+                        # Провайдер транскрипции с MLX
                         audio_provider = gr.Radio(
-                            label="Провайдер транскрипции",
-                            choices=["openai", "local_whisper"],
-                            value="openai",
-                            info="OpenAI Whisper API или локальный Whisper"
+                            label="🎤 Транскрипция",
+                            choices=["☁️ OpenAI Whisper (openai)", "🏠 MLX-Whisper (mlx_whisper)"],
+                            value="☁️ OpenAI Whisper (openai)",
+                            info="OpenAI: платно, быстро | MLX-Whisper: бесплатно, локально на Mac"
+                        )
+
+                        # Режим анализа
+                        audio_analysis_mode = gr.Radio(
+                            label="📊 Анализ транскрипта",
+                            choices=["☁️ Claude API (cloud)", "🏠 Ollama (local)"],
+                            value="☁️ Claude API (cloud)",
+                            info="Claude: глубокий анализ | Ollama: быстрый локальный анализ"
+                        )
+
+                        # Выбор модели Ollama для анализа аудио
+                        with gr.Row():
+                            audio_ollama_model = gr.Dropdown(
+                                label="🤖 Модель Ollama (анализ)",
+                                choices=audio_model_choices,
+                                value=default_text,
+                                visible=False,
+                                info=f"RAM: {system_ram}GB | 🟢 Рекомендовано | 🟡 Медленная",
+                                scale=4
+                            )
+                            audio_refresh_models = gr.Button(
+                                "🔄",
+                                visible=False,
+                                scale=1,
+                                min_width=50
+                            )
+
+                        # Показываем/скрываем выбор модели при смене режима анализа
+                        def toggle_audio_model_visibility(mode):
+                            mode_value = extract_radio_value(mode)
+                            visible = (mode_value == "local")
+                            return gr.update(visible=visible), gr.update(visible=visible)
+
+                        audio_analysis_mode.change(
+                            fn=toggle_audio_model_visibility,
+                            inputs=[audio_analysis_mode],
+                            outputs=[audio_ollama_model, audio_refresh_models]
                         )
 
                         audio_only = gr.Checkbox(
-                            label="Только транскрипция (без анализа Claude)",
+                            label="Только транскрипция (без анализа)",
                             value=False
                         )
 
-                        audio_btn = gr.Button("🎤 Транскрибировать", variant="primary")
+                        with gr.Row():
+                            audio_btn = gr.Button("🎤 Транскрибировать", variant="primary", scale=3)
+                            audio_cancel_btn = gr.Button("❌ Отменить", variant="stop", scale=1)
 
                     with gr.Column(scale=2):
                         audio_status = gr.Textbox(
@@ -754,8 +1326,30 @@ def create_interface():
 
                 audio_btn.click(
                     fn=transcribe_audio_file,
-                    inputs=[audio_file, audio_title, audio_speaker, audio_date, audio_module, audio_provider, audio_only],
+                    inputs=[audio_file, audio_title, audio_speaker, audio_date, audio_module, audio_provider, audio_only, audio_analysis_mode, audio_ollama_model],
                     outputs=[audio_status, audio_result, audio_transcript]
+                )
+
+                # Кнопка отмены конвертации
+                audio_cancel_btn.click(
+                    fn=cancel_audio_conversion,
+                    outputs=[audio_status]
+                )
+
+                # Функция обновления списка моделей Audio (все модели, как для PDF)
+                def refresh_audio_models():
+                    """Обновляет список моделей для анализа аудио (все модели, как для PDF)."""
+                    models = get_ollama_models()
+                    vision = models["vision_choices"] if models["vision_choices"] else []
+                    text = models["text_choices"] if models["text_choices"] else ["llama3.3 🟡"]
+                    all_models = vision + text  # Одинаковый список с PDF
+                    default_m = all_models[0] if all_models else "llama3.3"
+                    return gr.update(choices=all_models, value=default_m)
+
+                # Обновление списка моделей Audio
+                audio_refresh_models.click(
+                    fn=refresh_audio_models,
+                    outputs=[audio_ollama_model]
                 )
 
             # ========================
@@ -824,9 +1418,9 @@ def create_interface():
 
                 with gr.Row():
                     with gr.Column():
-                        gr.Markdown("#### API Ключи")
+                        gr.Markdown("#### ☁️ Облачные API")
                         api_status = gr.Textbox(
-                            label="Статус API",
+                            label="Статус API ключей",
                             value=check_api_keys(),
                             lines=4,
                             interactive=False
@@ -845,6 +1439,69 @@ def create_interface():
                         ```
                         ANTHROPIC_API_KEY=sk-ant-...
                         OPENAI_API_KEY=sk-...
+                        ```
+                        """)
+
+                        gr.Markdown("#### 🏠 Локальные компоненты")
+
+                        def check_local_status():
+                            if not LOCAL_AVAILABLE:
+                                return "❌ Локальные процессоры не установлены"
+                            try:
+                                status = check_local_requirements()
+                                lines = []
+                                lines.append(f"Ollama: {'✅ Запущен' if status['ollama'] else '❌ Не запущен (ollama serve)'}")
+                                if status['ollama'] and status['ollama_models']:
+                                    all_models = status['ollama_models']
+
+                                    # Разделяем модели
+                                    vision_kw = ['llava', 'vision', 'bakllava', 'moondream', 'cogvlm', 'qwen-vl', 'qwen3-vl']
+                                    vision_m = [m for m in all_models if any(kw in m.lower() for kw in vision_kw)]
+                                    text_m = [m for m in all_models if m not in vision_m]
+
+                                    lines.append(f"\n📝 Текстовые модели ({len(text_m)}):")
+                                    for m in text_m[:8]:
+                                        lines.append(f"   • {m}")
+                                    if len(text_m) > 8:
+                                        lines.append(f"   ... и ещё {len(text_m) - 8}")
+
+                                    lines.append(f"\n🖼️ Vision модели ({len(vision_m)}):")
+                                    if vision_m:
+                                        for m in vision_m:
+                                            lines.append(f"   • {m}")
+                                    else:
+                                        lines.append("   ⚠️ Нет (ollama pull llava:34b)")
+
+                                lines.append(f"\nMLX-Whisper: {'✅ Установлен' if status['mlx_whisper'] else '❌ Не установлен'}")
+                                lines.append(f"pdf2image: {'✅' if status['pdf2image'] else '❌'}")
+                                return "\n".join(lines)
+                            except Exception as e:
+                                return f"Ошибка проверки: {e}"
+
+                        local_status = gr.Textbox(
+                            label="Статус локальных компонентов",
+                            value=check_local_status() if LOCAL_AVAILABLE else "Локальные процессоры не загружены",
+                            lines=6,
+                            interactive=False
+                        )
+
+                        check_local_btn = gr.Button("🔄 Проверить локальные")
+                        check_local_btn.click(
+                            fn=check_local_status,
+                            outputs=[local_status]
+                        )
+
+                        gr.Markdown("""
+                        **Установка локальных компонентов:**
+                        ```bash
+                        # Ollama
+                        brew install ollama
+                        ollama serve  # в отдельном терминале
+                        ollama pull llama3.3      # текстовая модель
+                        ollama pull llava:34b     # vision модель
+
+                        # MLX-Whisper (транскрипция)
+                        pip install mlx-whisper
                         ```
                         """)
 
