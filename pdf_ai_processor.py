@@ -37,6 +37,18 @@ except ImportError:
     print("Установите anthropic: pip install anthropic")
     sys.exit(1)
 
+# Импортируем утилиты
+sys.path.insert(0, str(Path(__file__).parent))
+from utils import (
+    get_logger, get_rate_limiter, load_config,
+    OUTPUT_DIR, CHUNKS_DIR, KNOWLEDGE_DIR, load_env_file
+)
+
+# Инициализация
+load_env_file()
+logger = get_logger(__name__)
+rate_limiter = get_rate_limiter()
+
 # Configuration
 DEFAULT_CONFIG = {
     "model": "claude-sonnet-4-20250514",
@@ -55,25 +67,25 @@ DEFAULT_CONFIG = {
 
 class PDFAIProcessor:
     """Основной класс для обработки PDF через Claude API."""
-    
+
     def __init__(self, api_key: str = None, config: dict = None):
         """Инициализация процессора."""
         self.api_key = api_key or os.environ.get("ANTHROPIC_API_KEY")
         if not self.api_key:
             raise ValueError("API ключ не найден. Передайте его напрямую или установите ANTHROPIC_API_KEY")
-        
+
         self.client = anthropic.Anthropic(api_key=self.api_key)
-        self.config = {**DEFAULT_CONFIG, **(config or {})}
-        
-        # Пути для сохранения
-        self.base_dir = Path(__file__).parent
-        self.output_dir = self.base_dir / "output"
-        self.chunks_dir = self.base_dir / "processed_chunks"
-        self.knowledge_dir = self.base_dir / "knowledge_base"
-        
-        # Создаем директории
-        for d in [self.output_dir, self.chunks_dir, self.knowledge_dir]:
-            d.mkdir(exist_ok=True)
+
+        # Загружаем конфиг из utils, мерджим с переданным
+        base_config = load_config()
+        self.config = {**DEFAULT_CONFIG, **base_config, **(config or {})}
+
+        # Используем пути из utils
+        self.output_dir = OUTPUT_DIR
+        self.chunks_dir = CHUNKS_DIR
+        self.knowledge_dir = KNOWLEDGE_DIR
+
+        logger.info(f"PDFAIProcessor инициализирован, модель: {self.config['model']}")
     
     def extract_text_from_pdf(self, pdf_path: str) -> Tuple[str, Dict]:
         """
@@ -348,16 +360,16 @@ class PDFAIProcessor:
         
         return base_prompt + mode_prompts.get(mode, mode_prompts["summary"]) + f"\n\n{context}"
     
-    def process_chunk(self, chunk: Dict, mode: str = "full_analysis", 
+    def process_chunk(self, chunk: Dict, mode: str = "full_analysis",
                       additional_context: str = "") -> Dict:
         """
         Обрабатывает один чанк через Claude API.
-        
+
         Returns:
             Dict: Результат обработки с метаданными
         """
         system_prompt = self.get_system_prompt(mode, additional_context)
-        
+
         user_message = f"""Обработай следующий фрагмент учебного материала:
 
 ---
@@ -367,8 +379,12 @@ class PDFAIProcessor:
 Страницы: {chunk.get('page_range', 'N/A')}
 Фрагмент: {chunk['chunk_id']}
 """
-        
+
         try:
+            # Rate limiting перед API вызовом
+            rate_limiter.wait()
+            logger.debug(f"Обработка чанка {chunk['chunk_id']}, страницы {chunk.get('page_range', 'N/A')}")
+
             response = self.client.messages.create(
                 model=self.config["model"],
                 max_tokens=self.config["max_output_tokens"],

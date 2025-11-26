@@ -14,7 +14,7 @@ import os
 import sys
 import json
 import subprocess
-import threading
+import logging
 from pathlib import Path
 from datetime import datetime
 from typing import List, Tuple, Optional
@@ -22,29 +22,24 @@ import tempfile
 
 import gradio as gr
 
-# Загружаем переменные окружения из .env
-env_path = Path(__file__).parent / ".env"
-if env_path.exists():
-    with open(env_path) as f:
-        for line in f:
-            if "=" in line and not line.startswith("#"):
-                key, value = line.strip().split("=", 1)
-                os.environ[key] = value
-
-# Импортируем наши модули
+# Импортируем общие утилиты
 sys.path.insert(0, str(Path(__file__).parent))
+from utils import (
+    load_env_file, mask_api_key, check_api_keys as utils_check_api_keys,
+    validate_page_range, get_logger, ensure_directories,
+    OUTPUT_DIR, TRANSCRIPTS_DIR, KNOWLEDGE_DIR, BASE_DIR
+)
+
+# Инициализация: загружаем .env и создаём директории
+load_env_file()
+ensure_directories()
+
+# Логгер
+logger = get_logger(__name__)
+
+# Импортируем наши модули обработки
 from pdf_vision_processor import PDFVisionProcessor
 from audio_transcriber import AudioTranscriber, SeminarProcessor, process_audio_file
-
-# Пути
-BASE_DIR = Path(__file__).parent
-OUTPUT_DIR = BASE_DIR / "output"
-TRANSCRIPTS_DIR = BASE_DIR / "transcripts"
-KNOWLEDGE_DIR = BASE_DIR / "knowledge_base"
-
-# Убедимся, что директории существуют
-for d in [OUTPUT_DIR, TRANSCRIPTS_DIR, KNOWLEDGE_DIR]:
-    d.mkdir(exist_ok=True)
 
 
 # ============================================================================
@@ -89,18 +84,14 @@ def process_pdf_file(
 
         processor = PDFVisionProcessor(api_key=api_key)
 
-        # Парсим диапазон страниц
+        # Парсим и валидируем диапазон страниц
         page_tuple = None
         if page_range and page_range.strip():
             try:
-                parts = page_range.split("-")
-                if len(parts) == 2:
-                    page_tuple = (int(parts[0]), int(parts[1]))
-                elif len(parts) == 1:
-                    page_num = int(parts[0])
-                    page_tuple = (page_num, page_num)
-            except ValueError:
-                pass
+                start, end = validate_page_range(page_range)
+                page_tuple = (start, end)
+            except ValueError as e:
+                return f"Ошибка в диапазоне страниц: {e}", "", ""
 
         # Устанавливаем DPI
         processor.config["dpi"] = dpi
@@ -469,20 +460,15 @@ def search_in_results(query: str) -> str:
 # ============================================================================
 
 def check_api_keys() -> str:
-    """Проверяет наличие API ключей."""
+    """Проверяет наличие API ключей (безопасно, без раскрытия значений)."""
+    keys_info = utils_check_api_keys()
     status = []
 
-    anthropic_key = os.environ.get("ANTHROPIC_API_KEY", "")
-    if anthropic_key:
-        status.append(f"✅ ANTHROPIC_API_KEY: {anthropic_key[:20]}...{anthropic_key[-4:]}")
-    else:
-        status.append("❌ ANTHROPIC_API_KEY: не установлен")
-
-    openai_key = os.environ.get("OPENAI_API_KEY", "")
-    if openai_key:
-        status.append(f"✅ OPENAI_API_KEY: {openai_key[:20]}...{openai_key[-4:]}")
-    else:
-        status.append("❌ OPENAI_API_KEY: не установлен")
+    for key_name, info in keys_info.items():
+        if info["present"]:
+            status.append(f"✅ {key_name}: {info['masked']}")
+        else:
+            status.append(f"❌ {key_name}: не установлен")
 
     return "\n".join(status)
 
