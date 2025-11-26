@@ -2,6 +2,7 @@
 
 # ===== CORE =====
 anthropic>=0.18.0
+python-dotenv>=1.0.0  # Безопасная загрузка .env файлов
 
 # ===== PDF PROCESSING =====
 pdfplumber>=0.10.0

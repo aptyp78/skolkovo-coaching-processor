@@ -27,6 +27,18 @@ from typing import List, Dict, Optional, Tuple
 import argparse
 from io import BytesIO
 
+# Импортируем утилиты
+sys.path.insert(0, str(Path(__file__).parent))
+from utils import (
+    get_logger, get_rate_limiter, load_config, load_env_file,
+    OUTPUT_DIR
+)
+
+# Инициализация
+load_env_file()
+logger = get_logger(__name__)
+rate_limiter = get_rate_limiter()
+
 # PDF to image conversion
 try:
     from pdf2image import convert_from_path
@@ -34,7 +46,7 @@ try:
     PDF2IMAGE_AVAILABLE = True
 except ImportError:
     PDF2IMAGE_AVAILABLE = False
-    print("⚠️ Установите: pip install pdf2image pillow")
+    logger.warning("Установите: pip install pdf2image pillow")
 
 # Claude API
 try:
@@ -75,12 +87,15 @@ class PDFVisionProcessor:
             raise ImportError("Установите pdf2image: pip install pdf2image pillow")
 
         self.client = anthropic.Anthropic(api_key=self.api_key)
-        self.config = {**DEFAULT_CONFIG, **(config or {})}
 
-        # Пути для сохранения
-        self.base_dir = Path(__file__).parent
-        self.output_dir = self.base_dir / "output"
-        self.output_dir.mkdir(exist_ok=True)
+        # Загружаем конфиг из utils, мерджим с переданным
+        base_config = load_config()
+        self.config = {**DEFAULT_CONFIG, **base_config, **(config or {})}
+
+        # Используем путь из utils
+        self.output_dir = OUTPUT_DIR
+
+        logger.info(f"PDFVisionProcessor инициализирован, модель: {self.config['model']}")
 
     def pdf_to_images(self, pdf_path: str, dpi: int = None) -> List[Image.Image]:
         """
@@ -289,6 +304,9 @@ class PDFVisionProcessor:
                 })
 
             try:
+                # Rate limiting перед API вызовом
+                rate_limiter.wait()
+
                 response = self.client.messages.create(
                     model=self.config["model"],
                     max_tokens=self.config["max_output_tokens"],
@@ -309,6 +327,7 @@ class PDFVisionProcessor:
                     "status": "success"
                 }
 
+                logger.info(f"Страницы {page_nums[0]}-{page_nums[-1]}: {result['usage']['input_tokens']}→{result['usage']['output_tokens']} токенов")
                 print(f"   ✅ Готово ({result['usage']['input_tokens']}→{result['usage']['output_tokens']} токенов)")
 
             except Exception as e:

@@ -21,6 +21,14 @@ except ImportError:
     print("Установите: pip install anthropic")
     sys.exit(1)
 
+# Импортируем утилиты
+sys.path.insert(0, str(Path(__file__).parent))
+from utils import get_model, get_logger, load_env_file, KNOWLEDGE_DIR, OUTPUT_DIR
+
+# Инициализация
+load_env_file()
+logger = get_logger(__name__)
+
 
 class InteractiveKnowledgeBase:
     """Интерактивная работа с базой знаний."""
@@ -29,14 +37,16 @@ class InteractiveKnowledgeBase:
         self.api_key = api_key or os.environ.get("ANTHROPIC_API_KEY")
         if not self.api_key:
             raise ValueError("Установите ANTHROPIC_API_KEY или передайте api_key")
-        
+
         self.client = anthropic.Anthropic(api_key=self.api_key)
-        self.base_dir = Path(__file__).parent
-        self.knowledge_dir = self.base_dir / "knowledge_base"
-        self.output_dir = self.base_dir / "output"
-        
+        self.model = get_model()  # Из конфига, не хардкод
+        self.knowledge_dir = KNOWLEDGE_DIR
+        self.output_dir = OUTPUT_DIR
+
         self.kb = None
         self.conversation_history = []
+
+        logger.info(f"InteractiveKnowledgeBase инициализирован, модель: {self.model}")
         
     def load_knowledge_base(self) -> bool:
         """Загружает базу знаний."""
@@ -128,7 +138,7 @@ class InteractiveKnowledgeBase:
 - Практика: индивидуальный и групповой коучинг"""
         
         response = self.client.messages.create(
-            model="claude-sonnet-4-20250514",
+            model=self.model,
             max_tokens=2048,
             system=system_prompt,
             messages=messages

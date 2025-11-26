@@ -27,13 +27,25 @@ from datetime import datetime, timedelta
 from typing import List, Dict, Optional, Tuple
 import argparse
 
+# Импортируем утилиты
+sys.path.insert(0, str(Path(__file__).parent))
+from utils import (
+    get_logger, get_rate_limiter, load_config, load_env_file,
+    OUTPUT_DIR, TRANSCRIPTS_DIR, KNOWLEDGE_DIR
+)
+
+# Инициализация
+load_env_file()
+logger = get_logger(__name__)
+rate_limiter = get_rate_limiter()
+
 # Audio processing
 try:
     from pydub import AudioSegment
     PYDUB_AVAILABLE = True
 except ImportError:
     PYDUB_AVAILABLE = False
-    print("⚠️ pydub не установлен. Установите: pip install pydub")
+    logger.warning("pydub не установлен. Установите: pip install pydub")
 
 # API clients
 try:
@@ -303,21 +315,23 @@ class AudioTranscriber:
 
 class SeminarProcessor:
     """Обработка транскрипций семинаров через Claude API."""
-    
+
     def __init__(self, anthropic_api_key: str = None):
         self.api_key = anthropic_api_key or os.environ.get("ANTHROPIC_API_KEY")
         if not self.api_key:
             raise ValueError("Установите ANTHROPIC_API_KEY")
-        
+
         self.client = anthropic.Anthropic(api_key=self.api_key)
-        
-        self.base_dir = Path(__file__).parent
-        self.output_dir = self.base_dir / "output"
-        self.transcripts_dir = self.base_dir / "transcripts"
-        self.knowledge_dir = self.base_dir / "knowledge_base"
-        
-        for d in [self.output_dir, self.transcripts_dir, self.knowledge_dir]:
-            d.mkdir(exist_ok=True)
+
+        # Загружаем конфиг из utils
+        self.config = load_config()
+
+        # Используем пути из utils
+        self.output_dir = OUTPUT_DIR
+        self.transcripts_dir = TRANSCRIPTS_DIR
+        self.knowledge_dir = KNOWLEDGE_DIR
+
+        logger.info(f"SeminarProcessor инициализирован, модель: {self.config.get('model')}")
     
     def process_seminar(self, transcript: Dict, metadata: Dict = None,
                         mode: str = "full_analysis") -> Dict:
@@ -471,13 +485,18 @@ class SeminarProcessor:
 
 Обработай этот фрагмент семинара и извлеки ключевую информацию."""
 
+        # Rate limiting перед API вызовом
+        rate_limiter.wait()
+
         response = self.client.messages.create(
-            model=DEFAULT_CONFIG["claude_model"],
-            max_tokens=DEFAULT_CONFIG["max_output_tokens"],
+            model=self.config.get("model", DEFAULT_CONFIG["claude_model"]),
+            max_tokens=self.config.get("max_output_tokens", DEFAULT_CONFIG["max_output_tokens"]),
             system=system_prompt,
             messages=[{"role": "user", "content": user_message}]
         )
-        
+
+        logger.debug(f"Чанк {chunk_num} обработан: {response.usage.input_tokens}→{response.usage.output_tokens} токенов")
+
         return {
             "chunk_num": chunk_num,
             "time_range": f"{start_time} - {end_time}",
@@ -545,13 +564,18 @@ class SeminarProcessor:
 
 Создай итоговое структурированное саммари всего семинара."""
 
+        # Rate limiting перед API вызовом
+        rate_limiter.wait()
+
         response = self.client.messages.create(
-            model=DEFAULT_CONFIG["claude_model"],
-            max_tokens=DEFAULT_CONFIG["max_output_tokens"],
+            model=self.config.get("model", DEFAULT_CONFIG["claude_model"]),
+            max_tokens=self.config.get("max_output_tokens", DEFAULT_CONFIG["max_output_tokens"]),
             system=system_prompt,
             messages=[{"role": "user", "content": user_message}]
         )
-        
+
+        logger.info(f"Финальное саммари создано: {response.usage.output_tokens} токенов")
+
         return response.content[0].text
     
     def save_results(self, results: Dict, output_name: str = None) -> Tuple[Path, Path]:
