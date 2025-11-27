@@ -1,0 +1,893 @@
+{
+  "meta": {
+    "module_number": 1,
+    "module_name": "Познание себя через коучинг",
+    "module_name_en": "Self-Discovery Through Coaching",
+    "dates": "2025-10-21 to 2025-10-24",
+    "duration_days": 4,
+    "stage": "Познание себя через коучинг",
+    "stage_number": 1,
+    "stage_focus": "Компетенции executive-коучинга (индивидуального и группового)",
+    "status": "completed",
+    "pre_reading_deadline": "2025-10-08",
+    "location": "SKOLKOVO Campus",
+    "created": "2025-11-25",
+    "next_module": {
+      "number": 2,
+      "dates": "2025-11-25 to 2025-11-27",
+      "name": "Психологические концепции для коучинга"
+    }
+  },
+
+  "module_objectives": {
+    "primary_goal": "Познать себя как инструмент коучинга",
+    "key_questions": [
+      "Кто я как коуч?",
+      "Как я использую себя как инструмент?",
+      "Какие мои паттерны влияют на коучинг?",
+      "Что мне нужно осознать для эффективной работы с клиентами?"
+    ],
+    "competencies_developed": [
+      "Базовые компетенции executive-коучинга",
+      "Навыки индивидуального коучинга",
+      "Навыки группового коучинга",
+      "Самоосознанность как коуч",
+      "Активное слушание",
+      "Работа с мотивацией клиента",
+      "Понимание своих ограничений и возможностей"
+    ],
+    "personal_transformation": [
+      "Развитие рефлексивных способностей",
+      "Осознание себя как инструмента",
+      "Работа с синдромом самозванца",
+      "Понимание своих семейных паттернов",
+      "Развитие уязвимости как силы"
+    ]
+  },
+
+  "schedule": {
+    "daily_structure": {
+      "morning_session": "10:00-14:00",
+      "lunch_break": "14:00-15:00",
+      "afternoon_session": "15:00-19:00",
+      "evening_activity": "19:00-21:00 (опционально)",
+      "morning_ritual": "Утренняя рефлексия без телефонов"
+    },
+    
+    "day_1": {
+      "date": "2025-10-21",
+      "theme": "Открытие и введение в коучинг",
+      "morning": {
+        "time": "10:00-14:00",
+        "sessions": [
+          {
+            "title": "Открытие. Цели и ожидания",
+            "facilitators": ["Елена Клековкина", "Елена Рососская"],
+            "format": "Групповая работа",
+            "key_activities": [
+              "Знакомство участников (о себе, цель, ассоциация с животным)",
+              "Формирование ожиданий от программы",
+              "Обзор структуры программы",
+              "Создание безопасного пространства"
+            ]
+          },
+          {
+            "title": "Введение в коучинг руководителей",
+            "facilitator": "Елена Клековкина",
+            "format": "Лекция + обсуждение",
+            "key_concepts": [
+              "Что такое executive-коучинг",
+              "Отличие коучинга от менторства, консалтинга, терапии",
+              "Роль коуча",
+              "Коучинговая позиция"
+            ]
+          }
+        ]
+      },
+      "afternoon": {
+        "time": "15:00-19:00",
+        "sessions": [
+          {
+            "title": "Психодинамический подход в коучинге",
+            "facilitator": "Роджер Леман (INSEAD)",
+            "format": "Семинар",
+            "key_concepts": [
+              "Бессознательные процессы",
+              "Перенос и контрперенос",
+              "Защитные механизмы",
+              "Работа с глубинными паттернами"
+            ],
+            "importance": "Фундаментальный подход для понимания динамики коуч-клиент"
+          },
+          {
+            "title": "«Я как инструмент»",
+            "facilitators": ["Елена Клековкина", "Елена Рососская", "Executive-коучи"],
+            "format": "Практикум",
+            "key_concepts": [
+              "Коуч как главный инструмент работы",
+              "Самоосознанность",
+              "Понимание своих триггеров",
+              "Работа со своими реакциями"
+            ]
+          }
+        ]
+      }
+    },
+
+    "day_2": {
+      "date": "2025-10-22",
+      "theme": "Рефлексия и семейные системы",
+      "morning": {
+        "time": "10:00-14:00",
+        "sessions": [
+          {
+            "title": "Рефлексия по поводу рефлексии",
+            "facilitators": ["Елена Клековкина", "Елена Рососская"],
+            "format": "Групповая рефлексия",
+            "key_concepts": [
+              "Мета-рефлексия",
+              "Осознание процесса осознания",
+              "Дебриф первого дня",
+              "Интеграция опыта"
+            ]
+          },
+          {
+            "title": "Слушать, чтобы услышать",
+            "facilitator": "Елена Клековкина",
+            "format": "Практикум",
+            "key_skills": [
+              "Активное слушание",
+              "Уровни слушания",
+              "Слушание без суждения",
+              "Эмпатическое слушание",
+              "Слушание паттернов и метафор"
+            ],
+            "practice": "Упражнения в парах и тройках"
+          }
+        ]
+      },
+      "afternoon": {
+        "time": "15:00-19:00",
+        "sessions": [
+          {
+            "title": "Анализ семейных взаимоотношений. Динамика семейных отношений",
+            "facilitator": "Елена Клековкина",
+            "format": "Семинар + упражнения",
+            "key_concepts": [
+              "Семейные системы и паттерны",
+              "Влияние семьи на лидерский стиль",
+              "Ролевые модели из детства",
+              "Семейные сценарии в работе",
+              "Генограмма"
+            ],
+            "importance": "Понимание корней своих поведенческих паттернов"
+          },
+          {
+            "title": "Групповой коучинг",
+            "facilitators": ["Executive-коучи"],
+            "format": "Практическая сессия",
+            "description": "Первый опыт группового коучинга как участник"
+          }
+        ]
+      }
+    },
+
+    "day_3": {
+      "date": "2025-10-23",
+      "theme": "Мотивация и уязвимость",
+      "morning": {
+        "time": "10:00-14:00",
+        "sessions": [
+          {
+            "title": "Мотивационное интервью",
+            "facilitator": "Елена Рососская",
+            "format": "Семинар + практика",
+            "key_concepts": [
+              "Принципы мотивационного интервью",
+              "Работа с амбивалентностью",
+              "Выявление внутренней мотивации",
+              "Техники мотивационного интервью",
+              "OARS (Open questions, Affirmations, Reflections, Summaries)"
+            ],
+            "practice": "Ролевые игры"
+          },
+          {
+            "title": "Синдром самозванца и уязвимость",
+            "facilitator": "Елена Клековкина",
+            "format": "Семинар + групповая работа",
+            "key_concepts": [
+              "Природа синдрома самозванца",
+              "Уязвимость как сила лидера",
+              "Работа с внутренним критиком",
+              "Аутентичность в коучинге",
+              "Принятие несовершенства"
+            ],
+            "importance": "Критически важно для коуча - работать с собственной уязвимостью"
+          }
+        ]
+      },
+      "afternoon": {
+        "time": "15:00-19:00",
+        "sessions": [
+          {
+            "title": "Групповой коучинг",
+            "facilitators": ["Executive-коучи"],
+            "format": "Практическая сессия",
+            "description": "Углубление опыта группового коучинга"
+          }
+        ]
+      }
+    },
+
+    "day_4": {
+      "date": "2025-10-24",
+      "theme": "Стили обучения и практика",
+      "morning": {
+        "time": "10:00-14:00",
+        "sessions": [
+          {
+            "title": "Стили обучения",
+            "facilitator": "Елена Рососская",
+            "format": "Семинар + диагностика",
+            "key_concepts": [
+              "Разные стили обучения (Kolb, Honey & Mumford)",
+              "Как люди усваивают информацию",
+              "Адаптация коучинга под стиль клиента",
+              "Свой собственный стиль обучения"
+            ]
+          },
+          {
+            "title": "Упражнение в малых группах",
+            "facilitators": ["Executive-коучи"],
+            "format": "Практикум",
+            "description": "Отработка навыков в малых группах с обратной связью от коучей"
+          }
+        ]
+      },
+      "afternoon": {
+        "time": "15:00-18:00",
+        "sessions": [
+          {
+            "title": "Упражнение в малых группах",
+            "facilitators": ["Executive-коучи"],
+            "format": "Практикум",
+            "description": "Продолжение практики с фокусом на интеграцию всех инструментов модуля"
+          }
+        ]
+      },
+      "evening": {
+        "time": "18:00-21:00",
+        "event": "Фуршет",
+        "description": "Неформальное общение, networking, закрытие модуля"
+      }
+    }
+  },
+
+  "faculty": {
+    "academic_directors": [
+      {
+        "name": "Елена Клековкина",
+        "role": "Директор Центра развития лидерства СКОЛКОВО",
+        "phone": "+7 985 111-30-13",
+        "email": "elena_klekovkina@skolkovo.ru",
+        "credentials": [
+          "ICF PCC",
+          "Harvard Executive Education",
+          "SKOLKOVO FLOW",
+          "INSEAD",
+          "Il Nodo Group"
+        ],
+        "sessions_module_1": [
+          "Открытие и цели",
+          "Введение в коучинг руководителей",
+          "Я как инструмент",
+          "Слушать, чтобы услышать",
+          "Анализ семейных взаимоотношений",
+          "Синдром самозванца и уязвимость"
+        ]
+      },
+      {
+        "name": "Елена Рососская",
+        "role": "Директор образовательных проектов ЦРЛ СКОЛКОВО",
+        "phone": "+7 916 959 88-64",
+        "email": "elena_rososskaya@skolkovo.ru",
+        "credentials": [
+          "ICF PCC",
+          "SKOLKOVO FLOW",
+          "Topsystems"
+        ],
+        "sessions_module_1": [
+          "Открытие и цели",
+          "Рефлексия по поводу рефлексии",
+          "Я как инструмент",
+          "Мотивационное интервью",
+          "Стили обучения"
+        ]
+      }
+    ],
+    
+    "guest_faculty": [
+      {
+        "name": "Роджер Леман",
+        "affiliation": "INSEAD",
+        "expertise": "Психодинамический подход в коучинге",
+        "session": "Психодинамический подход в коучинге",
+        "importance": "Ведущий мировой эксперт по психодинамике в организациях"
+      }
+    ],
+
+    "executive_coaches": [
+      {
+        "name": "Кирилл Богачев",
+        "role": "Executive-коуч, ведущий групповых сессий"
+      },
+      {
+        "name": "Анна Козловская",
+        "role": "Executive-коуч, ведущая групповых сессий"
+      },
+      {
+        "name": "Наталья Ожегина",
+        "role": "Executive-коуч, ведущая групповых сессий"
+      },
+      {
+        "name": "Мария Смирнова",
+        "role": "Executive-коуч, ведущая групповых сессий"
+      },
+      {
+        "name": "Эрнест Хачатурян",
+        "role": "Executive-коуч, ведущий групповых сессий"
+      }
+    ]
+  },
+
+  "key_concepts": {
+    "executive_coaching_definition": {
+      "definition": "Unlocking potential for maximum effectiveness",
+      "source": "Timothy Gallwey",
+      "components": [
+        "Работа с руководителями высшего звена",
+        "Фокус на лидерские компетенции",
+        "Раскрытие потенциала",
+        "Измеримые результаты в деятельности"
+      ]
+    },
+
+    "coach_as_instrument": {
+      "principle": "Главный инструмент коуча — это он сам",
+      "implications": [
+        "Необходимость глубокой самоосознанности",
+        "Работа над собственными триггерами и паттернами",
+        "Понимание своих ограничений",
+        "Continuous личностное развитие",
+        "Супервизия и собственная терапия"
+      ],
+      "practices": [
+        "Регулярная рефлексия",
+        "Работа с супервизором",
+        "Peer-коучинг",
+        "Ведение дневника наблюдений",
+        "Медитация и mindfulness"
+      ]
+    },
+
+    "psychodynamic_approach": {
+      "core_ideas": [
+        "Бессознательные процессы влияют на поведение",
+        "Ранний опыт формирует паттерны",
+        "Перенос и контрперенос в коучинге",
+        "Защитные механизмы",
+        "Работа с сопротивлением"
+      ],
+      "application_in_coaching": [
+        "Понимание глубинной динамики клиента",
+        "Работа с повторяющимися паттернами",
+        "Осознание переноса со стороны клиента",
+        "Управление контрпереносом коуча",
+        "Создание безопасного пространства для исследования"
+      ],
+      "key_figures": ["Sigmund Freud", "Carl Jung", "Melanie Klein", "Donald Winnicott"]
+    },
+
+    "active_listening": {
+      "levels": [
+        {
+          "level": 1,
+          "name": "Внутреннее слушание",
+          "description": "Фокус на своих мыслях и реакциях"
+        },
+        {
+          "level": 2,
+          "name": "Сфокусированное слушание",
+          "description": "Полное внимание на клиенте, его словах и эмоциях"
+        },
+        {
+          "level": 3,
+          "name": "Глобальное слушание",
+          "description": "Осознание всего поля, энергии, невысказанного"
+        }
+      ],
+      "techniques": [
+        "Парафраз",
+        "Отражение эмоций",
+        "Обобщение",
+        "Прояснение",
+        "Использование пауз"
+      ]
+    },
+
+    "motivational_interviewing": {
+      "principles": [
+        "Express empathy",
+        "Develop discrepancy",
+        "Roll with resistance",
+        "Support self-efficacy"
+      ],
+      "oars_framework": {
+        "O": "Open-ended questions",
+        "A": "Affirmations",
+        "R": "Reflective listening",
+        "S": "Summaries"
+      },
+      "change_talk": [
+        "Desire (хочу)",
+        "Ability (могу)",
+        "Reasons (причины)",
+        "Need (нужно)",
+        "Commitment (обязуюсь)"
+      ]
+    },
+
+    "imposter_syndrome": {
+      "definition": "Внутреннее ощущение, что ты обманщик, несмотря на внешние признаки успеха",
+      "manifestations": [
+        "Приписывание успеха удаче",
+        "Страх быть раскрытым",
+        "Сверхподготовка",
+        "Перфекционизм",
+        "Отказ от новых возможностей"
+      ],
+      "work_with": [
+        "Нормализация опыта",
+        "Разделение фактов и интерпретаций",
+        "Работа с внутренним критиком",
+        "Развитие self-compassion",
+        "Sharing vulnerability"
+      ],
+      "relevance_for_coaches": "Коучи часто испытывают синдром самозванца, особенно в начале практики"
+    },
+
+    "vulnerability": {
+      "brene_brown_research": "Vulnerability is not weakness; it's our greatest measure of courage",
+      "in_leadership": [
+        "Создает доверие",
+        "Показывает аутентичность",
+        "Разрешает другим быть собой",
+        "Стимулирует инновации",
+        "Укрепляет команды"
+      ],
+      "in_coaching": [
+        "Коуч моделирует уязвимость",
+        "Создает безопасность для клиента",
+        "Позволяет работать с трудными темами",
+        "Усиливает rapport"
+      ]
+    },
+
+    "family_systems": {
+      "key_idea": "Семейные паттерны повторяются в рабочей среде",
+      "concepts": [
+        "Семейные роли (герой, козел отпущения, забытый ребенок, талисман)",
+        "Границы в семье",
+        "Коалиции и триангуляция",
+        "Семейные мифы и правила",
+        "Генограмма"
+      ],
+      "application": [
+        "Понимание лидерского стиля через семейную историю",
+        "Осознание повторяющихся паттернов",
+        "Работа с конфликтами через призму семейной динамики",
+        "Идентификация с родительскими фигурами"
+      ]
+    },
+
+    "learning_styles": {
+      "kolb_cycle": [
+        "Concrete Experience (ощущение)",
+        "Reflective Observation (наблюдение)",
+        "Abstract Conceptualization (размышление)",
+        "Active Experimentation (действие)"
+      ],
+      "honey_mumford_styles": [
+        "Activist (активист)",
+        "Reflector (рефлектор)",
+        "Theorist (теоретик)",
+        "Pragmatist (прагматик)"
+      ],
+      "coaching_application": [
+        "Адаптация коучинга под стиль клиента",
+        "Помощь клиенту завершить цикл обучения",
+        "Расширение гибкости в обучении"
+      ]
+    }
+  },
+
+  "coaching_tools_introduced": {
+    "powerful_questions": {
+      "types": [
+        "Открытые вопросы",
+        "Прояснение",
+        "Углубление",
+        "Расширение перспективы",
+        "Вопросы о будущем",
+        "Вопросы о паттернах"
+      ],
+      "examples": [
+        "Что для тебя важно в этой ситуации?",
+        "Как это связано с твоими ценностями?",
+        "Что было бы возможно, если бы...?",
+        "Какие паттерны ты замечаешь?",
+        "Что стоит за этим?",
+        "Если бы ты мог начать заново, что бы ты сделал по-другому?"
+      ]
+    },
+
+    "reflection_techniques": {
+      "structured_reflection": {
+        "what_happened": "Что произошло? (факты)",
+        "what_felt": "Что я почувствовал? (эмоции)",
+        "what_learned": "Что я узнал? (инсайты)",
+        "what_will_apply": "Что я буду применять? (действия)"
+      },
+      "morning_reflection": {
+        "description": "Начало каждого дня без телефонов",
+        "focus": "Осознанность, намерение на день, присутствие"
+      }
+    },
+
+    "contracting": {
+      "importance": "Основа эффективной коучинговой сессии",
+      "elements": [
+        "Тема сессии",
+        "Желаемый результат",
+        "Формат работы",
+        "Роли коуча и клиента",
+        "Конфиденциальность",
+        "Время"
+      ]
+    },
+
+    "feedback_model": {
+      "structure": [
+        "Что наблюдал (факты)",
+        "Какое влияние это имело (impact)",
+        "Что предлагаю (suggestion)"
+      ],
+      "principles": [
+        "Specific, not general",
+        "Описательный, не оценочный",
+        "Своевременный",
+        "Проверяемый"
+      ]
+    }
+  },
+
+  "practical_components": {
+    "group_coaching_experience": {
+      "frequency": "Несколько сессий в течение модуля",
+      "role": "Участник группового коучинга",
+      "learning_outcomes": [
+        "Опыт получения коучинга",
+        "Наблюдение за работой опытных коучей",
+        "Понимание групповой динамики",
+        "Личные инсайты и прорывы"
+      ]
+    },
+
+    "small_group_practice": {
+      "format": "Малые группы с executive-коучами",
+      "activities": [
+        "Ролевые игры",
+        "Практика навыков",
+        "Обратная связь от коучей",
+        "Peer-feedback"
+      ]
+    },
+
+    "self_reflection_assignments": {
+      "identity_map": {
+        "description": "Создание карты идентичности",
+        "framework": {
+          "given": "Что дано (генетика, семья, культура)",
+          "chosen": "Что выбрано (карьера, навыки, роли)",
+          "foundation": "Основа (ценности, убеждения, суть)"
+        },
+        "deadline": "Межмодульный период",
+        "purpose": "Понимание себя как коуча"
+      },
+      
+      "learning_journal": {
+        "description": "Ведение дневника обучения",
+        "prompts": [
+          "Что зацепило сегодня?",
+          "Какой главный инсайт?",
+          "Что изменилось в моем понимании?",
+          "Что я буду применять?",
+          "Какие вопросы остались?"
+        ]
+      }
+    }
+  },
+
+  "inter_module_assignments": {
+    "period": "2025-10-25 to 2025-11-24",
+    "individual_coaching_session": {
+      "number": 1,
+      "type": "coaching",
+      "duration": "90 minutes",
+      "coach": "Assigned from pool",
+      "purpose": "Personal coaching experience and development"
+    },
+
+    "homework": [
+      {
+        "task": "Identity Map",
+        "description": "Создать свою карту идентичности по framework Given-Chosen-Foundation",
+        "format": "Визуальное представление или текст",
+        "reflection_questions": [
+          "Как моя идентичность влияет на мой коучинг?",
+          "Какие противоречия я замечаю?",
+          "Что я хочу интегрировать?"
+        ]
+      },
+      {
+        "task": "Reflection on Module 1",
+        "description": "Структурированная рефлексия по модулю",
+        "questions": [
+          "Что я узнал нового?",
+          "Что меня удивило?",
+          "Что я почувствовал?",
+          "Что пересмотрел в своих взглядах?",
+          "Что буду применять?",
+          "Какие вопросы возникли?"
+        ]
+      },
+      {
+        "task": "Practice Active Listening",
+        "description": "В реальных разговорах практиковать уровни слушания",
+        "tracking": "Записывать наблюдения в дневник"
+      },
+      {
+        "task": "Observe Family Patterns",
+        "description": "Наблюдать проявление семейных паттернов в работе",
+        "questions": [
+          "Какие роли из семьи я играю на работе?",
+          "Какие семейные правила я переношу?",
+          "Где я вижу повторение динамики?"
+        ]
+      }
+    ],
+
+    "reading": [
+      {
+        "priority": "required",
+        "title": "Pre-reading for Module 2",
+        "deadline": "2025-11-10",
+        "focus": "Психологические концепции для коучинга"
+      }
+    ],
+
+    "practice_hours_target": "5-10 hours",
+    "practice_suggestions": [
+      "Informal coaching conversations",
+      "Practice powerful questions",
+      "Active listening in meetings",
+      "Self-reflection daily"
+    ]
+  },
+
+  "program_context": {
+    "connection_to_program_arc": {
+      "stage": "Stage 1: Познание себя через коучинг",
+      "focus": "Self as instrument",
+      "foundation_for": [
+        "Module 2: Психологические концепции",
+        "Module 3-4: Работа с командами",
+        "Module 5-7: Коучинговая практика"
+      ]
+    },
+
+    "development_trajectory": {
+      "from": "Начинающий интерес к коучингу",
+      "to": "Понимание себя как инструмента коучинга",
+      "key_shift": "От внешних техник к внутренней работе"
+    },
+
+    "integration_with_leadership": {
+      "question": "Как коучинговая позиция меняет мое лидерство?",
+      "areas": [
+        "Стиль управления командой",
+        "Принятие решений",
+        "Коммуникация",
+        "Развитие сотрудников",
+        "Создание культуры"
+      ]
+    }
+  },
+
+  "participant_experience": {
+    "onboarding_exercise": {
+      "name": "Знакомство через животных",
+      "structure": {
+        "element_1": "О себе",
+        "element_2": "Цель на программу",
+        "element_3": "Ассоциация с животным и почему"
+      },
+      "time_limit": "1 минута на человека",
+      "purpose": [
+        "Breaking the ice",
+        "Metaphorical self-expression",
+        "Understanding motivations",
+        "Creating connection"
+      ]
+    },
+
+    "class_profile": {
+      "total_participants": "~25-30",
+      "composition": {
+        "owners_entrepreneurs": "56%",
+        "directors_managers": "25%",
+        "other": "19%"
+      },
+      "gender_split": {
+        "women": "52%",
+        "men": "48%"
+      },
+      "average_age": 40
+    },
+
+    "campus_experience": {
+      "campus_tour": "14:45 on Day 1",
+      "closing_event": "Фуршет 18:00-21:00 on Day 4",
+      "morning_ritual": "Рефлексия без телефонов каждое утро",
+      "no_recordings": "Занятия и групповая работа не записываются"
+    }
+  },
+
+  "digital_infrastructure": {
+    "platform": {
+      "name": "Цифровое образовательное пространство СКОЛКОВО",
+      "access": "QR-код предоставлен",
+      "login": "email участника",
+      "initial_password": "Skolkovo011"
+    },
+    
+    "telegram_chat": {
+      "description": "Закрытый чат группы",
+      "access": "QR-код для присоединения"
+    },
+
+    "materials_available": [
+      "Презентации модуля",
+      "Дополнительные материалы для чтения",
+      "Задания",
+      "Записи (только определенные сессии)"
+    ]
+  },
+
+  "success_metrics": {
+    "personal_markers": [
+      "Повышение самоосознанности",
+      "Понимание своих триггеров",
+      "Способность к рефлексии",
+      "Интеграция уязвимости",
+      "Clarity относительно себя как коуча"
+    ],
+
+    "skill_markers": [
+      "Качество слушания",
+      "Способность задавать мощные вопросы",
+      "Создание безопасного пространства",
+      "Работа с контрактом",
+      "Базовые навыки индивидуального коучинга"
+    ],
+
+    "reflection_questions": [
+      "Что изменилось во мне после этого модуля?",
+      "Какой самый важный инсайт?",
+      "Как я теперь вижу роль коуча?",
+      "Что я хочу развивать дальше?",
+      "Готов ли я к следующему этапу?"
+    ]
+  },
+
+  "resources": {
+    "key_books_mentioned": [
+      "The Inner Game of Tennis - Timothy Gallwey",
+      "Daring Greatly - Brené Brown",
+      "Motivational Interviewing - Miller & Rollnick"
+    ],
+
+    "recommended_further_reading": [
+      "Co-Active Coaching - Whitworth et al.",
+      "The Thinking Environment - Nancy Kline",
+      "Presence-Based Coaching - Doug Silsbee"
+    ],
+
+    "key_frameworks": [
+      "Psychodynamic approach",
+      "Motivational Interviewing",
+      "Learning Styles (Kolb, Honey & Mumford)",
+      "Family Systems Theory",
+      "Active Listening Levels"
+    ]
+  },
+
+  "tags": [
+    "#module_1",
+    "#self_discovery",
+    "#coach_as_instrument",
+    "#psychodynamic",
+    "#active_listening",
+    "#motivational_interviewing",
+    "#imposter_syndrome",
+    "#vulnerability",
+    "#family_systems",
+    "#learning_styles",
+    "#reflection",
+    "#executive_coaching",
+    "#SKOLKOVO"
+  ],
+
+  "personal_coaching_notes": {
+    "coaching_stance_for_this_module": {
+      "balance": "70% acceptance / 30% challenge",
+      "rationale": "Participants are just beginning, need safety to explore vulnerability",
+      "key_coaching_questions": [
+        "Что ты открыл в себе?",
+        "Как это меняет твое понимание лидерства?",
+        "Где ты чувствуешь сопротивление?",
+        "Что тебя пугает в роли коуча?",
+        "Как твоя история формирует твой стиль?"
+      ]
+    },
+
+    "common_challenges": [
+      "Синдром самозванца усиливается",
+      "Сопротивление уязвимости",
+      "Желание 'делать правильно' вместо 'быть собой'",
+      "Сравнение с другими",
+      "Информационная перегрузка"
+    ],
+
+    "coaching_interventions": [
+      "Normalize the imposter feelings",
+      "Encourage vulnerability in safe doses",
+      "Redirect from 'doing' to 'being'",
+      "Focus on personal journey, not comparison",
+      "Help integrate, not accumulate"
+    ]
+  },
+
+  "next_steps": {
+    "immediate": [
+      "Complete reflection assignment",
+      "Schedule individual coaching session #1",
+      "Start Identity Map work",
+      "Practice active listening daily"
+    ],
+
+    "before_module_2": [
+      "Complete all inter-module assignments",
+      "Pre-reading for Module 2",
+      "Integrate Module 1 learnings",
+      "Prepare questions for Module 2"
+    ],
+
+    "milestone": {
+      "id": "M1",
+      "name": "Identity map completed",
+      "target": "Before Module 2",
+      "status": "in_progress"
+    }
+  }
+}

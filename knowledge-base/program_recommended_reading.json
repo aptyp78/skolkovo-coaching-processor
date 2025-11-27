@@ -1,0 +1,730 @@
+{
+  "meta": {
+    "title": "Executive-коучинг: Рекомендованная литература",
+    "version": "1.0",
+    "created": "2025-11-26",
+    "source": "Список рекомендаций программы SKOLKOVO",
+    "purpose": "Структурированная база литературы для интеграции в обучение",
+    "total_books": 19
+  },
+
+  "reading_categories": {
+    "mandatory": {
+      "label": "Обязательные к прочтению",
+      "priority": "CRITICAL",
+      "count": 4,
+      "completion_target": "До окончания Модуля 2"
+    },
+    "recommended": {
+      "label": "По желанию, по возможности, по мере прохождения программы",
+      "priority": "PROGRESSIVE",
+      "count": 15,
+      "completion_target": "В течение программы"
+    }
+  },
+
+  "mandatory_reading": [
+    {
+      "id": "M001",
+      "author": "Питер Г. Нортхаус",
+      "title": "Лидерство. Теория и практика",
+      "subtitle": "Профессиональный подход к управлению компаниями и людьми",
+      "original_title": "Leadership: Theory and Practice",
+      "language": "ru",
+      "cluster": "leadership_theory",
+      "key_concepts": [
+        "Теории лидерства",
+        "Трансформационное лидерство",
+        "Ситуационное лидерство",
+        "Аутентичное лидерство"
+      ],
+      "relevance_to_program": {
+        "modules": [1, 3, 4],
+        "themes": ["Контекст executive-коучинга", "Понимание клиентов-лидеров"],
+        "integration_note": "Академическая база для понимания контекста работы executive-коуча"
+      },
+      "reading_strategy": {
+        "approach": "reference",
+        "focus_chapters": "Определить после знакомства со структурой",
+        "time_estimate_hours": 15
+      }
+    },
+    {
+      "id": "M002",
+      "author": "Джон Уитмор",
+      "title": "Коучинг",
+      "subtitle": "Основные принципы и практики коучинга и лидерства",
+      "original_title": "Coaching for Performance",
+      "language": "ru",
+      "cluster": "coaching_methodology",
+      "key_concepts": [
+        "GROW-модель",
+        "Потенциал vs интерференция",
+        "Осознанность и ответственность",
+        "Коучинговый стиль лидерства"
+      ],
+      "relevance_to_program": {
+        "modules": [1, 2, 5, 6, 7],
+        "themes": ["Методология коучинга", "Практика коучинга"],
+        "integration_note": "Методологическое ядро программы — GROW как базовая структура"
+      },
+      "reading_strategy": {
+        "approach": "deep_study",
+        "focus_chapters": "Все — ключевой текст",
+        "time_estimate_hours": 10
+      }
+    },
+    {
+      "id": "M003",
+      "author": "Дэниел Гоулман",
+      "title": "Эмоциональный интеллект",
+      "subtitle": "Почему он может значить больше, чем IQ",
+      "original_title": "Emotional Intelligence: Why It Can Matter More Than IQ",
+      "language": "ru",
+      "cluster": "emotional_intelligence",
+      "key_concepts": [
+        "Самосознание",
+        "Саморегуляция",
+        "Эмпатия",
+        "Социальные навыки",
+        "Мотивация"
+      ],
+      "relevance_to_program": {
+        "modules": [5, 6, 7],
+        "themes": ["Эмоциональный интеллект и лидерство"],
+        "integration_note": "Прямая связь с модулями 5-7, фокус на EQ"
+      },
+      "reading_strategy": {
+        "approach": "deep_study",
+        "focus_chapters": "Части о самосознании и эмпатии — приоритет",
+        "time_estimate_hours": 12
+      }
+    },
+    {
+      "id": "M004",
+      "author": "Эрик Шмидт, Джонатан Розенберг, Алан Игл",
+      "title": "Trillion Dollar Coach",
+      "subtitle": "Принципы лидерства легендарного коуча Кремниевой долины Билла Кэмпбелла",
+      "original_title": "Trillion Dollar Coach: The Leadership Playbook of Silicon Valley's Bill Campbell",
+      "language": "ru",
+      "cluster": "executive_coaching_practice",
+      "key_concepts": [
+        "Коучинг CEO",
+        "Доверие как фундамент",
+        "Радикальная честность",
+        "Командный коучинг",
+        "Коучинг в бизнес-контексте"
+      ],
+      "relevance_to_program": {
+        "modules": [1, 3, 4],
+        "themes": ["Executive-коучинг на практике", "Групповой коучинг"],
+        "integration_note": "Живой пример executive-коучинга высшего уровня"
+      },
+      "reading_strategy": {
+        "approach": "case_study",
+        "focus_chapters": "Читать как кейс, выделять принципы",
+        "time_estimate_hours": 6
+      }
+    }
+  ],
+
+  "recommended_reading": [
+    {
+      "id": "R001",
+      "author": "Крис Аргирис",
+      "title": "Как научить ученого",
+      "subtitle": "Одинарный и двойной цикл научения. Преодоление защитной позиции",
+      "original_title": "Teaching Smart People How to Learn",
+      "language": "ru",
+      "cluster": "learning_theory",
+      "key_concepts": [
+        "Single-loop learning",
+        "Double-loop learning",
+        "Defensive reasoning",
+        "Espoused theory vs theory-in-use"
+      ],
+      "relevance_to_program": {
+        "modules": [2, 3],
+        "themes": ["Психологические концепции", "Изменение поведения"],
+        "connection_to_core_theories": "Связь с 11 психологическими теориями модуля 2"
+      },
+      "priority_score": 9,
+      "reading_strategy": {
+        "approach": "conceptual",
+        "time_estimate_hours": 3
+      }
+    },
+    {
+      "id": "R002",
+      "author": "Венди Бехари",
+      "title": "Обезоружить нарцисса",
+      "subtitle": "Как выжить рядом с эгоцентриком",
+      "original_title": "Disarming the Narcissist",
+      "language": "ru",
+      "cluster": "difficult_clients",
+      "key_concepts": [
+        "Нарциссические паттерны",
+        "Schema therapy",
+        "Работа с защитами",
+        "Эмпатическая конфронтация"
+      ],
+      "relevance_to_program": {
+        "modules": [2, 5, 6],
+        "themes": ["Работа со сложными клиентами", "Психодинамика"],
+        "connection_to_lehman": "Расширяет понимание защитных механизмов"
+      },
+      "priority_score": 7,
+      "reading_strategy": {
+        "approach": "practical",
+        "time_estimate_hours": 8
+      }
+    },
+    {
+      "id": "R003",
+      "author": "Абрам Брудный",
+      "title": "Психологическая герменевтика",
+      "subtitle": null,
+      "original_title": null,
+      "language": "ru",
+      "cluster": "understanding_interpretation",
+      "key_concepts": [
+        "Понимание как процесс",
+        "Интерпретация смыслов",
+        "Герменевтический круг",
+        "Контекст понимания"
+      ],
+      "relevance_to_program": {
+        "modules": [2],
+        "themes": ["Искусство слушания", "Понимание клиента"],
+        "connection_to_clinical_approach": "Теоретическая база для глубинного слушания"
+      },
+      "priority_score": 6,
+      "reading_strategy": {
+        "approach": "conceptual",
+        "time_estimate_hours": 10
+      }
+    },
+    {
+      "id": "R004",
+      "author": "Манфред Кетс де Врис",
+      "title": "Лидер на кушетке",
+      "subtitle": "Клинический подход к изменению людей и организаций",
+      "original_title": "The Leader on the Couch",
+      "language": "ru",
+      "cluster": "psychodynamic_approach",
+      "key_concepts": [
+        "Клинический подход к лидерству",
+        "Внутренний театр лидера",
+        "Нарциссизм в лидерстве",
+        "Организационная динамика",
+        "Трансфер в организациях"
+      ],
+      "relevance_to_program": {
+        "modules": [1, 2, 3, 4],
+        "themes": ["Психодинамика", "Клинический подход"],
+        "connection_to_lehman": "ПРЯМАЯ СВЯЗЬ с лекциями Роджера Лемана — обязательно"
+      },
+      "priority_score": 10,
+      "reading_strategy": {
+        "approach": "deep_study",
+        "note": "Читать параллельно с материалами Лемана",
+        "time_estimate_hours": 12
+      }
+    },
+    {
+      "id": "R005",
+      "author": "Маршалл Голдсмит",
+      "title": "Прыгни выше головы!",
+      "subtitle": null,
+      "original_title": "What Got You Here Won't Get You There",
+      "language": "ru",
+      "cluster": "executive_coaching_practice",
+      "key_concepts": [
+        "20 привычек, мешающих успеху",
+        "Feedforward vs feedback",
+        "Поведенческие изменения",
+        "Коучинг руководителей"
+      ],
+      "relevance_to_program": {
+        "modules": [1, 5, 6, 7],
+        "themes": ["Executive-коучинг", "Изменение поведения"],
+        "practical_value": "Конкретные инструменты для работы с клиентами"
+      },
+      "priority_score": 8,
+      "reading_strategy": {
+        "approach": "practical",
+        "time_estimate_hours": 6
+      }
+    },
+    {
+      "id": "R006",
+      "author": "Майлз Дауни",
+      "title": "Эффективный коучинг",
+      "subtitle": "Технологии развития организации через обучение и развитие сотрудников в процессе работы",
+      "original_title": "Effective Coaching",
+      "language": "ru",
+      "cluster": "coaching_methodology",
+      "key_concepts": [
+        "Коучинг в организациях",
+        "Развитие через работу",
+        "Коучинговая культура",
+        "Интеграция коучинга в HR"
+      ],
+      "relevance_to_program": {
+        "modules": [3, 4, 5],
+        "themes": ["Организационный коучинг", "Развитие команд"],
+        "practical_value": "Применение коучинга в корпоративном контексте"
+      },
+      "priority_score": 7,
+      "reading_strategy": {
+        "approach": "practical",
+        "time_estimate_hours": 8
+      }
+    },
+    {
+      "id": "R007",
+      "author": "Эрминия Ибарра",
+      "title": "Обретая Я",
+      "subtitle": "Неординарные стратегии, изменяющие карьеру",
+      "original_title": "Working Identity",
+      "language": "ru",
+      "cluster": "identity_transformation",
+      "key_concepts": [
+        "Рабочая идентичность",
+        "Экспериментирование с Я",
+        "Переходные периоды",
+        "Possible selves"
+      ],
+      "relevance_to_program": {
+        "modules": [1, 2, 8],
+        "themes": ["Идентичность", "Трансформация"],
+        "connection_to_identity_map": "Дополняет работу с картой идентичности"
+      },
+      "priority_score": 8,
+      "reading_strategy": {
+        "approach": "reflective",
+        "personal_application": "Применить к собственной трансформации",
+        "time_estimate_hours": 7
+      }
+    },
+    {
+      "id": "R008",
+      "author": "Даниэль Канеман",
+      "title": "Думай медленно... Решай быстро",
+      "subtitle": null,
+      "original_title": "Thinking, Fast and Slow",
+      "language": "ru",
+      "cluster": "cognitive_psychology",
+      "key_concepts": [
+        "Система 1 и Система 2",
+        "Когнитивные искажения",
+        "Эвристики",
+        "Принятие решений"
+      ],
+      "relevance_to_program": {
+        "modules": [2, 5],
+        "themes": ["Психологические концепции", "Принятие решений"],
+        "coaching_application": "Понимание когнитивных ловушек клиентов"
+      },
+      "priority_score": 8,
+      "reading_strategy": {
+        "approach": "conceptual",
+        "time_estimate_hours": 15
+      }
+    },
+    {
+      "id": "R009",
+      "author": "Роберт Киган, Лиза Лэйхи",
+      "title": "Неприятие перемен",
+      "subtitle": "Как преодолеть сопротивление изменениям и раскрыть потенциал организации",
+      "original_title": "Immunity to Change",
+      "language": "ru",
+      "cluster": "change_resistance",
+      "key_concepts": [
+        "Immunity to change",
+        "Competing commitments",
+        "Big assumptions",
+        "Developmental coaching"
+      ],
+      "relevance_to_program": {
+        "modules": [2, 3, 5, 6],
+        "themes": ["Изменения", "Сопротивление", "Развитие"],
+        "high_value": "Ключевая модель для работы с застреванием клиентов"
+      },
+      "priority_score": 9,
+      "reading_strategy": {
+        "approach": "deep_study",
+        "practical_exercises": "Применить модель к себе",
+        "time_estimate_hours": 10
+      }
+    },
+    {
+      "id": "R010",
+      "author": "Джордж Колризер",
+      "title": "Не стать заложником",
+      "subtitle": "Сохранить самообладание и убедить оппонента",
+      "original_title": "Hostage at the Table",
+      "language": "ru",
+      "cluster": "negotiation_influence",
+      "key_concepts": [
+        "Психология заложника",
+        "Bonding",
+        "Emotional anchoring",
+        "Mind's eye"
+      ],
+      "relevance_to_program": {
+        "modules": [4, 5, 6],
+        "themes": ["Влияние", "Самообладание", "Переговоры"],
+        "coaching_application": "Работа с блокировками и захваченностью"
+      },
+      "priority_score": 7,
+      "reading_strategy": {
+        "approach": "practical",
+        "time_estimate_hours": 8
+      }
+    },
+    {
+      "id": "R011",
+      "author": "Алис Миллер",
+      "title": "Драма одаренного ребенка и поиск собственного Я",
+      "subtitle": null,
+      "original_title": "The Drama of the Gifted Child",
+      "language": "ru",
+      "cluster": "psychodynamic_approach",
+      "key_concepts": [
+        "Детские травмы",
+        "Ложное Я",
+        "Нарциссические родители",
+        "Исцеление через осознание"
+      ],
+      "relevance_to_program": {
+        "modules": [1, 2],
+        "themes": ["Психодинамика", "Самопознание"],
+        "connection_to_lehman": "Углубляет понимание формирования личности лидера"
+      },
+      "priority_score": 8,
+      "reading_strategy": {
+        "approach": "reflective",
+        "caution": "Может вызвать сильный эмоциональный отклик",
+        "time_estimate_hours": 5
+      }
+    },
+    {
+      "id": "R012",
+      "author": "Людмила Петрановская",
+      "title": "Тайная опора",
+      "subtitle": "Привязанность в жизни ребенка",
+      "original_title": null,
+      "language": "ru",
+      "cluster": "attachment_theory",
+      "key_concepts": [
+        "Теория привязанности",
+        "Типы привязанности",
+        "Внутренняя рабочая модель",
+        "Secure base"
+      ],
+      "relevance_to_program": {
+        "modules": [2],
+        "themes": ["Психологические концепции", "Привязанность"],
+        "russian_context": "Адаптация теории привязанности для русскоязычной аудитории"
+      },
+      "priority_score": 6,
+      "reading_strategy": {
+        "approach": "conceptual",
+        "time_estimate_hours": 4
+      }
+    },
+    {
+      "id": "R013",
+      "author": "Мингьюр Ринпоче",
+      "title": "Будда, мозг и нейрофизиология счастья",
+      "subtitle": null,
+      "original_title": "The Joy of Living",
+      "language": "ru",
+      "cluster": "mindfulness_neuroscience",
+      "key_concepts": [
+        "Медитация",
+        "Нейропластичность",
+        "Осознанность",
+        "Природа ума"
+      ],
+      "relevance_to_program": {
+        "modules": [5, 6, 7],
+        "themes": ["Эмоциональный интеллект", "Осознанность"],
+        "practical_value": "Mindfulness как инструмент коуча"
+      },
+      "priority_score": 6,
+      "reading_strategy": {
+        "approach": "practice_oriented",
+        "time_estimate_hours": 8
+      }
+    },
+    {
+      "id": "R014",
+      "author": "Карл Роджерс",
+      "title": "Становление личности",
+      "subtitle": "Взгляд на психотерапию",
+      "original_title": "On Becoming a Person",
+      "language": "ru",
+      "cluster": "humanistic_psychology",
+      "key_concepts": [
+        "Безусловное позитивное принятие",
+        "Конгруэнтность",
+        "Эмпатическое понимание",
+        "Клиент-центрированный подход"
+      ],
+      "relevance_to_program": {
+        "modules": [1, 2],
+        "themes": ["Гуманистический подход", "Принятие"],
+        "foundational": "Основа коучингового отношения к клиенту"
+      },
+      "priority_score": 9,
+      "reading_strategy": {
+        "approach": "deep_study",
+        "time_estimate_hours": 12
+      }
+    },
+    {
+      "id": "R015",
+      "author": "Робин Скиннер",
+      "title": "Семья и как в ней уцелеть",
+      "subtitle": null,
+      "original_title": "Families and How to Survive Them",
+      "language": "ru",
+      "cluster": "family_systems",
+      "key_concepts": [
+        "Семейные системы",
+        "Паттерны отношений",
+        "Здоровая семья vs дисфункциональная",
+        "Психологическое здоровье"
+      ],
+      "relevance_to_program": {
+        "modules": [2, 4],
+        "themes": ["Системный подход", "Семейные паттерны"],
+        "organizational_parallel": "Семья как прототип организации"
+      },
+      "priority_score": 6,
+      "reading_strategy": {
+        "approach": "conceptual",
+        "format": "Написана в форме диалога — легко читается",
+        "time_estimate_hours": 6
+      }
+    },
+    {
+      "id": "R016",
+      "author": "Джон Уитмор",
+      "title": "Коучинг высокой эффективности",
+      "subtitle": null,
+      "original_title": "Coaching for Performance (extended)",
+      "language": "ru",
+      "cluster": "coaching_methodology",
+      "key_concepts": [
+        "Продвинутые техники GROW",
+        "Командный коучинг",
+        "Коучинг культуры",
+        "Измерение эффективности"
+      ],
+      "relevance_to_program": {
+        "modules": [5, 6, 7],
+        "themes": ["Практика коучинга", "Продвинутые техники"],
+        "note": "Расширение базовой книги Уитмора"
+      },
+      "priority_score": 7,
+      "reading_strategy": {
+        "approach": "practical",
+        "sequence": "После освоения базовой книги",
+        "time_estimate_hours": 8
+      }
+    }
+  ],
+
+  "thematic_clusters": {
+    "leadership_theory": {
+      "name": "Теория лидерства",
+      "books": ["M001"],
+      "relevance": "Контекст работы executive-коуча"
+    },
+    "coaching_methodology": {
+      "name": "Методология коучинга",
+      "books": ["M002", "R006", "R016"],
+      "relevance": "Ядро профессиональной практики"
+    },
+    "emotional_intelligence": {
+      "name": "Эмоциональный интеллект",
+      "books": ["M003"],
+      "relevance": "Ключевая компетенция модулей 5-7"
+    },
+    "executive_coaching_practice": {
+      "name": "Executive-коучинг на практике",
+      "books": ["M004", "R005"],
+      "relevance": "Кейсы и инструменты высшего уровня"
+    },
+    "psychodynamic_approach": {
+      "name": "Психодинамический подход",
+      "books": ["R004", "R011"],
+      "relevance": "Связь с лекциями Роджера Лемана",
+      "priority": "HIGH"
+    },
+    "identity_transformation": {
+      "name": "Трансформация идентичности",
+      "books": ["R007"],
+      "relevance": "Работа с картой идентичности"
+    },
+    "change_resistance": {
+      "name": "Сопротивление изменениям",
+      "books": ["R001", "R009"],
+      "relevance": "Работа с застреванием клиентов"
+    },
+    "cognitive_psychology": {
+      "name": "Когнитивная психология",
+      "books": ["R008"],
+      "relevance": "Понимание процессов мышления"
+    },
+    "humanistic_psychology": {
+      "name": "Гуманистическая психология",
+      "books": ["R014"],
+      "relevance": "Философская основа коучинга"
+    },
+    "attachment_theory": {
+      "name": "Теория привязанности",
+      "books": ["R012"],
+      "relevance": "Понимание базовых паттернов отношений"
+    },
+    "family_systems": {
+      "name": "Семейные системы",
+      "books": ["R011", "R015"],
+      "relevance": "Системный взгляд на организации"
+    },
+    "mindfulness_neuroscience": {
+      "name": "Осознанность и нейронаука",
+      "books": ["R013"],
+      "relevance": "Инструменты саморегуляции"
+    },
+    "difficult_clients": {
+      "name": "Работа со сложными клиентами",
+      "books": ["R002", "R010"],
+      "relevance": "Специальные ситуации в практике"
+    }
+  },
+
+  "reading_sequences": {
+    "foundational": {
+      "name": "Фундаментальная последовательность",
+      "description": "Рекомендуемый порядок для построения базы",
+      "sequence": ["M002", "M003", "M001", "M004"],
+      "timeline": "До конца Модуля 2"
+    },
+    "psychodynamic_track": {
+      "name": "Психодинамический трек",
+      "description": "Для углубления в клинический подход (связь с Леманом)",
+      "sequence": ["R004", "R011", "R014", "R015"],
+      "timeline": "Модули 2-4"
+    },
+    "practical_coaching_track": {
+      "name": "Практический коучинговый трек",
+      "description": "Для развития практических навыков",
+      "sequence": ["M002", "R005", "R006", "R016"],
+      "timeline": "Модули 5-7"
+    },
+    "change_and_development_track": {
+      "name": "Трек изменений и развития",
+      "description": "Для работы с трансформацией клиентов",
+      "sequence": ["R001", "R009", "R007"],
+      "timeline": "Модули 3-6"
+    }
+  },
+
+  "module_reading_map": {
+    "module_1": {
+      "primary": ["M001", "M002", "M004"],
+      "secondary": ["R004", "R007", "R014"]
+    },
+    "module_2": {
+      "primary": ["M003", "R004"],
+      "secondary": ["R001", "R008", "R009", "R011", "R012"]
+    },
+    "module_3": {
+      "primary": ["R006", "R009"],
+      "secondary": ["R001", "R004"]
+    },
+    "module_4": {
+      "primary": ["M004", "R004", "R010"],
+      "secondary": ["R015"]
+    },
+    "module_5": {
+      "primary": ["M003", "R005", "R009"],
+      "secondary": ["R002", "R008", "R013"]
+    },
+    "module_6": {
+      "primary": ["M003", "R005", "R016"],
+      "secondary": ["R002", "R010", "R013"]
+    },
+    "module_7": {
+      "primary": ["R016", "M003"],
+      "secondary": ["R005", "R013"]
+    },
+    "module_8": {
+      "primary": ["R007"],
+      "secondary": "Интеграция всего прочитанного"
+    }
+  },
+
+  "priority_reading_list": {
+    "top_5_beyond_mandatory": [
+      {
+        "rank": 1,
+        "id": "R004",
+        "reason": "Прямая связь с лекциями Лемана — психодинамический подход"
+      },
+      {
+        "rank": 2,
+        "id": "R009",
+        "reason": "Ключевая модель для работы с сопротивлением изменениям"
+      },
+      {
+        "rank": 3,
+        "id": "R014",
+        "reason": "Философская основа коучингового отношения"
+      },
+      {
+        "rank": 4,
+        "id": "R001",
+        "reason": "Двойной цикл научения — фундамент для развития"
+      },
+      {
+        "rank": 5,
+        "id": "R005",
+        "reason": "Практические инструменты executive-коучинга"
+      }
+    ]
+  },
+
+  "personal_notes": {
+    "engineering_approach_relevance": {
+      "architecture_books": ["M001", "R004", "R009"],
+      "explanation": "Эти книги дают системное понимание 'как это работает внутри'"
+    },
+    "identity_work_connection": {
+      "books": ["R007", "R011", "R014"],
+      "connection": "Прямая связь с работой над картой идентичности"
+    },
+    "lehman_integration": {
+      "books": ["R004", "R011", "R015"],
+      "note": "Читать параллельно с анализом материалов Лемана"
+    }
+  },
+
+  "tracking": {
+    "status_options": ["not_started", "in_progress", "completed", "reference"],
+    "books_status": {},
+    "notes_template": {
+      "book_id": "",
+      "start_date": "",
+      "completion_date": "",
+      "key_takeaways": [],
+      "application_ideas": [],
+      "questions_raised": [],
+      "connection_to_program": ""
+    }
+  }
+}

@@ -1,0 +1,1736 @@
+{
+  "meta": {
+    "document_type": "module_schedule_analysis",
+    "module_number": 1,
+    "module_title": "ÐŸÐ¾Ð·Ð½Ð°Ð½Ð¸Ðµ ÑÐµÐ±Ñ Ñ‡ÐµÑ€ÐµÐ· ÐºÐ¾ÑƒÑ‡Ð¸Ð½Ð³",
+    "dates": "2025-10-21 to 2025-10-24",
+    "location": "ÐšÐ°Ð¼Ð¿ÑƒÑ Ð¡ÐšÐžÐ›ÐšÐžÐ’Ðž, ÐœÐ¾ÑÐºÐ²Ð°, ÐºÐ»Ð°ÑÑ‚ÐµÑ€ Ð Ð¾ÑÑÐ¸Ñ, 2 ÑÑ‚Ð°Ð¶",
+    "stage": "ÐŸÐ¾Ð·Ð½Ð°Ð½Ð¸Ðµ ÑÐµÐ±Ñ Ñ‡ÐµÑ€ÐµÐ· ÐºÐ¾ÑƒÑ‡Ð¸Ð½Ð³",
+    "analysis_created": "2025-11-25",
+    "pre_reading_deadline": "2025-10-08",
+    "version": "1.0"
+  },
+
+  "module_objectives": {
+    "primary_goals": [
+      {
+        "goal": "ÐŸÐ¾Ð²Ñ‹ÑÐ¸Ñ‚ÑŒ ÑƒÑ€Ð¾Ð²ÐµÐ½ÑŒ ÑÐ°Ð¼Ð¾Ð¾ÑÐ¾Ð·Ð½Ð°Ð½Ð½Ð¾ÑÑ‚Ð¸ ÑƒÑ‡Ð°ÑÑ‚Ð½Ð¸ÐºÐ¾Ð²",
+        "importance": "CRITICAL",
+        "foundation": "Self-awareness is the core instrument of a coach",
+        "assessment_criteria": [
+          "Ability to notice own reactions in real-time",
+          "Recognition of personal patterns and triggers",
+          "Understanding of identity foundations (given/chosen/foundation)"
+        ]
+      },
+      {
+        "goal": "Ð Ð°Ð·Ð²Ð¸Ñ‚ÑŒ ÐºÐ»ÑŽÑ‡ÐµÐ²Ñ‹Ðµ ÐºÐ¾Ð¼Ð¿ÐµÑ‚ÐµÐ½Ñ†Ð¸Ð¸, Ð¿Ñ€Ð¸Ð¼ÐµÐ½Ð¸Ð¼Ñ‹Ðµ Ð² ÐºÐ¾ÑƒÑ‡Ð¸Ð½Ð³Ðµ",
+        "importance": "HIGH",
+        "foundation": "Coaching skills are learnable but require practice",
+        "key_competencies": [
+          "Active listening (multiple levels)",
+          "Powerful questioning",
+          "Creating safe space",
+          "Holding challenge and acceptance simultaneously",
+          "Managing transference and projection"
+        ]
+      },
+      {
+        "goal": "ÐžÐ·Ð½Ð°ÐºÐ¾Ð¼Ð¸Ñ‚ÑŒÑÑ Ñ Ð¿Ð¾Ð´Ñ…Ð¾Ð´Ð°Ð¼Ð¸ Ð¸ Ñ‚ÐµÑ…Ð½Ð¸ÐºÐ°Ð¼Ð¸ Ñ€Ð°Ð±Ð¾Ñ‚Ñ‹ Ð² ÐºÐ¾ÑƒÑ‡Ð¸Ð½Ð³Ðµ",
+        "importance": "HIGH",
+        "foundation": "Structured approaches provide scaffolding for practice",
+        "approaches_covered": [
+          "Psychodynamic approach (Roger Lehmann)",
+          "Motivational interviewing",
+          "Family systems analysis",
+          "Reflective practice"
+        ]
+      },
+      {
+        "goal": "ÐÐ°ÑƒÑ‡Ð¸Ñ‚ÑŒÑÑ Ð²Ð¾ÑÐ¿Ñ€Ð¸Ð½Ð¸Ð¼Ð°Ñ‚ÑŒ ÑÐµÐ±Ñ ÐºÐ°Ðº Â«Ð¸Ð½ÑÑ‚Ñ€ÑƒÐ¼ÐµÐ½Ñ‚Â» Ð² ÐºÐ¾ÑƒÑ‡Ð¸Ð½Ð³Ð¾Ð²Ð¾Ð¼ Ð¿Ñ€Ð¾Ñ†ÐµÑÑÐµ",
+        "importance": "FOUNDATIONAL",
+        "foundation": "The coach's main instrument is themselves",
+        "implications": [
+          "Self-awareness becomes professional tool",
+          "Personal work = professional development",
+          "Congruence between inner state and outer presence",
+          "Managing own emotions while holding space for others"
+        ]
+      }
+    ],
+
+    "meta_objectives": {
+      "hidden_curriculum": [
+        "Building trust within cohort",
+        "Experiencing vulnerability in professional context",
+        "Normalizing discomfort as part of growth",
+        "Creating learning community",
+        "Establishing program culture of openness"
+      ],
+      "transformational_intent": "Shift from 'knowing about coaching' to 'being a coach'"
+    }
+  },
+
+  "faculty": {
+    "academic_directors": [
+      {
+        "name": "Ð•Ð»ÐµÐ½Ð° ÐšÐ»ÐµÐºÐ¾Ð²ÐºÐ¸Ð½Ð°",
+        "role": "Academic Director",
+        "title": "Ð”Ð¸Ñ€ÐµÐºÑ‚Ð¾Ñ€ Ñ†ÐµÐ½Ñ‚Ñ€Ð° Ñ€Ð°Ð·Ð²Ð¸Ñ‚Ð¸Ñ Ð»Ð¸Ð´ÐµÑ€ÑÑ‚Ð²Ð° Ð¡ÐšÐžÐ›ÐšÐžÐ’Ðž",
+        "teaching_focus": [
+          "Introduction to executive coaching",
+          "Self as instrument",
+          "Listening skills",
+          "Family dynamics analysis",
+          "Imposter syndrome and vulnerability"
+        ],
+        "style_hypothesis": "Combines structure with depth, likely direct and challenging while supportive"
+      },
+      {
+        "name": "Ð•Ð»ÐµÐ½Ð° Ð Ð¾ÑÐ¾ÑÑÐºÐ°Ñ",
+        "role": "Academic Director",
+        "title": "Ð”Ð¸Ñ€ÐµÐºÑ‚Ð¾Ñ€ Ð¿Ñ€Ð¾ÐµÐºÑ‚Ð¾Ð² Ñ†ÐµÐ½Ñ‚Ñ€Ð° Ñ€Ð°Ð·Ð²Ð¸Ñ‚Ð¸Ñ Ð»Ð¸Ð´ÐµÑ€ÑÑ‚Ð²Ð° Ð¡ÐšÐžÐ›ÐšÐžÐ’Ðž",
+        "teaching_focus": [
+          "Motivational interviewing",
+          "Learning styles",
+          "Program coordination"
+        ],
+        "style_hypothesis": "Structured, technique-oriented, practical application focus"
+      },
+      {
+        "name": "Ð Ð¾Ð´Ð¶ÐµÑ€ Ð›ÐµÐ¼Ð°Ð½",
+        "role": "International Faculty",
+        "title": "Professor INSEAD (Singapore) + Senior Lecturer MIT",
+        "specialization": "Entrepreneurship and Family Business",
+        "teaching_focus": [
+          "Psychodynamic approach in coaching"
+        ],
+        "delivery": "Online",
+        "significance": "World-class expertise, brings global perspective and depth psychology",
+        "style_hypothesis": "Theoretical depth, academic rigor, possibly uses case examples from family business"
+      }
+    ],
+
+    "executive_coaches": [
+      "Ð•Ð»ÐµÐ½Ð° Ð Ð¾ÑÐ¾ÑÑÐºÐ°Ñ",
+      "ÐšÐ¸Ñ€Ð¸Ð»Ð» Ð‘Ð¾Ð³Ð°Ñ‡ÐµÐ²",
+      "ÐÐ½Ð½Ð° ÐšÐ¾Ð·Ð»Ð¾Ð²ÑÐºÐ°Ñ",
+      "ÐÐ°Ñ‚Ð°Ð»ÑŒÑ ÐžÐ¶ÐµÐ³Ð¸Ð½Ð°",
+      "ÐœÐ°Ñ€Ð¸Ñ Ð¡Ð¼Ð¸Ñ€Ð½Ð¾Ð²Ð°",
+      "Ð­Ñ€Ð½ÐµÑÑ‚ Ð¥Ð°Ñ‡Ð°Ñ‚ÑƒÑ€ÑÐ½"
+    ],
+
+    "coach_ratio": "6 coaches for small group work = approximately 3-4 participants per coach",
+    "significance_of_coaches": "Not just observers but active facilitators of transformational work"
+  },
+
+  "daily_breakdown": {
+    "day_1": {
+      "date": "2025-10-21",
+      "day_of_week": "Tuesday",
+      "theme": "FOUNDATION - Introduction and Self as Instrument",
+      "emotional_arc": "Excitement â†’ Concentration â†’ Discomfort â†’ Vulnerability â†’ Integration",
+      "intensity_level": 3,
+      "intensity_scale": "1-5, where 5 is maximum",
+      
+      "schedule": [
+        {
+          "time": "09:30-10:00",
+          "duration_min": 30,
+          "activity": "ÐŸÑ€Ð¸Ð²ÐµÑ‚ÑÑ‚Ð²ÐµÐ½Ð½Ñ‹Ð¹ ÐºÐ¾Ñ„Ðµ",
+          "type": "social",
+          "purpose": "Informal connection, reduce anxiety, create welcoming atmosphere",
+          "participant_experience": "First impressions, meeting cohort"
+        },
+        {
+          "time": "10:00-10:15",
+          "duration_min": 15,
+          "activity": "ÐžÑ‚ÐºÑ€Ñ‹Ñ‚Ð¸Ðµ Ð¿Ñ€Ð¾Ð³Ñ€Ð°Ð¼Ð¼Ñ‹",
+          "facilitators": ["Ð•Ð»ÐµÐ½Ð° ÐšÐ»ÐµÐºÐ¾Ð²ÐºÐ¸Ð½Ð°", "Ð•Ð»ÐµÐ½Ð° Ð Ð¾ÑÐ¾ÑÑÐºÐ°Ñ"],
+          "type": "plenary",
+          "purpose": "Set context, establish program culture, create container",
+          "key_messages_likely": [
+            "Program overview and philosophy",
+            "Expectations and commitments",
+            "Culture of openness and experimentation"
+          ]
+        },
+        {
+          "time": "10:15-11:30",
+          "duration_min": 75,
+          "activity": "Ð¦ÐµÐ»Ð¸ Ð½Ð° Ð¿Ñ€Ð¾Ð³Ñ€Ð°Ð¼Ð¼Ñƒ Ð¸ Ð¾Ð¶Ð¸Ð´Ð°Ð½Ð¸Ñ ÑƒÑ‡Ð°ÑÑ‚Ð½Ð¸ÐºÐ¾Ð²",
+          "facilitators": ["Ð•Ð»ÐµÐ½Ð° ÐšÐ»ÐµÐºÐ¾Ð²ÐºÐ¸Ð½Ð°", "Ð•Ð»ÐµÐ½Ð° Ð Ð¾ÑÐ¾ÑÑÐºÐ°Ñ"],
+          "type": "interactive_plenary",
+          "significance": "CRITICAL",
+          "purpose": "First coaching contract, establish individual intentions, create shared understanding",
+          "coaching_principle": "Contracting - defining what we work on together",
+          "participant_tasks": [
+            "Articulate personal goals for program",
+            "Share expectations openly",
+            "Begin identifying learning edges"
+          ],
+          "insights": [
+            "This is NOT administrative - it's first group coaching exercise",
+            "Sets tone for how goals/intentions are treated throughout program",
+            "Creates accountability structure from day one"
+          ]
+        },
+        {
+          "time": "11:30-12:00",
+          "duration_min": 30,
+          "activity": "ÐšÐ¾Ñ„Ðµ-Ð±Ñ€ÐµÐ¹Ðº",
+          "type": "break",
+          "purpose": "Integration time, informal processing, relationship building"
+        },
+        {
+          "time": "12:00-14:00",
+          "duration_min": 120,
+          "activity": "Ð’Ð²ÐµÐ´ÐµÐ½Ð¸Ðµ Ð² ÐºÐ¾ÑƒÑ‡Ð¸Ð½Ð³ Ñ€ÑƒÐºÐ¾Ð²Ð¾Ð´Ð¸Ñ‚ÐµÐ»ÐµÐ¹",
+          "facilitator": "Ð•Ð»ÐµÐ½Ð° ÐšÐ»ÐµÐºÐ¾Ð²ÐºÐ¸Ð½Ð°",
+          "type": "lecture_interactive",
+          "significance": "FOUNDATIONAL",
+          "likely_content": [
+            {
+              "topic": "Definition of executive coaching",
+              "reference": "Timothy Gallwey: 'Coaching = unlocking potential for maximum effectiveness'"
+            },
+            {
+              "topic": "Coaching vs. mentoring vs. consulting",
+              "distinction": "Critical for professional identity"
+            },
+            {
+              "topic": "Google research: Good coach = #1 quality of best managers",
+              "implication": "Coaching as leadership style, not just separate role"
+            },
+            {
+              "topic": "Core coaching competencies overview",
+              "framework_likely": "ICF Core Competencies or similar"
+            },
+            {
+              "topic": "Self as instrument - introduction",
+              "foundation": "Sets up afternoon exercise"
+            },
+            {
+              "topic": "Balance of acceptance and challenge",
+              "sports_reference": "Usain Bolt's trainer example",
+              "application": "Every coaching interaction requires both"
+            }
+          ],
+          "preparation_recommendations": [
+            "Review basic coaching definitions beforehand",
+            "Think about own experiences being coached/mentored",
+            "Identify assumptions about what coaching is"
+          ]
+        },
+        {
+          "time": "14:00-15:00",
+          "duration_min": 60,
+          "activity": "ÐžÐ±ÐµÐ´",
+          "type": "break",
+          "note": "First shared meal - important for cohort bonding"
+        },
+        {
+          "time": "14:45-15:00",
+          "duration_min": 15,
+          "activity": "Ð­ÐºÑÐºÑƒÑ€ÑÐ¸Ñ Ð¿Ð¾ ÐºÐ°Ð¼Ð¿ÑƒÑÑƒ (Ð¿Ð¾ Ð¶ÐµÐ»Ð°Ð½Ð¸ÑŽ)",
+          "type": "optional_activity",
+          "purpose": "Orientation, sense of place, informal time"
+        },
+        {
+          "time": "15:00-16:30",
+          "duration_min": 90,
+          "activity": "ÐŸÑÐ¸Ñ…Ð¾Ð´Ð¸Ð½Ð°Ð¼Ð¸Ñ‡ÐµÑÐºÐ¸Ð¹ Ð¿Ð¾Ð´Ñ…Ð¾Ð´ Ð² ÐºÐ¾ÑƒÑ‡Ð¸Ð½Ð³Ðµ",
+          "facilitator": "Ð Ð¾Ð´Ð¶ÐµÑ€ Ð›ÐµÐ¼Ð°Ð½",
+          "delivery": "Online",
+          "type": "lecture_interactive",
+          "significance": "HIGH - Theoretical Depth",
+          "complexity": "HIGH",
+          "challenge_level": "This is HEAVY content for Day 1",
+          
+          "core_concepts_likely": [
+            {
+              "concept": "Unconscious processes in coaching",
+              "relevance": "Much of what happens in coaching happens below conscious awareness"
+            },
+            {
+              "concept": "Transference",
+              "definition": "Client projects feelings/patterns from past relationships onto coach",
+              "coaching_application": "Understanding why client may react strongly to coach"
+            },
+            {
+              "concept": "Countertransference",
+              "definition": "Coach's emotional reactions to client",
+              "coaching_application": "Using own feelings as diagnostic information"
+            },
+            {
+              "concept": "Projection",
+              "definition": "Attributing own unacknowledged feelings/thoughts to others",
+              "coaching_application": "Client may project onto team members, coach helps see this"
+            },
+            {
+              "concept": "Defense mechanisms",
+              "relevance": "How people protect themselves from uncomfortable awareness",
+              "coaching_application": "Recognizing when client is defending vs. exploring"
+            },
+            {
+              "concept": "Parallel process",
+              "definition": "Dynamics in client's system show up in coaching relationship",
+              "significance": "Coaching relationship as microcosm of client's challenges"
+            }
+          ],
+
+          "why_day_1": [
+            "Establishes that coaching is about MORE than surface-level conversation",
+            "Prepares participants for depth of 'Self as instrument' exercise",
+            "Introduces complexity early - sets expectations for program rigor",
+            "Roger Lehmann's schedule may dictate timing"
+          ],
+
+          "participant_experience_likely": [
+            "Intellectual stretch - new vocabulary and concepts",
+            "Some confusion is normal and expected",
+            "May feel abstract until connected to practice",
+            "Provides framework for understanding own reactions later"
+          ],
+
+          "preparation_recommendations": [
+            "Read about basic psychodynamic concepts if available in pre-readings",
+            "Don't worry about understanding everything - focus on curiosity",
+            "Think about times you've had strong reactions to people at work"
+          ]
+        },
+        {
+          "time": "16:30-17:00",
+          "duration_min": 30,
+          "activity": "ÐšÐ¾Ñ„Ðµ-Ð±Ñ€ÐµÐ¹Ðº",
+          "type": "break",
+          "purpose": "Essential processing time after heavy content",
+          "participant_need": "Digest psychodynamic concepts before experiential work"
+        },
+        {
+          "time": "17:00-19:00",
+          "duration_min": 120,
+          "activity": "Â«Ð¯ ÐºÐ°Ðº Ð¸Ð½ÑÑ‚Ñ€ÑƒÐ¼ÐµÐ½Ñ‚Â». Ð“Ñ€ÑƒÐ¿Ð¿Ð¾Ð²Ð¾Ðµ ÑƒÐ¿Ñ€Ð°Ð¶Ð½ÐµÐ½Ð¸Ðµ",
+          "facilitators": ["Ð•Ð»ÐµÐ½Ð° ÐšÐ»ÐµÐºÐ¾Ð²ÐºÐ¸Ð½Ð°", "Ð•Ð»ÐµÐ½Ð° Ð Ð¾ÑÐ¾ÑÑÐºÐ°Ñ", "Executive-ÐºÐ¾ÑƒÑ‡Ð¸"],
+          "type": "experiential_small_groups",
+          "significance": "TRANSFORMATIONAL - Day 1 Climax",
+          "emotional_intensity": "HIGH",
+          
+          "structure_hypothesis": {
+            "setup": "Introduction to exercise, create safety, explain process",
+            "small_groups": "Split into 3-4 groups with executive coaches",
+            "group_size": "Approximately 6-8 people per group",
+            "process_likely": [
+              "Personal reflection on self as instrument",
+              "Sharing in small group",
+              "Feedback and mirroring from others",
+              "Coach facilitation of insights"
+            ]
+          },
+
+          "core_inquiry": [
+            "What do I bring to coaching relationship?",
+            "What are my strengths as an instrument?",
+            "What are my limitations/blind spots?",
+            "How do my identity, background, values shape my coaching?",
+            "What triggers me? What hooks me?",
+            "How do I react under pressure?"
+          ],
+
+          "connection_to_earlier_content": {
+            "psychodynamic_approach": "Now experiencing what transference/countertransference might feel like",
+            "self_awareness": "Making abstract concept concrete and personal",
+            "coaching_definition": "Understanding that WHO you are matters as much as WHAT you know"
+          },
+
+          "participant_experience_likely": [
+            "Vulnerability - sharing in front of new colleagues",
+            "Insights about self that may be surprising",
+            "Discomfort with not having 'right answers'",
+            "Beginning of cohort bonding through shared vulnerability",
+            "Fatigue - this is end of long first day"
+          ],
+
+          "why_this_matters": [
+            "Cannot coach others without knowing self",
+            "Awareness of own 'instrument' allows for calibration",
+            "Unconscious biases/patterns will affect coaching if unexamined",
+            "Sets foundation for all subsequent learning"
+          ],
+
+          "preparation_recommendations": [
+            "Reflect on: 'What makes me uniquely me?'",
+            "Consider: 'When do I perform at my best? When do I struggle?'",
+            "Embrace: This is meant to be challenging",
+            "Remember: Vulnerability = strength in learning environment"
+          ]
+        }
+      ],
+
+      "day_summary": {
+        "pedagogical_logic": "Concept â†’ Theory â†’ Experience | From head to heart",
+        "emotional_journey": "Welcome â†’ Structure â†’ Depth â†’ Vulnerability",
+        "key_takeaway": "Coaching requires deep self-knowledge, not just technique",
+        "homework_likely": "Reflection on 'self as instrument' insights",
+        "energy_management": "Pace yourself - this is marathon, not sprint. Ends at 19:00 for a reason."
+      }
+    },
+
+    "day_2": {
+      "date": "2025-10-22",
+      "day_of_week": "Wednesday",
+      "theme": "SKILLS & ROOTS - Listening and Family Dynamics",
+      "emotional_arc": "Integration â†’ Learning â†’ Emotional Depth â†’ Processing",
+      "intensity_level": 4,
+      "intensity_scale": "1-5, where 5 is maximum",
+      
+      "schedule": [
+        {
+          "time": "09:30-10:00",
+          "duration_min": 30,
+          "activity": "ÐŸÑ€Ð¸Ð²ÐµÑ‚ÑÑ‚Ð²ÐµÐ½Ð½Ñ‹Ð¹ ÐºÐ¾Ñ„Ðµ",
+          "type": "social",
+          "purpose": "Reconnection after Day 1, informal processing of yesterday's experiences"
+        },
+        {
+          "time": "10:00-11:00",
+          "duration_min": 60,
+          "activity": "Ð ÐµÑ„Ð»ÐµÐºÑÐ¸Ñ",
+          "facilitators": ["Ð•Ð»ÐµÐ½Ð° ÐšÐ»ÐµÐºÐ¾Ð²ÐºÐ¸Ð½Ð°", "Ð•Ð»ÐµÐ½Ð° Ð Ð¾ÑÐ¾ÑÑÐºÐ°Ñ"],
+          "type": "structured_reflection",
+          "significance": "CRITICAL - Integration of Day 1",
+          
+          "purpose": [
+            "Make sense of Day 1 experiences",
+            "Surface insights from 'self as instrument' work",
+            "Connect learning across sessions",
+            "Identify questions that emerged"
+          ],
+
+          "structure_likely": {
+            "format": "Combination of individual reflection and group sharing",
+            "prompts_possible": [
+              "What surprised you yesterday?",
+              "What are you still wondering about?",
+              "What insight about yourself stands out?",
+              "How did you sleep? (Indicator of processing depth)"
+            ]
+          },
+
+          "coaching_principle": "Reflection transforms experience into learning"
+        },
+        {
+          "time": "11:00-11:30",
+          "duration_min": 30,
+          "activity": "Ð ÐµÑ„Ð»ÐµÐºÑÐ¸Ñ Ð¿Ð¾ Ð¿Ð¾Ð²Ð¾Ð´Ñƒ Ñ€ÐµÑ„Ð»ÐµÐºÑÐ¸Ð¸",
+          "facilitator": "Ð•Ð»ÐµÐ½Ð° ÐšÐ»ÐµÐºÐ¾Ð²ÐºÐ¸Ð½Ð°",
+          "type": "meta_cognitive",
+          "significance": "META-SKILL - Teaching how to reflect",
+          
+          "unique_aspect": "This is about HOW you reflect, not just WHAT you reflect on",
+          
+          "likely_content": [
+            {
+              "topic": "Levels of reflection",
+              "framework_possible": "Descriptive â†’ Interpretive â†’ Critical reflection"
+            },
+            {
+              "topic": "Reflective practice as coaching competency",
+              "application": "Both for own development and facilitating client reflection"
+            },
+            {
+              "topic": "Quality of reflection",
+              "distinction": "Surface observation vs. deep insight"
+            },
+            {
+              "topic": "Creating reflective space in coaching",
+              "skill": "How coach holds silence and allows client to go deeper"
+            }
+          ],
+
+          "why_this_matters": [
+            "Reflection is not just 'nice to have' - it's professional skill",
+            "Quality of coach's reflection = quality of development",
+            "Teaches participants to be more intentional about learning process",
+            "Sets up reflective practice for entire program"
+          ],
+
+          "meta_insight": "By reflecting on reflection, participants experience multi-level awareness - exactly what coaching requires"
+        },
+        {
+          "time": "11:30-12:00",
+          "duration_min": 30,
+          "activity": "ÐšÐ¾Ñ„Ðµ-Ð±Ñ€ÐµÐ¹Ðº, Ð³Ñ€ÑƒÐ¿Ð¿Ð¾Ð²Ð°Ñ Ñ„Ð¾Ñ‚Ð¾Ð³Ñ€Ð°Ñ„Ð¸Ñ, Ð¿Ð¾Ñ€Ñ‚Ñ€ÐµÑ‚Ð½Ñ‹Ðµ Ñ„Ð¾Ñ‚Ð¾",
+          "type": "break_admin",
+          "note": "Photos for program materials - don't let this distract from learning focus"
+        },
+        {
+          "time": "12:00-13:00",
+          "duration_min": 60,
+          "activity": "Ð¡Ð»ÑƒÑˆÐ°Ñ‚ÑŒ, Ñ‡Ñ‚Ð¾Ð±Ñ‹ ÑƒÑÐ»Ñ‹ÑˆÐ°Ñ‚ÑŒ",
+          "facilitator": "Ð•Ð»ÐµÐ½Ð° ÐšÐ»ÐµÐºÐ¾Ð²ÐºÐ¸Ð½Ð°",
+          "type": "skill_building",
+          "significance": "FOUNDATIONAL SKILL #1",
+          
+          "core_concept": "Listening is THE most important coaching skill",
+          
+          "levels_of_listening_likely": [
+            {
+              "level": "Level 1 - Internal Listening",
+              "description": "Focus on own thoughts, reactions, next question",
+              "indicator": "Thinking about what to say while client talks",
+              "coaching_impact": "Client doesn't feel heard"
+            },
+            {
+              "level": "Level 2 - Focused Listening",
+              "description": "Complete attention on client - words, tone, body language",
+              "indicator": "Can paraphrase accurately, notice emotions",
+              "coaching_impact": "Client feels heard and understood"
+            },
+            {
+              "level": "Level 3 - Global Listening",
+              "description": "Awareness of client + environment + energy + intuition",
+              "indicator": "Notice what's NOT being said, sense atmosphere shifts",
+              "coaching_impact": "Deep insights emerge, client feels 'gotten' at profound level"
+            }
+          ],
+
+          "distinction": "Listening TO vs. Listening FOR",
+          
+          "what_coaches_listen_for": [
+            "Values being expressed",
+            "Patterns and themes",
+            "Energy shifts",
+            "Contradictions",
+            "Limiting beliefs",
+            "Unexpressed emotions",
+            "The question behind the question"
+          ],
+
+          "practice_component": "Likely includes dyad or triad exercises with immediate feedback",
+
+          "connection_to_day_1": "Can't listen deeply to client if not aware of own internal noise (self as instrument)"
+        },
+        {
+          "time": "13:00-14:00",
+          "duration_min": 60,
+          "activity": "ÐžÐ±ÐµÐ´, Ð¿Ð¾Ñ€Ñ‚Ñ€ÐµÑ‚Ð½Ñ‹Ðµ Ñ„Ð¾Ñ‚Ð¾",
+          "type": "break",
+          "note": "Longer lunch - need integration time after skill-intensive morning"
+        },
+        {
+          "time": "14:00-15:30",
+          "duration_min": 90,
+          "activity": "ÐÐ½Ð°Ð»Ð¸Ð· ÑÐµÐ¼ÐµÐ¹Ð½Ñ‹Ñ… Ð²Ð·Ð°Ð¸Ð¼Ð¾Ð¾Ñ‚Ð½Ð¾ÑˆÐµÐ½Ð¸Ð¹. Ð”Ð¸Ð½Ð°Ð¼Ð¸ÐºÐ° ÑÐµÐ¼ÐµÐ¹Ð½Ñ‹Ñ… Ð¾Ñ‚Ð½Ð¾ÑˆÐµÐ½Ð¸Ð¹",
+          "facilitator": "Ð•Ð»ÐµÐ½Ð° ÐšÐ»ÐµÐºÐ¾Ð²ÐºÐ¸Ð½Ð°",
+          "type": "theoretical_personal",
+          "significance": "HIGH - Emotional Depth",
+          "emotional_intensity": "HIGH",
+          "challenge_level": "This will be emotionally activating for many",
+          
+          "theoretical_foundation": [
+            {
+              "approach": "Family Systems Theory",
+              "key_figure": "Murray Bowen, Virginia Satir",
+              "core_idea": "Family is primary system where we learn relationship patterns"
+            },
+            {
+              "concept": "Intergenerational patterns",
+              "relevance": "Leadership styles often mirror (or react against) family patterns"
+            },
+            {
+              "concept": "Family roles",
+              "examples": "Hero, Scapegoat, Lost Child, Mascot",
+              "coaching_relevance": "These roles show up in organizational teams"
+            },
+            {
+              "concept": "Birth order effects",
+              "leadership_implications": "First-born vs. middle vs. youngest patterns in leadership"
+            }
+          ],
+
+          "why_explore_family_dynamics": [
+            "Family = first 'organization' we experienced",
+            "Leadership behaviors rooted in family-of-origin experiences",
+            "Unexamined family patterns unconsciously influence coaching",
+            "Authority relationships in family â†’ authority relationships at work",
+            "Family communication patterns â†’ professional communication patterns"
+          ],
+
+          "likely_exercises": [
+            {
+              "exercise": "Genogram creation",
+              "description": "Map family structure and relationships",
+              "insight_generated": "Visual representation of family patterns"
+            },
+            {
+              "exercise": "Family scripts/messages",
+              "prompts": [
+                "What messages did you get about success?",
+                "What was said about expressing emotions?",
+                "What were family rules about conflict?"
+              ]
+            },
+            {
+              "exercise": "Role in family system",
+              "reflection": "What role did you play? How does it show up now?"
+            }
+          ],
+
+          "participant_experience_likely": [
+            "Emotional activation - family is tender territory",
+            "Surprising connections between past and present",
+            "Grief, anger, or appreciation may surface",
+            "Vulnerability in sharing family stories",
+            "Deep bonding with cohort through shared humanity"
+          ],
+
+          "coaching_applications": [
+            "Understanding client's family context",
+            "Recognizing when family patterns are at play in leadership challenges",
+            "Helping client see transgenerational patterns",
+            "Being aware of own family triggers when coaching"
+          ],
+
+          "ethical_boundaries": "This is coaching program, not therapy - family work serves professional development, not healing family wounds",
+
+          "preparation_recommendations": [
+            "Reflect on family structure and key relationships before module",
+            "Consider: What did I learn about leadership from my family?",
+            "Remember: This is not about blame, but about understanding",
+            "Know your boundaries: share what feels appropriate for professional context"
+          ]
+        },
+        {
+          "time": "15:30-15:45",
+          "duration_min": 15,
+          "activity": "ÐšÐ¾Ñ„Ðµ-Ð±Ñ€ÐµÐ¹Ðº, Ð¿Ð¾Ñ€Ñ‚Ñ€ÐµÑ‚Ð½Ñ‹Ðµ Ñ„Ð¾Ñ‚Ð¾",
+          "type": "break",
+          "purpose": "ESSENTIAL - Integration time after emotionally intense content",
+          "note": "Short break before moving into small group work - important transition"
+        },
+        {
+          "time": "15:45-16:00",
+          "duration_min": 15,
+          "activity": "Ð£ÑÑ‚Ð°Ð½Ð¾Ð²ÐºÐ° Ð½Ð° Ñ€Ð°Ð±Ð¾Ñ‚Ñƒ Ð² Ð¼Ð°Ð»Ñ‹Ñ… Ð³Ñ€ÑƒÐ¿Ð¿Ð°Ñ…",
+          "facilitators": ["Ð•Ð»ÐµÐ½Ð° ÐšÐ»ÐµÐºÐ¾Ð²ÐºÐ¸Ð½Ð°", "Ð•Ð»ÐµÐ½Ð° Ð Ð¾ÑÐ¾ÑÑÐºÐ°Ñ"],
+          "type": "transition_setup",
+          "significance": "Creating container for deep work",
+          
+          "purpose": [
+            "Explain small group process and purpose",
+            "Set expectations for what will happen",
+            "Create psychological safety",
+            "Establish group norms",
+            "Introduce executive coaches who will facilitate"
+          ],
+
+          "critical_messages_likely": [
+            "What happens in small group stays in small group",
+            "There are no 'right answers' - all experience is valid",
+            "Executive coaches are guides, not evaluators",
+            "This is space for exploration and practice"
+          ]
+        },
+        {
+          "time": "16:00-18:45",
+          "duration_min": 165,
+          "activity": "Ð Ð°Ð±Ð¾Ñ‚Ð° Ð² Ð¼Ð°Ð»Ñ‹Ñ… Ð³Ñ€ÑƒÐ¿Ð¿Ð°Ñ…",
+          "facilitators": "Executive-ÐºÐ¾ÑƒÑ‡Ð¸",
+          "type": "experiential_practice",
+          "significance": "CRITICAL - First deep practice",
+          "group_composition": "3-4 participants + 1 executive coach per group",
+          
+          "focus_likely": [
+            {
+              "topic": "Processing family dynamics material",
+              "activity": "Deeper exploration in safe small group",
+              "coach_role": "Facilitate insights, connect to professional context"
+            },
+            {
+              "topic": "Practicing listening skills",
+              "activity": "Dyads with feedback from observers and coach",
+              "skill_practice": "Applying Level 2 and Level 3 listening"
+            },
+            {
+              "topic": "Peer coaching",
+              "structure": "Rotating roles: coach, client, observer",
+              "learning": "Experience all sides of coaching dynamic"
+            },
+            {
+              "topic": "Feedback practice",
+              "skill": "Giving and receiving developmental feedback",
+              "courage_needed": "Being honest AND kind"
+            }
+          ],
+
+          "executive_coach_role": [
+            "Model coaching presence",
+            "Provide real-time feedback",
+            "Ask powerful questions about the process",
+            "Create safety for experimentation",
+            "Notice and name group dynamics",
+            "Connect individual insights to coaching principles"
+          ],
+
+          "participant_experience_likely": [
+            "Nervousness about being 'watched' while practicing",
+            "Relief at being in smaller, safer group",
+            "Bonding with small group members",
+            "Aha moments from feedback",
+            "Fatigue - nearly 3 hours of intensive work"
+          ],
+
+          "what_makes_this_transformational": [
+            "Not lecture - actual doing",
+            "Immediate feedback from skilled coaches",
+            "Multiple iterations of practice",
+            "Integration of morning's concepts (listening, family dynamics)",
+            "Building trust through shared vulnerability"
+          ]
+        },
+        {
+          "time": "18:45-19:00",
+          "duration_min": 15,
+          "activity": "Ð—Ð°ÐºÑ€Ñ‹Ñ‚Ð¸Ðµ Ð´Ð½Ñ Ð² Ð±Ð¾Ð»ÑŒÑˆÐ¾Ð¹ Ð³Ñ€ÑƒÐ¿Ð¿Ðµ",
+          "facilitators": ["Ð•Ð»ÐµÐ½Ð° ÐšÐ»ÐµÐºÐ¾Ð²ÐºÐ¸Ð½Ð°", "Ð•Ð»ÐµÐ½Ð° Ð Ð¾ÑÐ¾ÑÑÐºÐ°Ñ"],
+          "type": "closing_integration",
+          
+          "purpose": [
+            "Bring cohort back together after small group work",
+            "Harvest key learnings from the day",
+            "Create continuity toward Day 3",
+            "Acknowledge intensity of the work",
+            "Set expectation for overnight processing"
+          ],
+
+          "structure_likely": "Brief sharing of insights, not detailed reporting of small group content"
+        }
+      ],
+
+      "day_summary": {
+        "pedagogical_logic": "Skill development + Personal excavation + Practice in safe space",
+        "progression": "How to reflect â†’ How to listen â†’ Where we come from â†’ Practice together",
+        "emotional_journey": "Cognitive â†’ Skill â†’ Emotional Depth â†’ Vulnerability â†’ Integration",
+        "key_takeaway": "Can't separate personal history from professional presence",
+        "energy_management": "Most emotionally demanding day so far - evening self-care essential",
+        "overnight_processing": "Dreams and early morning thoughts may contain insights - journal them"
+      }
+    },
+
+    "day_3": {
+      "date": "2025-10-23",
+      "day_of_week": "Thursday",
+      "theme": "PRACTICE, PRACTICE, PRACTICE - Technique and Intensive Coaching",
+      "emotional_arc": "Preparation â†’ Normalization of Fear â†’ IMMERSION â†’ Breakthrough/Exhaustion",
+      "intensity_level": 5,
+      "intensity_scale": "1-5, where 5 is maximum",
+      "warning": "This is the most intensive day - NO evening plans should be made",
+      
+      "schedule": [
+        {
+          "time": "09:30-10:00",
+          "duration_min": 30,
+          "activity": "ÐŸÑ€Ð¸Ð²ÐµÑ‚ÑÑ‚Ð²ÐµÐ½Ð½Ñ‹Ð¹ ÐºÐ¾Ñ„Ðµ",
+          "type": "social",
+          "purpose": "Final informal time before intensive practice period",
+          "participant_state_likely": "Mix of excitement and nervousness about day ahead"
+        },
+        {
+          "time": "10:00-10:45",
+          "duration_min": 45,
+          "activity": "Ð ÐµÑ„Ð»ÐµÐºÑÐ¸Ñ",
+          "facilitators": ["Ð•Ð»ÐµÐ½Ð° ÐšÐ»ÐµÐºÐ¾Ð²ÐºÐ¸Ð½Ð°", "Ð•Ð»ÐµÐ½Ð° Ð Ð¾ÑÐ¾ÑÑÐºÐ°Ñ"],
+          "type": "structured_reflection",
+          "focus": "Processing Day 2 - especially family dynamics and small group work",
+          "shorter_than_day_2": "Yes - because much practice ahead, need to move forward",
+          
+          "likely_questions": [
+            "What's landing for you from yesterday's family work?",
+            "What did you notice about yourself in small group practice?",
+            "What are you feeling about today's intensive coaching practice?"
+          ]
+        },
+        {
+          "time": "10:45-12:00",
+          "duration_min": 75,
+          "activity": "ÐœÐ¾Ñ‚Ð¸Ð²Ð°Ñ†Ð¸Ð¾Ð½Ð½Ð¾Ðµ Ð¸Ð½Ñ‚ÐµÑ€Ð²ÑŒÑŽ",
+          "facilitator": "Ð•Ð»ÐµÐ½Ð° Ð Ð¾ÑÐ¾ÑÑÐºÐ°Ñ",
+          "type": "skill_technique_training",
+          "significance": "PRACTICAL TOOL",
+          
+          "background": {
+            "origin": "Developed by Miller & Rollnick for addiction counseling",
+            "core_idea": "Client has ambivalence; coach helps explore both sides",
+            "adaptation": "From clinical to coaching context"
+          },
+
+          "core_principles": [
+            {
+              "principle": "Express empathy",
+              "application": "Understanding client's perspective without judgment"
+            },
+            {
+              "principle": "Develop discrepancy",
+              "application": "Help client see gap between current state and values/goals"
+            },
+            {
+              "principle": "Roll with resistance",
+              "application": "Don't argue against client's resistance - explore it"
+            },
+            {
+              "principle": "Support self-efficacy",
+              "application": "Believe in client's capacity to change"
+            }
+          ],
+
+          "key_concepts": [
+            {
+              "concept": "Change talk vs. sustain talk",
+              "explanation": "Client language that argues for (change talk) or against (sustain talk) change",
+              "coach_skill": "Amplify change talk, explore sustain talk"
+            },
+            {
+              "concept": "Ambivalence",
+              "explanation": "Feeling two ways about something simultaneously",
+              "coaching_stance": "Ambivalence is normal, not a problem to fix"
+            },
+            {
+              "concept": "Open-ended questions",
+              "examples": [
+                "What are the good things about the current situation?",
+                "What are the less good things?",
+                "What would need to be different for you to consider changing?"
+              ]
+            }
+          ],
+
+          "why_in_coaching_context": [
+            "Executives often ambivalent about changes they 'should' want",
+            "Handles resistance elegantly without confrontation",
+            "Supports autonomy - client decides, not coach",
+            "Practical tool for 'stuck' situations"
+          ],
+
+          "practice_component": "Likely demonstration + structured practice in pairs",
+
+          "timing_significance": "Teach concrete technique RIGHT BEFORE massive practice session - immediate application"
+        },
+        {
+          "time": "12:00-12:30",
+          "duration_min": 30,
+          "activity": "ÐšÐ¾Ñ„Ðµ-Ð±Ñ€ÐµÐ¹Ðº",
+          "type": "break",
+          "purpose": "Last break before next critical session"
+        },
+        {
+          "time": "12:30-13:30",
+          "duration_min": 60,
+          "activity": "Ð¡Ð¸Ð½Ð´Ñ€Ð¾Ð¼ ÑÐ°Ð¼Ð¾Ð·Ð²Ð°Ð½Ñ†Ð° Ð¸ ÑƒÑÐ·Ð²Ð¸Ð¼Ð¾ÑÑ‚ÑŒ",
+          "facilitator": "Ð•Ð»ÐµÐ½Ð° ÐšÐ»ÐµÐºÐ¾Ð²ÐºÐ¸Ð½Ð°",
+          "type": "normalizing_empowering",
+          "significance": "CRITICAL - Psychological Preparation for Practice",
+          "timing": "Absolutely intentional - right before 5+ hours of coaching practice",
+          
+          "why_now": [
+            "By Day 3, participants feeling inadequacy: 'Can I really be a coach?'",
+            "About to practice intensively - imposter feelings will spike",
+            "Normalize before it derails learning",
+            "Give permission to be imperfect"
+          ],
+
+          "imposter_syndrome_core": {
+            "definition": "Persistent doubt in one's abilities despite evidence of competence",
+            "prevalence": "Up to 70% of people experience this",
+            "particularly_common": [
+              "High achievers",
+              "People entering new domains (like coaching)",
+              "Members of underrepresented groups"
+            ],
+            "coaching_relevance": [
+              "Coaches feel it too - not just clients",
+              "Can interfere with coaching presence if unrecognized",
+              "Clients often experiencing it - coach must recognize and navigate"
+            ]
+          },
+
+          "vulnerability_framework": {
+            "source_likely": "BrenÃ© Brown's research",
+            "core_message": "Vulnerability is not weakness - it's courage",
+            "coaching_application": [
+              "Cannot coach at depth without allowing own vulnerability",
+              "Client vulnerability requires coach to be comfortable with vulnerability",
+              "Vulnerability = prerequisite for authentic connection"
+            ],
+            "professional_context": "Difference between appropriate vulnerability and over-sharing"
+          },
+
+          "messages_to_participants": [
+            "You are not expected to be expert coaches today",
+            "Making mistakes is part of learning",
+            "Uncertainty is not evidence of incompetence",
+            "Your willingness to try is what matters",
+            "The discomfort you feel = you're at your learning edge"
+          ],
+
+          "preparation_for_practice": [
+            "Reduce performance anxiety",
+            "Shift mindset from 'perform perfectly' to 'experiment and learn'",
+            "Create permission for vulnerability in coaching practice",
+            "Anticipate and normalize the fears that will arise"
+          ],
+
+          "strategic_brilliance": "Addressing elephant in room BEFORE practice = participants can actually learn, not just manage anxiety"
+        },
+        {
+          "time": "13:30-14:30",
+          "duration_min": 60,
+          "activity": "ÐžÐ±ÐµÐ´",
+          "type": "break",
+          "purpose": "Final meal before intensive afternoon/evening practice",
+          "recommendation": "Eat well but not heavily - long session ahead"
+        },
+        {
+          "time": "14:30-14:45",
+          "duration_min": 15,
+          "activity": "Ð£ÑÑ‚Ð°Ð½Ð¾Ð²ÐºÐ° Ð½Ð° Ñ€Ð°Ð±Ð¾Ñ‚Ñƒ Ð² Ð¼Ð°Ð»Ñ‹Ñ… Ð³Ñ€ÑƒÐ¿Ð¿Ð°Ñ…",
+          "facilitator": "Ð•Ð»ÐµÐ½Ð° Ð Ð¾ÑÐ¾ÑÑÐºÐ°Ñ",
+          "type": "transition_setup",
+          
+          "purpose": [
+            "Explain structure of next 5+ hours",
+            "Set expectations: multiple rounds of practice",
+            "Reinforce safety and confidentiality",
+            "Practical logistics: breaks, timing, rotations",
+            "Final motivational framing: 'This is your opportunity to truly learn'"
+          ],
+
+          "critical_framing": "This is not performance evaluation - this is laboratory for experimentation"
+        },
+        {
+          "time": "14:45-16:30",
+          "duration_min": 105,
+          "activity": "ÐšÐ¾ÑƒÑ‡Ð¸Ð½Ð³ Ð² Ð¼Ð°Ð»Ñ‹Ñ… Ð³Ñ€ÑƒÐ¿Ð¿Ð°Ñ…*",
+          "facilitators": "Executive-ÐºÐ¾ÑƒÑ‡Ð¸",
+          "type": "intensive_practice",
+          "significance": "TRANSFORMATIONAL - Session 1 of 3",
+          "note": "*ÐšÐ¾ÑƒÑ‡Ð¸Ð½Ð³ Ð¼Ð¾Ð¶ÐµÑ‚ Ð·Ð°Ð½ÑÑ‚ÑŒ Ð±Ð¾Ð»ÑŒÑˆÐµ Ð²Ñ€ÐµÐ¼ÐµÐ½Ð¸. ÐŸÐ¾Ð¶Ð°Ð»ÑƒÐ¹ÑÑ‚Ð°, Ð½Ðµ Ð¿Ð»Ð°Ð½Ð¸Ñ€ÑƒÐ¹Ñ‚Ðµ Ð½Ð¸Ñ‡ÐµÐ³Ð¾ Ð½Ð° Ð²ÐµÑ‡ÐµÑ€",
+          
+          "structure_hypothesis": {
+            "format": "Rotating triads - coach/client/observer",
+            "session_length": "20-30 minutes per coaching conversation",
+            "roles": [
+              {
+                "role": "Coach",
+                "task": "Practice coaching skills",
+                "experience": "Performance pressure + learning + discovery"
+              },
+              {
+                "role": "Client",
+                "task": "Bring real topic to be coached on",
+                "experience": "Vulnerability + being helped + insights"
+              },
+              {
+                "role": "Observer",
+                "task": "Notice coach behaviors, client responses, dynamics",
+                "experience": "Learning by observation + preparing feedback"
+              }
+            ],
+            "executive_coach_role": [
+              "Observes all triads",
+              "Provides feedback after each round",
+              "Models coaching presence",
+              "Teaches in real-time: 'Did you notice when...'",
+              "Manages group process and timing"
+            ]
+          },
+
+          "what_participants_practice": [
+            "Contracting - establishing what to work on",
+            "Listening at Levels 2 and 3",
+            "Asking open-ended questions",
+            "Noticing and naming patterns",
+            "Managing silence",
+            "Tracking multiple threads",
+            "Ending sessions cleanly",
+            "Motivational interviewing techniques (just learned)",
+            "Using self as instrument (Day 1 concept)",
+            "Managing own anxiety while holding space"
+          ],
+
+          "real_topics": "Participants bring actual challenges - not role-play scenarios",
+
+          "emotional_landscape": [
+            "First round: High anxiety, self-consciousness",
+            "After feedback: Calibration, seeing what works",
+            "Growing confidence mixed with humility",
+            "Fatigue starts to appear"
+          ]
+        },
+        {
+          "time": "16:30-16:45",
+          "duration_min": 15,
+          "activity": "ÐšÐ¾Ñ„Ðµ-Ð±Ñ€ÐµÐ¹Ðº (Ð¿Ð»Ð°Ð²Ð°ÑŽÑ‰Ð¸Ð¹)",
+          "type": "flexible_break",
+          "note": "Floating break - taken when group needs it, not fixed time"
+        },
+        {
+          "time": "16:45-18:15",
+          "duration_min": 90,
+          "activity": "ÐšÐ¾ÑƒÑ‡Ð¸Ð½Ð³ Ð² Ð¼Ð°Ð»Ñ‹Ñ… Ð³Ñ€ÑƒÐ¿Ð¿Ð°Ñ… (Ð¿Ñ€Ð¾Ð´Ð¾Ð»Ð¶ÐµÐ½Ð¸Ðµ)",
+          "facilitators": "Executive-ÐºÐ¾ÑƒÑ‡Ð¸",
+          "type": "intensive_practice",
+          "significance": "Session 2 of 3",
+          
+          "progression": {
+            "difference_from_session_1": [
+              "More confident - first jitters worn off",
+              "Deeper coaching conversations - safety established",
+              "Can take more risks in practice",
+              "Feedback integration visible",
+              "Fatigue becoming factor"
+            ],
+            "new_challenges": [
+              "Maintaining presence when tired",
+              "Going deeper not wider",
+              "Managing time in sessions",
+              "Handling more complex client material"
+            ]
+          },
+
+          "likely_evolution": "Groups developing own rhythm and culture"
+        },
+        {
+          "time": "18:15-18:30",
+          "duration_min": 15,
+          "activity": "ÐšÐ¾Ñ„Ðµ-Ð±Ñ€ÐµÐ¹Ðº (Ð¿Ð»Ð°Ð²Ð°ÑŽÑ‰Ð¸Ð¹)",
+          "type": "flexible_break",
+          "critical": "Energy management - needed before final session"
+        },
+        {
+          "time": "18:30-20:00",
+          "duration_min": 90,
+          "activity": "ÐšÐ¾ÑƒÑ‡Ð¸Ð½Ð³ Ð² Ð¼Ð°Ð»Ñ‹Ñ… Ð³Ñ€ÑƒÐ¿Ð¿Ð°Ñ… (Ð¿Ñ€Ð¾Ð´Ð¾Ð»Ð¶ÐµÐ½Ð¸Ðµ)",
+          "facilitators": "Executive-ÐºÐ¾ÑƒÑ‡Ð¸",
+          "type": "intensive_practice",
+          "significance": "Session 3 of 3 - INTEGRATION",
+          "end_time": "20:00 or later",
+          
+          "final_session_dynamics": {
+            "physical_state": "Fatigue, possibly exhaustion",
+            "mental_state": "Information saturation + clarity emerging",
+            "emotional_state": "Deep bonds formed, vulnerability normalized",
+            "learning_state": "Integration happening, not accumulation"
+          },
+
+          "why_push_to_this_level": [
+            "Breakthrough often happens when defenses are down from tiredness",
+            "Learn what it's like to coach when not at 100% (real-world)",
+            "Group cohesion deepens through shared intensity",
+            "Demonstrates commitment to practice, not just theory",
+            "Compression creates intensity that drives transformation"
+          ],
+
+          "what_emerges_in_final_rounds": [
+            "More authentic coaching - less trying to 'do it right'",
+            "Deeper trust = riskier, more real conversations",
+            "Coaching presence accessed naturally, not effortfully",
+            "Surprising insights for both coach and client",
+            "Embodied learning - coaching is in the bones now, not just head"
+          ],
+
+          "executive_coach_interventions": [
+            "May do live coaching demonstrations",
+            "May coach the coach mid-session (teaching tool)",
+            "Provide integrative feedback: 'Notice how far you've come today'",
+            "Help groups find completion even if tired"
+          ]
+        }
+      ],
+
+      "day_summary": {
+        "total_practice_time": "5 hours 15 minutes minimum, possibly longer",
+        "pedagogical_logic": "Technique â†’ Normalization â†’ IMMERSION â†’ Integration through repetition",
+        "why_this_design": [
+          "Cannot learn coaching by talking about it - must do it",
+          "Multiple iterations allow real-time adjustment",
+          "Fatigue strips away pretense - reveals authentic style",
+          "Intensity creates crucible for transformation",
+          "Participants leave KNOWING they can coach, not just hoping"
+        ],
+        "emotional_journey": "Anxiety â†’ Technique â†’ Permission to be imperfect â†’ Practice â†’ Confidence building â†’ Fatigue â†’ Breakthrough â†’ Deep bonding",
+        "key_takeaway": "Coaching is a practice, not a performance. You CAN do this.",
+        "participant_state_at_end": [
+          "Exhausted",
+          "Proud",
+          "Bonded with cohort",
+          "Uncertain but less afraid",
+          "Hungry for more learning",
+          "Need for rest and integration"
+        ],
+        "energy_management": "Early bedtime essential. No work emails. Let brain process.",
+        "note_to_participants": "This intensity is intentional. It's creating the container for real transformation. Trust the process."
+      }
+    },
+
+    "day_4": {
+      "date": "2025-10-24",
+      "day_of_week": "Friday",
+      "theme": "INTEGRATION & CELEBRATION - Learning about Learning and Closure",
+      "emotional_arc": "Tired â†’ Reflective â†’ Conceptual â†’ Creative â†’ Celebratory",
+      "intensity_level": 3,
+      "intensity_scale": "1-5, where 5 is maximum",
+      "note": "Intentionally lower intensity - integration day after intensive Day 3",
+      
+      "schedule": [
+        {
+          "time": "09:30-10:00",
+          "duration_min": 30,
+          "activity": "ÐŸÑ€Ð¸Ð²ÐµÑ‚ÑÑ‚Ð²ÐµÐ½Ð½Ñ‹Ð¹ ÐºÐ¾Ñ„Ðµ",
+          "type": "social",
+          "purpose": "Reconnection after intensive Day 3",
+          "participant_state": "Tired but energized, bonded, proud of yesterday's work"
+        },
+        {
+          "time": "10:00-10:30",
+          "duration_min": 30,
+          "activity": "Ð ÐµÑ„Ð»ÐµÐºÑÐ¸Ñ",
+          "facilitators": ["Ð•Ð»ÐµÐ½Ð° ÐšÐ»ÐµÐºÐ¾Ð²ÐºÐ¸Ð½Ð°", "Ð•Ð»ÐµÐ½Ð° Ð Ð¾ÑÐ¾ÑÑÐºÐ°Ñ"],
+          "type": "structured_reflection",
+          "focus": "Processing Day 3 intensive practice",
+          "significance": "Making sense of yesterday's experience",
+          
+          "likely_prompts": [
+            "What surprised you most about your coaching practice?",
+            "What was harder than expected? Easier?",
+            "What did you discover about yourself as a coach?",
+            "What are you taking forward from yesterday's intensity?"
+          ],
+
+          "purpose": [
+            "Consolidate learning from practice",
+            "Name achievements - group went through significant experience",
+            "Begin articulating emerging coaching identity",
+            "Transition from doing to understanding"
+          ]
+        },
+        {
+          "time": "10:30-11:30",
+          "duration_min": 60,
+          "activity": "Ð¡Ñ‚Ð¸Ð»Ð¸ Ð¾Ð±ÑƒÑ‡ÐµÐ½Ð¸Ñ",
+          "facilitator": "Ð•Ð»ÐµÐ½Ð° Ð Ð¾ÑÐ¾ÑÑÐºÐ°Ñ",
+          "type": "conceptual_meta",
+          "significance": "META-LEARNING - Understanding How You Learn",
+          "timing_brilliance": "After 3 days of intensive learning, NOW teach about learning itself",
+          
+          "frameworks_likely": [
+            {
+              "framework": "Kolb's Learning Styles",
+              "dimensions": [
+                "Concrete Experience vs. Abstract Conceptualization",
+                "Active Experimentation vs. Reflective Observation"
+              ],
+              "four_types": [
+                "Diverging (feeling + watching)",
+                "Assimilating (thinking + watching)",
+                "Converging (thinking + doing)",
+                "Accommodating (feeling + doing)"
+              ]
+            },
+            {
+              "framework": "Honey & Mumford Learning Styles",
+              "types": [
+                "Activist - learns by doing",
+                "Reflector - learns by observing",
+                "Theorist - learns by understanding concepts",
+                "Pragmatist - learns by trying things out"
+              ]
+            },
+            {
+              "framework": "VARK Model",
+              "modalities": [
+                "Visual",
+                "Auditory",
+                "Reading/Writing",
+                "Kinesthetic"
+              ]
+            }
+          ],
+
+          "why_now": [
+            "Participants have just experienced 3 days of varied learning approaches",
+            "Can reflect on what worked best for them personally",
+            "Meta-awareness of learning = can optimize rest of program",
+            "Coaching application: understanding client learning styles"
+          ],
+
+          "coaching_application": [
+            "Match coaching approach to client's learning style",
+            "If client is activist - suggest experiments",
+            "If client is reflector - provide thinking space",
+            "If client is theorist - connect to frameworks",
+            "If client is pragmatist - focus on immediate application"
+          ],
+
+          "personal_development_application": [
+            "Design own learning for rest of program",
+            "Know how to get most from inter-module period",
+            "Understand own resistance to certain learning approaches",
+            "Leverage strengths, compensate for preferences"
+          ],
+
+          "self_assessment_likely": "Participants identify their own learning style preferences",
+
+          "meta_insight": "By teaching this on Day 4, after experiencing multiple learning modalities, participants have data to work with"
+        },
+        {
+          "time": "11:30-11:45",
+          "duration_min": 15,
+          "activity": "Ð£ÑÑ‚Ð°Ð½Ð¾Ð²ÐºÐ° Ð½Ð° Ð³Ñ€ÑƒÐ¿Ð¿Ð¾Ð²ÑƒÑŽ Ñ€Ð°Ð±Ð¾Ñ‚Ñƒ",
+          "facilitators": ["Ð•Ð»ÐµÐ½Ð° ÐšÐ»ÐµÐºÐ¾Ð²ÐºÐ¸Ð½Ð°", "Ð•Ð»ÐµÐ½Ð° Ð Ð¾ÑÐ¾ÑÑÐºÐ°Ñ"],
+          "type": "transition_setup",
+          "different_from_previous": "This is NOT more coaching practice - creative group work",
+          
+          "purpose": [
+            "Explain afternoon activity structure",
+            "Shift tone from intensive to creative",
+            "Set expectation for integration through different medium",
+            "Practical logistics"
+          ]
+        },
+        {
+          "time": "11:45-12:00",
+          "duration_min": 15,
+          "activity": "ÐšÐ¾Ñ„Ðµ-Ð±Ñ€ÐµÐ¹Ðº",
+          "type": "break"
+        },
+        {
+          "time": "12:00-14:00",
+          "duration_min": 120,
+          "activity": "Ð¡Ð¾Ð·Ð´Ð°Ð½Ð¸Ðµ ÑƒÑÐ»Ð¾Ð²Ð¸Ð¹ Ð´Ð»Ñ Ð½Ð°ÐºÐ¾Ð¿Ð»ÐµÐ½Ð¸Ñ Ð¸Ð½Ñ„Ð¾Ñ€Ð¼Ð°Ñ†Ð¸Ð¸",
+          "facilitators": "Executive-ÐºÐ¾ÑƒÑ‡Ð¸",
+          "type": "experiential_creative",
+          "significance": "Integration through creative expression",
+          "note": "Mysterious title - likely intentionally vague",
+          
+          "title_interpretation": {
+            "creating_conditions": "How coach creates space/container",
+            "accumulating_information": "How insights accumulate over time, not forced",
+            "deeper_meaning": "Trusting the process, not controlling it"
+          },
+
+          "activity_hypothesis": [
+            {
+              "possibility": "Creative project - visual/artistic representation of learning",
+              "rationale": "Accessing different intelligence - not just verbal/analytical",
+              "examples": "Collage, drawing, sculpture, metaphor mapping"
+            },
+            {
+              "possibility": "Group synthesis project",
+              "rationale": "Integrating collective learning from 4 days",
+              "examples": "Create manifesto, principles, visual model"
+            },
+            {
+              "possibility": "Case-based application",
+              "rationale": "Apply learning to real scenarios",
+              "examples": "Analyze coaching situation, design intervention"
+            },
+            {
+              "possibility": "Video project mentioned later",
+              "rationale": "'Ð’Ñ‹Ð±Ð¾Ñ€ Ñ€Ð¾Ð»Ð¸ÐºÐ°-Ð¿Ð¾Ð±ÐµÐ´Ð¸Ñ‚ÐµÐ»Ñ' at dinner suggests groups create videos",
+              "creative_element": "Humor, metaphor, demonstration of coaching concepts"
+            }
+          ],
+
+          "learning_objectives": [
+            "Synthesize 4 days of learning",
+            "Express understanding through non-traditional medium",
+            "Collaborate with cohort in new way",
+            "Make learning memorable and personal",
+            "Access right-brain processing after left-brain intensive work"
+          ],
+
+          "why_this_approach": [
+            "Creative expression = deeper encoding of learning",
+            "Fun and lightness after intensity",
+            "Different intelligences engaged",
+            "Group bonding through shared creation",
+            "Memory anchors created"
+          ],
+
+          "executive_coach_role": "Facilitate group process, ensure psychological safety, help groups find their creative expression"
+        },
+        {
+          "time": "14:00-15:00",
+          "duration_min": 60,
+          "activity": "ÐžÐ±ÐµÐ´ (Ð¿Ð»Ð°Ð²Ð°ÑŽÑ‰Ð¸Ð¹)",
+          "type": "flexible_break",
+          "note": "Flexible timing - taken when groups need it during creative work"
+        },
+        {
+          "time": "15:00-17:00",
+          "duration_min": 120,
+          "activity": "Ð¡Ð¾Ð·Ð´Ð°Ð½Ð¸Ðµ ÑƒÑÐ»Ð¾Ð²Ð¸Ð¹ Ð´Ð»Ñ Ð½Ð°ÐºÐ¾Ð¿Ð»ÐµÐ½Ð¸Ñ Ð¸Ð½Ñ„Ð¾Ñ€Ð¼Ð°Ñ†Ð¸Ð¸ (Ð¿Ñ€Ð¾Ð´Ð¾Ð»Ð¶ÐµÐ½Ð¸Ðµ)",
+          "facilitators": "Executive-ÐºÐ¾ÑƒÑ‡Ð¸",
+          "type": "experiential_creative",
+          "focus": "Completing creative projects, preparing presentations"
+        },
+        {
+          "time": "17:00-17:30",
+          "duration_min": 30,
+          "activity": "Ð—Ð°ÐºÑ€Ñ‹Ñ‚Ð¸Ðµ Ð¼Ð¾Ð´ÑƒÐ»Ñ, Ð´Ð¾Ð¼Ð°ÑˆÐ½ÐµÐµ Ð·Ð°Ð´Ð°Ð½Ð¸Ðµ",
+          "facilitators": ["Ð•Ð»ÐµÐ½Ð° ÐšÐ»ÐµÐºÐ¾Ð²ÐºÐ¸Ð½Ð°", "Ð•Ð»ÐµÐ½Ð° Ð Ð¾ÑÐ¾ÑÑÐºÐ°Ñ"],
+          "type": "formal_closure",
+          "significance": "CRITICAL - Bridge to inter-module period",
+          
+          "closing_elements_likely": [
+            {
+              "element": "Harvest key learnings from module",
+              "format": "Structured sharing or final reflection"
+            },
+            {
+              "element": "Acknowledge the journey",
+              "purpose": "Name what the group accomplished together"
+            },
+            {
+              "element": "Individual takeaways",
+              "prompt": "What's your biggest insight from Module 1?"
+            },
+            {
+              "element": "Introduction to inter-module period",
+              "focus": "What happens between now and Module 2"
+            }
+          ],
+
+          "homework_assignment": {
+            "significance": "CRITICAL - Bridges to Module 2",
+            "likely_components": [
+              {
+                "assignment": "Complete identity map",
+                "format": "Written reflection on given/chosen/foundation",
+                "purpose": "Deepen self-awareness work from 'self as instrument'"
+              },
+              {
+                "assignment": "Practice coaching conversations",
+                "requirement": "Minimum 2-3 informal coaching sessions",
+                "purpose": "Apply and integrate skills",
+                "documentation": "Reflection on what worked/challenged"
+              },
+              {
+                "assignment": "Reading for Module 2",
+                "materials": "Pre-readings on psychological concepts",
+                "deadline": "2-3 weeks before Module 2 (Nov 25-27)"
+              },
+              {
+                "assignment": "Reflective journal",
+                "frequency": "Weekly or after each practice session",
+                "prompts": "What am I noticing? What am I learning? What questions arise?"
+              },
+              {
+                "assignment": "Individual coaching session",
+                "timing": "Between Oct 25 - Nov 24",
+                "purpose": "One-on-one work with assigned executive coach",
+                "focus": "Personal development goals from module"
+              }
+            ],
+            "tone": "Invitations for learning, not compliance requirements"
+          },
+
+          "key_messages": [
+            "Real learning happens in inter-module period through practice",
+            "Stay connected with cohort",
+            "Reach out to executive coaches if needed",
+            "Trust your process",
+            "Module 1 was beginning, not end"
+          ]
+        },
+        {
+          "time": "17:30-18:00",
+          "duration_min": 30,
+          "activity": "ÐŸÐµÑ€ÐµÑ…Ð¾Ð´ Ð² Ð‘ÐµÐ»Ñ‹Ð¹ Ñ€ÐµÑÑ‚Ð¾Ñ€Ð°Ð½. Welcome drinks",
+          "type": "social_transition",
+          "purpose": "Shift from formal learning to celebration",
+          "location": "Ð‘ÐµÐ»Ñ‹Ð¹ Ñ€ÐµÑÑ‚Ð¾Ñ€Ð°Ð½ (White Restaurant) on campus"
+        },
+        {
+          "time": "18:00-19:00",
+          "duration_min": 60,
+          "activity": "Ð’Ñ‹Ð±Ð¾Ñ€ Ñ€Ð¾Ð»Ð¸ÐºÐ°-Ð¿Ð¾Ð±ÐµÐ´Ð¸Ñ‚ÐµÐ»Ñ",
+          "type": "celebration_creative",
+          "hypothesis": "Groups present their creative videos from afternoon work",
+          "atmosphere": "Fun, laughter, celebration of learning",
+          "voting": "Cohort votes on 'winner' - but all win by participating",
+          "purpose": [
+            "Share creative expressions",
+            "Laugh together",
+            "See learning through multiple lenses",
+            "Celebrate cohort creativity"
+          ]
+        },
+        {
+          "time": "19:00-20:00",
+          "duration_min": 60,
+          "activity": "Ð¤ÑƒÑ€ÑˆÐµÑ‚ Ð¸ ÑÐ²Ð¾Ð±Ð¾Ð´Ð½Ð¾Ðµ Ð¾Ð±Ñ‰ÐµÐ½Ð¸Ðµ",
+          "type": "social_networking",
+          "atmosphere": "Relaxed, celebratory, informal",
+          
+          "purposes": [
+            "Celebrate completion of Module 1",
+            "Deepen relationships in informal setting",
+            "Process experiences over food and drink",
+            "Build professional network",
+            "End on positive, connected note"
+          ],
+
+          "participant_state": "Proud, exhausted, bonded, energized about program, ready for break"
+        }
+      ],
+
+      "day_summary": {
+        "pedagogical_logic": "Reflection â†’ Meta-learning â†’ Creative integration â†’ Formal closure â†’ Informal celebration",
+        "arc": "Making sense â†’ Understanding how you learn â†’ Expressing learning creatively â†’ Setting next steps â†’ Celebrating together",
+        "emotional_journey": "Tired reflection â†’ Conceptual clarity â†’ Creative energy â†’ Closure â†’ Joy and connection",
+        "key_takeaway": "Learning is a process that continues beyond the classroom",
+        "energy_level": "Lower intensity by design - allows integration and celebration",
+        "completion": "Both task completion (homework assigned) and psychological completion (celebration)",
+        "bridge_forward": "Clear path to inter-module work and Module 2"
+      }
+    }
+  },
+
+  "pedagogical_architecture": {
+    "overall_progression": {
+      "day_1": {
+        "focus": "Foundation and Self-Awareness",
+        "mode": "Conceptual + Experiential",
+        "outcome": "Understanding coaching and self as instrument"
+      },
+      "day_2": {
+        "focus": "Skills and Roots",
+        "mode": "Skill-building + Personal excavation",
+        "outcome": "Listening competency + Family pattern awareness"
+      },
+      "day_3": {
+        "focus": "Intensive Practice",
+        "mode": "Immersive doing",
+        "outcome": "Embodied coaching capability + Confidence"
+      },
+      "day_4": {
+        "focus": "Integration and Celebration",
+        "mode": "Meta-learning + Creative + Social",
+        "outcome": "Consolidated learning + Path forward + Cohort bonds"
+      }
+    },
+
+    "skill_development_sequence": [
+      {
+        "day": 1,
+        "skill": "Self-awareness (self as instrument)",
+        "level": "Introduction + Experience"
+      },
+      {
+        "day": 2,
+        "skill": "Listening (multiple levels)",
+        "level": "Learn + Practice"
+      },
+      {
+        "day": 2,
+        "skill": "Understanding family dynamics",
+        "level": "Theory + Personal application"
+      },
+      {
+        "day": 3,
+        "skill": "Motivational interviewing",
+        "level": "Technique training"
+      },
+      {
+        "day": 3,
+        "skill": "Managing imposter syndrome",
+        "level": "Awareness + Normalization"
+      },
+      {
+        "day": 3,
+        "skill": "Coaching conversations (integrated)",
+        "level": "Intensive practice (5+ hours)"
+      },
+      {
+        "day": 4,
+        "skill": "Meta-learning (learning styles)",
+        "level": "Conceptual + Self-assessment"
+      }
+    ],
+
+    "balance_of_modalities": {
+      "lecture_conceptual": "25%",
+      "experiential_practice": "40%",
+      "reflection": "20%",
+      "social_creative": "15%",
+      "rationale": "Heavy emphasis on doing and reflecting, not just learning about"
+    },
+
+    "psychological_safety_building": {
+      "day_1": "Establishing container, sharing goals, first vulnerability (self as instrument)",
+      "day_2": "Small groups form, family sharing creates depth, trust building",
+      "day_3": "Intensive practice possible because safety established, imposter syndrome addressed",
+      "day_4": "Creative expression and celebration deepen bonds",
+      "cumulative_effect": "By end of module, cohort has shared significant vulnerability and formed strong bonds"
+    },
+
+    "intensity_management": {
+      "pattern": "Build â†’ Build â†’ Peak â†’ Integrate",
+      "day_3_as_crucible": "Intentional design - transformation through intensity",
+      "recovery_built_in": "Day 4 lighter, evening celebration, then week break before next module",
+      "energy_tracking": [
+        "Day 1: 7-8/10",
+        "Day 2: 8-9/10",
+        "Day 3: 10/10",
+        "Day 4: 6/10"
+      ]
+    }
+  },
+
+  "inter_module_assignments": {
+    "timing": "Oct 25 - Nov 24 (5 weeks)",
+    "individual_coaching_session": {
+      "type": "Coaching (not mentoring)",
+      "duration_likely": "60-90 minutes",
+      "with": "Assigned executive coach",
+      "focus": "Personal development goals identified in Module 1",
+      "preparation": "Reflect on Module 1 insights, identify what to work on"
+    },
+    "practice_requirement": {
+      "minimum": "2-3 coaching conversations",
+      "ideal": "4-6 conversations",
+      "with_whom": "Colleagues, peers (not direct reports initially)",
+      "duration": "30-60 minutes each",
+      "reflection": "Journal after each session"
+    },
+    "reading": {
+      "deadline": "~Nov 11 (2 weeks before Module 2)",
+      "topic": "Psychological concepts for coaching (Module 2 focus)",
+      "materials": "Provided in digital platform"
+    },
+    "identity_map_completion": {
+      "format": "Written document",
+      "framework": "Given / Chosen / Foundation",
+      "depth": "2-3 pages, thoughtful reflection",
+      "purpose": "Deepen self-awareness, prepare for Module 2 work"
+    }
+  },
+
+  "critical_insights": {
+    "design_brilliance": [
+      {
+        "insight": "Sequencing of imposter syndrome session",
+        "timing": "Right before massive practice",
+        "impact": "Participants can actually learn instead of managing anxiety"
+      },
+      {
+        "insight": "Family dynamics on Day 2",
+        "timing": "After trust established, before intensive practice",
+        "impact": "Personal history informs coaching presence without overwhelming"
+      },
+      {
+        "insight": "Reflection on reflection (Day 2)",
+        "meta_skill": "Teaching how to learn, not just what to learn",
+        "impact": "Participants become self-directed learners"
+      },
+      {
+        "insight": "5+ hours of coaching practice",
+        "intensity": "Beyond comfort zone into transformation zone",
+        "impact": "Embodied confidence, not just intellectual understanding"
+      },
+      {
+        "insight": "Learning styles taught on Day 4",
+        "timing": "After experiencing multiple modalities",
+        "impact": "Self-awareness with data, not abstract theory"
+      },
+      {
+        "insight": "Creative project on final day",
+        "modality": "Right-brain after left-brain dominance",
+        "impact": "Deeper encoding, memorable synthesis"
+      },
+      {
+        "insight": "Celebration built into structure",
+        "message": "Learning should be joyful, not just hard work",
+        "impact": "Positive association with growth and challenge"
+      }
+    ],
+
+    "potential_challenges": [
+      {
+        "challenge": "Emotional overwhelm from family dynamics",
+        "mitigation": "Executive coaches present, Day 3 normalization session",
+        "support_available": "Individual coaching session in inter-module period"
+      },
+      {
+        "challenge": "Exhaustion on Day 3",
+        "mitigation": "Intentional - transformation through intensity, Day 4 lighter",
+        "participant_agency": "Know this in advance, can prepare physically/mentally"
+      },
+      {
+        "challenge": "Imposter syndrome activation",
+        "mitigation": "Directly addressed in dedicated session, normalized throughout",
+        "reframe": "Sign of learning, not failure"
+      },
+      {
+        "challenge": "Group dynamics in small groups",
+        "mitigation": "Executive coaches skilled at facilitation, group agreements",
+        "monitoring": "Coaches watch for concerning patterns"
+      }
+    ]
+  },
+
+  "preparation_recommendations": {
+    "two_weeks_before": {
+      "intellectual": [
+        "Read all pre-module materials thoroughly",
+        "Research Roger Lehmann - INSEAD/MIT background",
+        "Review basic coaching definitions and frameworks",
+        "Familiarize with ICF core competencies"
+      ],
+      "logistical": [
+        "Book accommodation near campus if not local",
+        "Block Oct 23 evening completely (Day 3 goes late)",
+        "Arrange childcare/pet care for full 4 days",
+        "Prepare work delegation for intensive week"
+      ],
+      "emotional": [
+        "Begin daily reflection practice (10 min)",
+        "Journal on: 'What do I want to develop in myself?'",
+        "Identify 3 core learning goals for module",
+        "Reflect on own family patterns before arriving"
+      ]
+    },
+    "week_before": {
+      "mental": [
+        "Clear mental space - reduce decision fatigue",
+        "Set intention: openness to vulnerability",
+        "Identify one specific coaching skill to focus on",
+        "Prepare 1-2 real topics you might bring as 'client' in practice"
+      ],
+      "physical": [
+        "Ensure adequate sleep - intensive week ahead",
+        "Pack comfortable clothes for long sessions",
+        "Bring journal/notebook for capturing insights",
+        "Prepare healthy snacks for long Day 3"
+      ],
+      "relational": [
+        "Inform family/partners about intensive nature of week",
+        "Set expectations: limited availability Oct 21-24",
+        "Arrange for self-care time after module ends"
+      ]
+    },
+    "day_before": {
+      "practical": [
+        "Pack: notebook, pens, comfort items",
+        "Set multiple alarms - 9:30am start",
+        "Plan route to campus",
+        "Light dinner, early bed"
+      ],
+      "mindset": [
+        "Review your learning goals",
+        "Set intention: curiosity over perfection",
+        "Remind yourself: discomfort = growth",
+        "Excitement + nervousness = readiness"
+      ]
+    }
+  },
+
+  "post_module_integration": {
+    "immediately_after": {
+      "rest": "Full day off if possible - integration happens in rest",
+      "journaling": "Capture hot insights before they fade",
+      "questions_to_reflect": [
+        "What am I taking forward?",
+        "What surprised me most?",
+        "What do I want to practice?",
+        "Who am I becoming as a coach?"
+      ]
+    },
+    "first_week_after": {
+      "process": "Let learning settle, don't force it",
+      "share": "Tell someone outside program about key insights",
+      "practice": "One informal coaching conversation to apply learning",
+      "homework": "Begin identity map while memories fresh"
+    },
+    "ongoing": {
+      "rhythm": "Weekly practice + reflection",
+      "connection": "Stay in touch with cohort via Telegram",
+      "preparation": "Start Module 2 readings by Nov 11",
+      "coaching_session": "Schedule individual session with executive coach"
+    }
+  },
+
+  "meta_analysis": {
+    "program_philosophy_evident": [
+      "Learn by doing, not just listening",
+      "Vulnerability is strength",
+      "Community accelerates learning",
+      "Transformation requires intensity",
+      "Self-awareness is foundation",
+      "Integration is as important as acquisition",
+      "Celebration makes learning stick"
+    ],
+
+    "cultural_messages_embedded": [
+      "Imperfection is welcome",
+      "Questions more valuable than answers",
+      "Personal history shapes professional practice",
+      "Coaching is both art and science",
+      "You are the instrument - develop yourself",
+      "Learning never stops",
+      "We're in this together"
+    ],
+
+    "what_makes_this_excellent_design": [
+      "Theory and practice tightly integrated",
+      "Emotional and cognitive learning balanced",
+      "Safety established before big risks",
+      "Intensity builds progressively",
+      "Multiple learning modalities honored",
+      "Individual and group learning both present",
+      "Clear structure with room for emergence",
+      "Faculty are not just teachers but models",
+      "Celebration integrated, not afterthought",
+      "Bridge to next phase explicitly built"
+    ]
+  },
+
+  "ai_coach_support_plan": {
+    "before_module": {
+      "offer": [
+        "Deep dive into specific topics (e.g., psychodynamic approach)",
+        "Create personal identity map together",
+        "Set learning intentions with powerful questions",
+        "Explore family patterns as preparation",
+        "Practice reflective conversation"
+      ]
+    },
+    "during_module": {
+      "not_available": "Focus entirely on in-person experience",
+      "brief_checkins": "Only if user initiates, keep very brief"
+    },
+    "after_module": {
+      "critical_window": "Within 3 days of completion",
+      "structured_debrief": {
+        "five_questions": [
+          "What did you learn?",
+          "What did you feel?",
+          "What did you reconsider?",
+          "What will you apply?",
+          "What questions emerged?"
+        ]
+      },
+      "extract_and_tag": "Create checkpoint with key insights",
+      "action_planning": "Support with homework and practice plan"
+    },
+    "inter_module_support": {
+      "practice_debrief": "After each coaching conversation",
+      "reading_discussion": "Process pre-readings together",
+      "homework_support": "Help complete identity map",
+      "coaching_sessions": "Practice powerful questions for individual coaching session",
+      "regular_checkins": "Every 2 weeks minimum"
+    }
+  }
+}

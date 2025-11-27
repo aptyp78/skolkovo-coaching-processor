@@ -1,0 +1,634 @@
+{
+  "meta": {
+    "session_date": "2025-11-25",
+    "session_type": "pre_module_1_preparation",
+    "material": "Roger Lehman - Vision Lecture (M1)",
+    "pages_analyzed": 36,
+    "status": "analyzed",
+    "next_action": "deep_reflection_on_personal_patterns",
+    "context_capacity": "15%",
+    "tags": ["#INSIGHT", "#IDENTITY", "#MODULE_1_PREP"]
+  },
+
+  "session_summary": {
+    "main_question_explored": "Предложил ли Роджер модель подхода к коучингу?",
+    "key_discovery": "Да - психодинамическая модель с использованием себя как инструмента",
+    "breakthrough_moment": "Понимание, что метафоры Роджера не декоративные, а системные инструменты",
+    "user_engagement": "Высокая - задавал точные вопросы о структуре и метафорах"
+  },
+
+  "roger_lehman_model": {
+    "name": "Психодинамическая модель коучинга с использованием себя как инструмента",
+    "full_name_eng": "Psychodynamic Coaching Model with Self-as-Instrument",
+    
+    "architecture": {
+      "layer_1_foundation": {
+        "name": "Философия самопознания",
+        "core_principle": "Ты не можешь научить человека чему-либо. Ты можешь только помочь ему открыть это в себе (Galileo)",
+        "learning_cycle": {
+          "stage_1": "Curiosity → Questions",
+          "stage_2": "Awareness → Insight",
+          "stage_3": "Options → Choice",
+          "stage_4": "Change → Impact",
+          "result": "Making a Difference",
+          "total_stages": 8
+        },
+        "application": "Структура для коуч-сессии и личной трансформации"
+      },
+
+      "layer_2_structure": {
+        "name": "Пространственная метафора: С танцпола на балкон",
+        "dance_floor": {
+          "description": "Быть внутри ситуации",
+          "characteristics": [
+            "Эмоциональное погружение",
+            "Непосредственное действие",
+            "Чувствуешь музыку",
+            "Не видишь паттернов"
+          ],
+          "role": "Участие, проживание опыта"
+        },
+        "balcony": {
+          "description": "Наблюдательная позиция",
+          "characteristics": [
+            "Рефлексия",
+            "Видение целого",
+            "Распознавание паттернов",
+            "Дистанция от эмоций"
+          ],
+          "role": "Осознание, анализ, инсайты"
+        },
+        "coach_function": "Помогать осознанно переходить между уровнями",
+        "key_insight": "Мастерство = умение быть и на танцполе, и на балконе одновременно"
+      },
+
+      "layer_3_depth": {
+        "name": "Работа с бессознательным (айсберг Фрейда)",
+        "structure": {
+          "conscious": {
+            "component": "Ego",
+            "percentage": 10,
+            "visibility": "above_water",
+            "description": "То, что мы видим и контролируем"
+          },
+          "unconscious": {
+            "components": ["Superego", "Id"],
+            "percentage": 90,
+            "visibility": "below_water",
+            "description": "То, что управляет нами скрыто"
+          }
+        },
+        "coaching_principle": "Большая часть того, что влияет на решения лидера - под водой",
+        "tools": {
+          "projection": {
+            "definition": "Приписывание другим своих неприятных качеств",
+            "mechanism": "Защита эго от тревоги и вины",
+            "formula": "Что я вижу в других = что не принимаю в себе",
+            "coaching_work": "Замечать эмоциональные сверхреакции и спрашивать: 'Что это говорит обо МНЕ?'"
+          },
+          "transference": {
+            "definition": "Перенос паттернов из детства на текущие отношения",
+            "mechanism": "Смещение чувств от значимых фигур прошлого на людей настоящего",
+            "signs": [
+              "Отсутствие эмпатии (скука, апатия, забывчивость)",
+              "Необычно интенсивные реакции (+/-)",
+              "Отклонение от профессиональных правил"
+            ],
+            "coaching_work": "Осознавать, какую роль ты играешь для клиента"
+          },
+          "internal_theatre": {
+            "definition": "Неосознаваемые аспекты личности",
+            "principle": "Чем больше отрицаем - тем больше проецируем",
+            "coaching_work": "Интеграция отвергаемых частей себя"
+          }
+        }
+      },
+
+      "layer_4_technology": {
+        "name": "Коуч как инструмент (Self-as-Instrument)",
+        "transference_triangle": {
+          "vertex_1": "YOU (коуч)",
+          "vertex_2": "CLIENT (в настоящем)",
+          "vertex_3": "Significant Others (из прошлого/настоящего)",
+          "dynamic": "В отношениях всегда три участника, даже если физически двое"
+        },
+        "coach_tracking": {
+          "what_to_notice": [
+            "Свои эмоциональные реакции на клиента",
+            "Отклонения от профессиональной рутины",
+            "Необычно сильные чувства (+ или -)",
+            "Что клиент 'вызывает' во мне",
+            "Для кого делаю исключения"
+          ],
+          "reflective_questions": [
+            "Почему этот человек вызывает во мне ТАКУЮ эмоцию?",
+            "Что это говорит обо МНЕ?",
+            "Какой паттерн из МОЕГО прошлого активировался?",
+            "Какой тип клиентов я предпочитаю/избегаю?",
+            "Что я ищу в профессиональных отношениях?"
+          ]
+        },
+        "radical_principle": "Главный инструмент коуча - это он сам, его осознанность своих реакций"
+      },
+
+      "layer_5_application": {
+        "name": "Практические техники",
+        "working_with_projection": {
+          "step_1": "Notice emotional overreactions",
+          "step_2": "Ask: Why does this person trigger THIS emotion?",
+          "step_3": "Ask: What does this say about ME?",
+          "result": "Self-awareness → Empathy → Reduced blame"
+        },
+        "working_with_transference": {
+          "diagnostic_questions": [
+            "Какой тип клиентов я предпочитаю?",
+            "Кого я склонен избегать?",
+            "Что я ищу в профессиональных отношениях?",
+            "Чего я ожидаю от себя и других?",
+            "Что я провоцирую в других?",
+            "Что может расстроить меня?",
+            "Как я справляюсь с неопределенностью?",
+            "Для кого делаю исключения?"
+          ]
+        }
+      }
+    },
+
+    "model_comparison": {
+      "vs_GROW": {
+        "roger_model": {
+          "focus": "Глубинные бессознательные процессы",
+          "instrument": "Сам коуч и его реакции",
+          "work_with": "Перенос, проекция, детские паттерны",
+          "timeframe": "Долгосрочная трансформация",
+          "approach": "Психоаналитический"
+        },
+        "grow_model": {
+          "focus": "Структура разговора, цели",
+          "instrument": "Вопросы и техники",
+          "work_with": "Текущая ситуация, опции",
+          "timeframe": "Решение конкретных задач",
+          "approach": "Когнитивно-бихевиоральный"
+        },
+        "complementarity": "Модели не конкурируют - они работают на разных уровнях глубины"
+      }
+    },
+
+    "essence_one_line": "Коучинг = использование СЕБЯ как инструмента для помощи клиенту увидеть бессознательные паттерны через рефлексию (балкон) и осознание проекций/переносов"
+  },
+
+  "metaphors_system": {
+    "purpose": "Метафоры Роджера - не декорация, а продуманная система визуальных и смысловых якорей",
+    
+    "level_1_emotional_triggers": {
+      "WOW": {
+        "visual": "Крупная надпись оранжевым",
+        "meaning": "Внешнее удивление, восхищение",
+        "type": "External insight"
+      },
+      "AHA": {
+        "visual": "Крупная надпись синим",
+        "meaning": "Внутреннее озарение, понимание",
+        "type": "Internal insight"
+      },
+      "function": "Создать эмоциональную память о целях коучинга"
+    },
+
+    "level_2_spatial": {
+      "dance_floor_to_balcony": {
+        "visual_elements": [
+          "Вид с балкона на танцпол клуба",
+          "Терраса с видом на горы",
+          "Человек на балконе небоскреба"
+        ],
+        "metaphor_power": {
+          "on_dance_floor": "Чувствуешь музыку, но не видишь хореографию",
+          "on_balcony": "Видишь весь танец, но не чувствуешь вибрации",
+          "coach_role": "Помогать подниматься и спускаться"
+        },
+        "applications": [
+          "Деэскалация конфликтов: 'Давай поднимемся на балкон'",
+          "Рефлексия после действия",
+          "Видение паттернов в поведении"
+        ]
+      },
+      
+      "iceberg": {
+        "visual": "Айсберг с линией воды",
+        "layers": {
+          "above_water": "Ego (10%) - сознательное",
+          "below_water": "Superego + Id (90%) - бессознательное"
+        },
+        "coaching_lesson": "Титаник терпит крушение из-за того, что не видит под водой",
+        "application": "Большая часть решений лидера определяется невидимой частью"
+      }
+    },
+
+    "level_3_tools_of_knowing": {
+      "abacus": {
+        "visual": "Старинный китайский абакус",
+        "meaning": {
+          "primary": "Древний, но эффективный инструмент",
+          "contrast": "Старое образование vs. новое обучение",
+          "principle": "Простота ≠ примитивность"
+        },
+        "connection": "Цитата Эйнштейна: формальные системы блокируют естественное познание"
+      },
+      
+      "tree_night_vision": {
+        "visual": "Дерево в зеленых тонах (тепловизор)",
+        "meanings": [
+          "Органический рост знания",
+          "Другой способ видения (не обычным глазом)",
+          "Скрытая жизнь, невидимая при обычном свете"
+        ],
+        "coaching_metaphor": "Коуч помогает 'включить ночное видение' - увидеть скрытое"
+      }
+    },
+
+    "level_4_projection_self_perception": {
+      "kitten_lion_mirror": {
+        "visual": "Котенок смотрит в зеркало, видит льва",
+        "multi_layered_meanings": {
+          "interpretation_1_positive": {
+            "meaning": "Потенциал внутри больше, чем мы думаем",
+            "message": "Ты больше, чем ты думаешь",
+            "use": "Трансформация самовосприятия"
+          },
+          "interpretation_2_projection": {
+            "meaning": "Мы видим в себе то, чего нет",
+            "message": "Осторожно с самообманом",
+            "use": "Искаженное самовосприятие"
+          },
+          "interpretation_3_transference": {
+            "meaning": "В отношениях видим не того, кто перед нами",
+            "message": "Проецируем ожидания/страхи",
+            "use": "Перенос в отношениях"
+          }
+        },
+        "genius": "Одна метафора работает на 3 концепции лекции!"
+      },
+
+      "shadow": {
+        "visual": "Человек + его темная искаженная тень",
+        "concept": "Тень Юнга - отвергаемые части личности",
+        "formula": "Что не принимаем в себе → проецируем на других",
+        "examples": {
+          "leader_anxiety": "Не признает тревожность → видит команду 'слабой'",
+          "manager_ambition": "Отрицает амбиции → обвиняет коллег в 'карьеризме'"
+        },
+        "internal_theatre": "Чем больше отрицаем, тем больше 'видим' в других"
+      },
+
+      "defensive_dialogue": {
+        "visual": "Два человека за столом",
+        "dialogue": {
+          "he": "WHY ARE YOU SO DEFENSIVE?",
+          "she": "WHY ARE YOU SO ANNOYED?"
+        },
+        "meaning": "Взаимная проекция - бесконечная петля обвинений",
+        "coaching_question": "Когда кто-то обвинил тебя в чем-то, что больше связано с НИМ?",
+        "application": "Помочь выйти из петли и увидеть динамику"
+      }
+    },
+
+    "level_5_rebel_authorities": {
+      "einstein_tongue": {
+        "visual": "Знаменитое фото с высунутым языком",
+        "quote": "The only thing that interferes with my learning is my education",
+        "paradox": "Формальное образование может убивать любопытство",
+        "message": "Величайший физик - бунтарь против системы",
+        "for_coaches": "Сохранить детское любопытство и не бояться играть"
+      },
+
+      "galileo": {
+        "visual": "Классический портрет эпохи Возрождения",
+        "quote": "You cannot teach a man anything. You can only help him discover it within himself",
+        "role": "Фундамент коучинга",
+        "principle": "Вопросы > Ответы",
+        "legacy": "Ученый, который помог человечеству увидеть по-новому"
+      }
+    },
+
+    "level_6_systemic_models": {
+      "transference_triangle": {
+        "visual": "Геометрическая схема с 3 вершинами",
+        "structure": {
+          "vertex_top": "ТЫ (коуч)",
+          "vertex_left": "КЛИЕНТ (сейчас)",
+          "vertex_right": "Значимые другие (прошлое/настоящее)"
+        },
+        "principle": "В отношениях всегда три участника (даже если двое)",
+        "third_participant": "Прошлый опыт отношений",
+        "coach_awareness": "Какую роль я играю для клиента?",
+        "cartoon_example": "'Вся моя семья выросла. Кроме мужа, конечно.' - перенос материнской роли"
+      }
+    },
+
+    "metaphors_as_system": {
+      "table": [
+        {
+          "metaphor": "WOW/A-HA",
+          "function": "Эмоциональный якорь",
+          "works_for": "Желаемый результат коучинга"
+        },
+        {
+          "metaphor": "Танцпол→Балкон",
+          "function": "Пространственная",
+          "works_for": "Механизм рефлексии"
+        },
+        {
+          "metaphor": "Айсберг",
+          "function": "Структурная",
+          "works_for": "Уровни сознания"
+        },
+        {
+          "metaphor": "Котенок→Лев",
+          "function": "Трансформационная",
+          "works_for": "Проекция/потенциал"
+        },
+        {
+          "metaphor": "Тень",
+          "function": "Психологическая",
+          "works_for": "Работа с отрицаемым"
+        },
+        {
+          "metaphor": "Треугольник",
+          "function": "Системная",
+          "works_for": "Динамика переноса"
+        },
+        {
+          "metaphor": "Эйнштейн/Галилей",
+          "function": "Авторитетная",
+          "works_for": "Легитимация подхода"
+        }
+      ],
+      
+      "why_it_works": [
+        "Визуальная память сильнее текстовой",
+        "Метафоры = мосты между абстрактным и конкретным",
+        "Многослойность - одна метафора на несколько концепций",
+        "Эмоциональная вовлеченность через юмор",
+        "Культурные архетипы - универсальные символы"
+      ]
+    }
+  },
+
+  "key_concepts_extracted": {
+    "executive_coaching_foundations": [
+      {
+        "concept": "Self-Discovery Learning",
+        "definition": "Обучение через самопознание, а не прямое преподавание",
+        "source": "Galileo Galilei",
+        "application": "Основа коучингового подхода"
+      },
+      {
+        "concept": "Curiosity-Driven Development",
+        "definition": "Развитие, основанное на любопытстве",
+        "trigger": "Первый этап цикла обучения",
+        "application": "Запуск процесса самопознания"
+      },
+      {
+        "concept": "Making a Difference",
+        "definition": "Создание значимых изменений",
+        "position": "Конечная цель всего процесса",
+        "application": "Измеритель эффективности коучинга"
+      }
+    ],
+
+    "psychoanalytic_concepts": [
+      {
+        "concept": "Projection",
+        "mechanism": "Защита эго путем приписывания своих качеств другим",
+        "trigger": "Черты, которые не можем принять в себе",
+        "coaching_work": "Осознание эмоциональных сверхреакций"
+      },
+      {
+        "concept": "Transference",
+        "mechanism": "Перенос детских паттернов на текущие отношения",
+        "signs": ["Отсутствие эмпатии", "Интенсивные реакции", "Отклонения от правил"],
+        "coaching_work": "Использование себя как инструмента"
+      },
+      {
+        "concept": "Internal Theatre",
+        "definition": "Неосознаваемые аспекты личности",
+        "principle": "Чем больше отрицаем → тем больше проецируем",
+        "coaching_work": "Интеграция отвергаемых частей"
+      },
+      {
+        "concept": "Ego Defense Mechanisms",
+        "function": "Защита от тревоги и вины",
+        "main_mechanism": "Projection",
+        "coaching_awareness": "Распознавание защит у клиента и у себя"
+      }
+    ],
+
+    "human_development_factors": [
+      "Genetic predisposition",
+      "Birth order",
+      "Parents",
+      "History of successes and failures",
+      "Family status and class",
+      "Chance"
+    ]
+  },
+
+  "practical_exercises_from_lecture": {
+    "exercise_1": {
+      "type": "Breakout Groups (3 people)",
+      "question": "Describe an event/situation (personal/organizational) that changed your life in a significant way",
+      "purpose": "Practice going to the balcony - see your life from observer position",
+      "coaching_focus": "Identify transformation moments"
+    },
+
+    "exercise_2": {
+      "type": "Reflection",
+      "question": "Can you think of a time when someone accused you of something that felt to be more about them than you?",
+      "purpose": "Understand projection in action",
+      "coaching_focus": "Recognize projection in relationships"
+    },
+
+    "exercise_3": {
+      "type": "Breakout Groups (3 people)",
+      "question": "Think of a situation where you were either the object of someone's transference OR you experienced transference to another person",
+      "purpose": "Identify transference patterns",
+      "coaching_focus": "Awareness of unconscious dynamics"
+    }
+  },
+
+  "important_quotes": [
+    {
+      "author": "Galileo Galilei",
+      "quote": "You cannot teach a man anything. You can only help him discover it within himself",
+      "significance": "Фундаментальный принцип коучинга",
+      "application": "Reminder: не давать ответы, а помогать находить"
+    },
+    {
+      "author": "Albert Einstein",
+      "quote": "The only thing that interferes with my learning is my education",
+      "significance": "Парадокс формального образования",
+      "application": "Критическое мышление о системах обучения"
+    },
+    {
+      "author": "Roger Lehman (via Manfred Kets de Vries)",
+      "quote": "Projection protects our own ego from anxiety or guilt",
+      "significance": "Определение защитной функции",
+      "application": "Понимание механизма проекции"
+    },
+    {
+      "author": "Roger Lehman",
+      "quote": "The more we disown ourselves... our own 'internal theatre', the more we 'see' it in others",
+      "significance": "Механизм работы проекции",
+      "application": "Ключ к самоосознанию лидера"
+    },
+    {
+      "author": "Roger Lehman",
+      "quote": "Managers often project stress, insecurity, or ambition onto team members—what's unacknowledged in ourselves can distort how we see others",
+      "significance": "Практическое применение в менеджменте",
+      "application": "Работа с управленческими искажениями"
+    },
+    {
+      "author": "Roger Lehman",
+      "quote": "Self-awareness builds empathy and reduces blame",
+      "significance": "Результат работы с проекцией",
+      "application": "Путь к лучшему лидерству"
+    }
+  ],
+
+  "connection_to_program": {
+    "module_1_relevance": {
+      "module_name": "Познание себя через коучинг",
+      "dates": "2025-10-21 to 2025-10-24",
+      "roger_lecture_role": "Введение в психоаналитические основы коучинга",
+      "key_preparation": [
+        "Понять модель айсберга (сознательное/бессознательное)",
+        "Начать замечать свои проекции",
+        "Практиковать 'выход на балкон'",
+        "Подготовить примеры трансформационных событий",
+        "Исследовать свой 'внутренний театр'"
+      ]
+    },
+
+    "identity_map_connection": {
+      "note": "Метафора котенка→льва напрямую связана с identity work",
+      "questions": [
+        "Как я вижу себя сейчас? (котенок)",
+        "Каков мой потенциал? (лев)",
+        "Что мешает мне видеть свой потенциал? (проекции, защиты)"
+      ],
+      "milestone": "M1 - Identity map completed"
+    },
+
+    "coaching_practice_foundation": {
+      "core_skill": "Using yourself as an instrument",
+      "development_path": [
+        "Осознавать свои эмоциональные реакции",
+        "Замечать, когда отклоняешься от профессиональной рутины",
+        "Спрашивать: 'Что это говорит обо мне?'",
+        "Работать с собственным переносом",
+        "Интегрировать отвергаемые части себя"
+      ],
+      "long_term": "Модули 5-7 (HIGH INTENSITY practice period)"
+    },
+
+    "psychological_concepts_preview": {
+      "module_2_connection": "Психологические концепции для коучинга",
+      "roger_gives_foundation": [
+        "Projection",
+        "Transference", 
+        "Ego defense mechanisms",
+        "Unconscious mind",
+        "Internal theatre"
+      ],
+      "to_be_expanded": "Модуль 2 углубит эти концепции"
+    }
+  },
+
+  "user_reflections_to_explore": {
+    "pending_questions": [
+      {
+        "question": "Какая метафора 'зацепила' сильнее всего?",
+        "purpose": "Понять личный резонанс с материалом",
+        "status": "pending"
+      },
+      {
+        "question": "Видишь ли ты, как можно использовать метафоры в своей практике?",
+        "purpose": "Практическое применение",
+        "status": "pending"
+      },
+      {
+        "question": "Какая ситуация пришла на ум при описании проекции?",
+        "purpose": "Личный инсайт о собственных проекциях",
+        "status": "pending"
+      },
+      {
+        "question": "Ближе ли тебе психодинамическая модель Роджера или техническая GROW?",
+        "purpose": "Определить стиль коучинга",
+        "status": "pending"
+      }
+    ],
+
+    "exercises_to_do": [
+      {
+        "exercise": "Recall transformational event",
+        "source": "Lecture Exercise 1",
+        "timing": "Before Module 1"
+      },
+      {
+        "exercise": "Identify projection experience",
+        "source": "Lecture Exercise 2",
+        "timing": "Before Module 1"
+      },
+      {
+        "exercise": "Analyze transference situation",
+        "source": "Lecture Exercise 3",
+        "timing": "Before Module 1"
+      }
+    ]
+  },
+
+  "next_steps": {
+    "immediate": [
+      "Получить feedback от пользователя на анализ",
+      "Исследовать личные проекции пользователя",
+      "Подготовить практические примеры для Модуля 1"
+    ],
+    "before_module_1": [
+      "Создать личную 'identity map'",
+      "Проработать упражнения из лекции",
+      "Подготовить вопросы для Roger Lehman",
+      "Исследовать свой 'внутренний театр'"
+    ],
+    "during_module_1": [
+      "Практиковать 'выход на балкон'",
+      "Замечать проекции в реальном времени",
+      "Использовать метафоры в обсуждениях",
+      "Фиксировать A-HA моменты"
+    ],
+    "post_module_1": [
+      "Structured reflection (5 questions)",
+      "Extract key insights → TAG for memory",
+      "Create checkpoint for context management"
+    ]
+  },
+
+  "tags_for_memory": [
+    "#INSIGHT: Психодинамическая модель как альтернатива техническому коучингу",
+    "#IDENTITY: Метафора котенка-льва для identity work",
+    "#PRACTICE: Использование себя как инструмента",
+    "#PATTERN: Проекция и перенос в лидерстве",
+    "#MILESTONE: Подготовка к M1 завершена - модель понята"
+  ],
+
+  "context_management": {
+    "this_session_tokens": "~15000 tokens",
+    "critical_info_extracted": true,
+    "can_compress_after": "User feedback received",
+    "persistent_layer_updated": [
+      "Roger Lehman model architecture",
+      "Metaphors system",
+      "Connection to program"
+    ],
+    "next_sync_due": "After Module 1 completion (2025-10-24)"
+  }
+}
